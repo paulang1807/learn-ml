@@ -1,0 +1,2857 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes taken while learning Machine Learning">
+      
+      
+        <meta name="author" content="Angshuman Paul">
+      
+      
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stats-cheatsheet/">
+      
+      
+        <link rel="prev" href="../stats-reg/">
+      
+      
+        <link rel="next" href="../stat-viz/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Cheatsheet - Machine Learning Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm32 64h192c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1-64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm-32 64c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zm128-160a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1-64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1-64 0 32 32 0 1 1 64 0zm-32 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Machine Learning Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cheatsheet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/paulang1807/learn-ml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Machine Learning Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/paulang1807/learn-ml" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Statistics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Statistics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-distributions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distributions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-rv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Random Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-sampling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sampling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-hypo-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypothesis Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-reg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mean" class="md-nav__link">
+    Mean
+  </a>
+  
+    <nav class="md-nav" aria-label="Mean">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weighted-mean" class="md-nav__link">
+    Weighted Mean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouped-data-mean" class="md-nav__link">
+    Grouped Data Mean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    Variance
+  </a>
+  
+    <nav class="md-nav" aria-label="Variance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouped-data-variance" class="md-nav__link">
+    Grouped Data Variance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-deviation" class="md-nav__link">
+    Standard Deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#covariance" class="md-nav__link">
+    Covariance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation" class="md-nav__link">
+    Correlation
+  </a>
+  
+    <nav class="md-nav" aria-label="Correlation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pearson-correlation-coefficient" class="md-nav__link">
+    Pearson Correlation Coefficient
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance-covariance-matrix" class="md-nav__link">
+    Variance Covariance Matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-score" class="md-nav__link">
+    Z-Score
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-variables" class="md-nav__link">
+    Random Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Random Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discrete-random-variables" class="md-nav__link">
+    Discrete Random Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-random-variables" class="md-nav__link">
+    Continuous Random Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-or-mean-value" class="md-nav__link">
+    Expected or Mean value
+  </a>
+  
+    <nav class="md-nav" aria-label="Expected or Mean value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-expected-value" class="md-nav__link">
+    Rules of Expected Value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_1" class="md-nav__link">
+    Variance
+  </a>
+  
+    <nav class="md-nav" aria-label="Variance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-deviation_1" class="md-nav__link">
+    Standard Deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-variance-standard-deviation" class="md-nav__link">
+    Rules of Variance &amp; Standard Deviation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#covariance_1" class="md-nav__link">
+    Covariance
+  </a>
+  
+    <nav class="md-nav" aria-label="Covariance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-covariance" class="md-nav__link">
+    Rules of Covariance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation_1" class="md-nav__link">
+    Correlation
+  </a>
+  
+    <nav class="md-nav" aria-label="Correlation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-correlation" class="md-nav__link">
+    Rules of Correlation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binomial-rv" class="md-nav__link">
+    Binomial RV
+  </a>
+  
+    <nav class="md-nav" aria-label="Binomial RV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-rv" class="md-nav__link">
+    Bernoulli RV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-rv" class="md-nav__link">
+    Geometric RV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributions" class="md-nav__link">
+    Distributions
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-distribution" class="md-nav__link">
+    Normal Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-normal-distribution-z-distribution-z-sim-nmu0-sigma-1" class="md-nav__link">
+    Standard Normal Distribution (z-Distribution), \(Z \sim N(\mu=0, \sigma = 1)\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distribution" class="md-nav__link">
+    Binomial Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Binomial Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-distribution" class="md-nav__link">
+    Bernoulli Distribution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-distribution" class="md-nav__link">
+    Geometric Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poisson-distribution" class="md-nav__link">
+    Poisson Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#students-t-distribution" class="md-nav__link">
+    Students T-Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Students T-Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#degrees-of-freedom" class="md-nav__link">
+    Degrees of Freedom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    Sampling
+  </a>
+  
+    <nav class="md-nav" aria-label="Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finite-correction-factor-fpc" class="md-nav__link">
+    Finite Correction Factor (FPC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-distribution-of-the-sample-meansdsm" class="md-nav__link">
+    Sampling Distribution of the Sample Mean(SDSM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-distribution-of-the-sample-proportionsdsp" class="md-nav__link">
+    Sampling Distribution of the Sample Proportion(SDSP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-distribution-of-the-difference-of-means-sddm" class="md-nav__link">
+    Sample Distribution of the Difference of Means (SDDM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pooled-procedures" class="md-nav__link">
+    Pooled Procedures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-distribution-of-the-difference-of-proportions-sddp" class="md-nav__link">
+    Sample Distribution of the Difference of Proportions (SDDP)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence-interval" class="md-nav__link">
+    Confidence Interval
+  </a>
+  
+    <nav class="md-nav" aria-label="Confidence Interval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-the-proportion" class="md-nav__link">
+    Confidence Interval for the Proportion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-difference-of-means" class="md-nav__link">
+    Confidence Interval for Difference of Means
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-pooled-procedures" class="md-nav__link">
+    Confidence Interval for Pooled Procedures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-matched-pair-test" class="md-nav__link">
+    Confidence Interval for Matched-Pair Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-difference-of-proportions" class="md-nav__link">
+    Confidence Interval for Difference of Proportions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-testing" class="md-nav__link">
+    Hypothesis Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypothesis Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-1-error-rate" class="md-nav__link">
+    Type 1 Error Rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    Power
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-and-two-tailed-tests" class="md-nav__link">
+    One and Two Tailed Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="One and Two Tailed Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-one-and-two-tailed-tests" class="md-nav__link">
+    Confidence Interval for One and Two Tailed Tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic" class="md-nav__link">
+    Test Statistic
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Statistic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-the-proportion" class="md-nav__link">
+    Test Statistic for the Proportion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-difference-of-means" class="md-nav__link">
+    Test Statistic for Difference of Means
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-pooled-procedures" class="md-nav__link">
+    Test Statistic for Pooled Procedures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-matched-pair-test" class="md-nav__link">
+    Test Statistic for Matched-Pair Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-difference-of-proportions" class="md-nav__link">
+    Test Statistic for Difference of Proportions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-value" class="md-nav__link">
+    p-value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-linear-regression-model" class="md-nav__link">
+    Simple Linear Regression Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple Linear Regression Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#residual" class="md-nav__link">
+    Residual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-squared-residuals" class="md-nav__link">
+    Sum of Squared Residuals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measures-of-variation" class="md-nav__link">
+    Measures of Variation
+  </a>
+  
+    <nav class="md-nav" aria-label="Measures of Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explained-sum-of-squares" class="md-nav__link">
+    Explained Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#residual-sum-of-squares" class="md-nav__link">
+    Residual Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-sum-of-squares" class="md-nav__link">
+    Total Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mean-square-of-regression" class="md-nav__link">
+    Mean Square of Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-mean-square-error" class="md-nav__link">
+    Root Mean Square Error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chi-square-tests" class="md-nav__link">
+    Chi Square Tests
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stat-viz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vizuals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Probability
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Probability
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../probability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prob-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other Math Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Other Math Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perm-com/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Permutation and Combination
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mean" class="md-nav__link">
+    Mean
+  </a>
+  
+    <nav class="md-nav" aria-label="Mean">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weighted-mean" class="md-nav__link">
+    Weighted Mean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouped-data-mean" class="md-nav__link">
+    Grouped Data Mean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    Variance
+  </a>
+  
+    <nav class="md-nav" aria-label="Variance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouped-data-variance" class="md-nav__link">
+    Grouped Data Variance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-deviation" class="md-nav__link">
+    Standard Deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#covariance" class="md-nav__link">
+    Covariance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation" class="md-nav__link">
+    Correlation
+  </a>
+  
+    <nav class="md-nav" aria-label="Correlation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pearson-correlation-coefficient" class="md-nav__link">
+    Pearson Correlation Coefficient
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance-covariance-matrix" class="md-nav__link">
+    Variance Covariance Matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-score" class="md-nav__link">
+    Z-Score
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-variables" class="md-nav__link">
+    Random Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Random Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discrete-random-variables" class="md-nav__link">
+    Discrete Random Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-random-variables" class="md-nav__link">
+    Continuous Random Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-or-mean-value" class="md-nav__link">
+    Expected or Mean value
+  </a>
+  
+    <nav class="md-nav" aria-label="Expected or Mean value">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-expected-value" class="md-nav__link">
+    Rules of Expected Value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_1" class="md-nav__link">
+    Variance
+  </a>
+  
+    <nav class="md-nav" aria-label="Variance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-deviation_1" class="md-nav__link">
+    Standard Deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-variance-standard-deviation" class="md-nav__link">
+    Rules of Variance &amp; Standard Deviation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#covariance_1" class="md-nav__link">
+    Covariance
+  </a>
+  
+    <nav class="md-nav" aria-label="Covariance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-covariance" class="md-nav__link">
+    Rules of Covariance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation_1" class="md-nav__link">
+    Correlation
+  </a>
+  
+    <nav class="md-nav" aria-label="Correlation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-of-correlation" class="md-nav__link">
+    Rules of Correlation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binomial-rv" class="md-nav__link">
+    Binomial RV
+  </a>
+  
+    <nav class="md-nav" aria-label="Binomial RV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-rv" class="md-nav__link">
+    Bernoulli RV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-rv" class="md-nav__link">
+    Geometric RV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributions" class="md-nav__link">
+    Distributions
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-distribution" class="md-nav__link">
+    Normal Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-normal-distribution-z-distribution-z-sim-nmu0-sigma-1" class="md-nav__link">
+    Standard Normal Distribution (z-Distribution), \(Z \sim N(\mu=0, \sigma = 1)\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distribution" class="md-nav__link">
+    Binomial Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Binomial Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-distribution" class="md-nav__link">
+    Bernoulli Distribution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-distribution" class="md-nav__link">
+    Geometric Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poisson-distribution" class="md-nav__link">
+    Poisson Distribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#students-t-distribution" class="md-nav__link">
+    Students T-Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Students T-Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#degrees-of-freedom" class="md-nav__link">
+    Degrees of Freedom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampling" class="md-nav__link">
+    Sampling
+  </a>
+  
+    <nav class="md-nav" aria-label="Sampling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finite-correction-factor-fpc" class="md-nav__link">
+    Finite Correction Factor (FPC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-distribution-of-the-sample-meansdsm" class="md-nav__link">
+    Sampling Distribution of the Sample Mean(SDSM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-distribution-of-the-sample-proportionsdsp" class="md-nav__link">
+    Sampling Distribution of the Sample Proportion(SDSP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-distribution-of-the-difference-of-means-sddm" class="md-nav__link">
+    Sample Distribution of the Difference of Means (SDDM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pooled-procedures" class="md-nav__link">
+    Pooled Procedures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-distribution-of-the-difference-of-proportions-sddp" class="md-nav__link">
+    Sample Distribution of the Difference of Proportions (SDDP)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence-interval" class="md-nav__link">
+    Confidence Interval
+  </a>
+  
+    <nav class="md-nav" aria-label="Confidence Interval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-the-proportion" class="md-nav__link">
+    Confidence Interval for the Proportion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-difference-of-means" class="md-nav__link">
+    Confidence Interval for Difference of Means
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-pooled-procedures" class="md-nav__link">
+    Confidence Interval for Pooled Procedures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-matched-pair-test" class="md-nav__link">
+    Confidence Interval for Matched-Pair Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-difference-of-proportions" class="md-nav__link">
+    Confidence Interval for Difference of Proportions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypothesis-testing" class="md-nav__link">
+    Hypothesis Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Hypothesis Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-1-error-rate" class="md-nav__link">
+    Type 1 Error Rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    Power
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-and-two-tailed-tests" class="md-nav__link">
+    One and Two Tailed Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="One and Two Tailed Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confidence-interval-for-one-and-two-tailed-tests" class="md-nav__link">
+    Confidence Interval for One and Two Tailed Tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic" class="md-nav__link">
+    Test Statistic
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Statistic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-the-proportion" class="md-nav__link">
+    Test Statistic for the Proportion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-difference-of-means" class="md-nav__link">
+    Test Statistic for Difference of Means
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-pooled-procedures" class="md-nav__link">
+    Test Statistic for Pooled Procedures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-matched-pair-test" class="md-nav__link">
+    Test Statistic for Matched-Pair Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-statistic-for-difference-of-proportions" class="md-nav__link">
+    Test Statistic for Difference of Proportions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p-value" class="md-nav__link">
+    p-value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-linear-regression-model" class="md-nav__link">
+    Simple Linear Regression Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple Linear Regression Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#residual" class="md-nav__link">
+    Residual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-squared-residuals" class="md-nav__link">
+    Sum of Squared Residuals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measures-of-variation" class="md-nav__link">
+    Measures of Variation
+  </a>
+  
+    <nav class="md-nav" aria-label="Measures of Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explained-sum-of-squares" class="md-nav__link">
+    Explained Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#residual-sum-of-squares" class="md-nav__link">
+    Residual Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-sum-of-squares" class="md-nav__link">
+    Total Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mean-square-of-regression" class="md-nav__link">
+    Mean Square of Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-mean-square-error" class="md-nav__link">
+    Root Mean Square Error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chi-square-tests" class="md-nav__link">
+    Chi Square Tests
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Cheatsheet</h1>
+
+<h2 id="basics">Basics</h2>
+<h3 id="mean">Mean</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Population</label><label for="__tabbed_1_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\mu = \frac{x_1 + x_2 + ... + x_N}{N} = \frac{\sum_{i = 1}^N x_i}{N}\]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[\overline x = \frac{x_1 + x_2 + ... + x_n}{n} = \frac{\sum_{i = 1}^n x_i}{n}\]</div>
+</div>
+</div>
+</div>
+<p>Also see <a href="#expected-or-mean-value">Random Variables: Expected or Mean Value</a></p>
+<h4 id="weighted-mean">Weighted Mean</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Population</label><label for="__tabbed_2_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\mu = \frac{\sum_{i=1}^N w_i x_i}{\sum_{i=1}^N w_i}\]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[\overline x = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\]</div>
+</div>
+</div>
+</div>
+<h4 id="grouped-data-mean">Grouped Data Mean</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Population</label><label for="__tabbed_3_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\mu = \frac{\sum_{i=1}^N f_i M_i}{N}\]</div>
+<p>where <span class="arithmatex">\(M_i\)</span> is the midpoint and <span class="arithmatex">\(f_i\)</span> is the frequency of each class</p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[\overline x = \frac{\sum_{i=1}^n f_i M_i}{n}\]</div>
+<p>where <span class="arithmatex">\(M_i\)</span> is the midpoint and <span class="arithmatex">\(f_i\)</span> is the frequency of each class</p>
+</div>
+</div>
+</div>
+<h3 id="variance">Variance</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Population</label><label for="__tabbed_4_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\sigma^2 = \frac{\sum_{i=1}^N (x_i - \mu)^2}{N} \]</div>
+</div>
+<div class="tabbed-block">
+<p><strong>Biased</strong></p>
+<div class="arithmatex">\[s^2 = \frac{\sum_{i=1}^n (x_i - \overline x)^2}{n} \]</div>
+<p><strong>Unbiased</strong></p>
+<div class="arithmatex">\[s_{n-1}^2 = \frac{\sum_{i=1}^n (x_i - \overline x)^2}{n - 1} \]</div>
+</div>
+</div>
+</div>
+<p>Also see <a href="#variance_1">Random Variables: Variance</a></p>
+<h4 id="grouped-data-variance">Grouped Data Variance</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Population</label><label for="__tabbed_5_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\sigma^2 = \frac{\sum_{i=1}^N f_i(M_i - \mu)^2}{N}\]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[s^2 = \frac{\sum_{i=1}^n f_i(M_i - \overline x)^2}{n-1}\]</div>
+</div>
+</div>
+</div>
+<h3 id="standard-deviation">Standard Deviation</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Population</label><label for="__tabbed_6_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum_{i=1}^N (x_i - \mu)^2}{N}} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[s = \sqrt{s_{n-1}^2} = \sqrt{\frac{\sum_{i=1}^n (x_i - \overline x)^2}{n - 1}} \]</div>
+</div>
+</div>
+</div>
+<h3 id="covariance">Covariance</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Population</label><label for="__tabbed_7_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\sigma_{xy} = cov(x,y) = \frac{\sum(x_i - \mu_x)(y_i - \mu_y)}{N}\]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[s_{xy} = cov(x,y) = \frac{\sum(x_i - \overline x)(y_i - \overline y)}{n - 1}\]</div>
+</div>
+</div>
+</div>
+<p>Also see <a href="#covariance_1">Random Variables: Covariance</a></p>
+<h3 id="correlation">Correlation</h3>
+<div class="arithmatex">\[ r = \frac{1}{n - 1}\sum {\biggl(\frac{x_i - \overline x}{S_x}\biggl)\biggl(\frac{y_i - \overline y}{S_y}\biggl)} = \frac{1}{n - 1}\sum {(z_x)(z_y)}\]</div>
+<p>where
+<span class="arithmatex">\(S_x\)</span> and <span class="arithmatex">\(S_y\)</span> are the standard deviations with respect to x and y and <span class="arithmatex">\(z_x\)</span> and <span class="arithmatex">\(z_y\)</span> are the z-scores for x and y.</p>
+<h4 id="pearson-correlation-coefficient">Pearson Correlation Coefficient</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Population</label><label for="__tabbed_8_2">Sample</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[\rho_{xy} = \frac{\sigma_{xy}}{\sigma_x\sigma_y}\]</div>
+<p>where <span class="arithmatex">\(\sigma_{xy}\)</span> is the covariance and <span class="arithmatex">\(\sigma_x\)</span> and <span class="arithmatex">\(\sigma_y\)</span> are the standard deviations of the variables.</p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[r_{xy} = \frac{s_{xy}}{s_xs_y}\]</div>
+</div>
+</div>
+</div>
+<p>Also see <a href="#correlation_1">Random Variables: Correlation</a></p>
+<h3 id="variance-covariance-matrix">Variance Covariance Matrix</h3>
+<div class="arithmatex">\[vcov(x,y) = \begin{bmatrix}
+var(x) &amp; cov(x,y) \\
+cov(x,y) &amp; var(y)
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[var(X) = \begin{bmatrix}
+var(X_1) &amp; cov(X_1, X_2) &amp; \dots &amp; cov(X_1, X_n) \\
+cov(X_2, X_1) &amp; var(X_2) &amp; \dots &amp; cov(X_2, X_n) \\
+\vdots &amp; \ &amp; \ddots \\
+cov(X_n, X_1) &amp; cov(X_n, X_2) &amp; \dots &amp; var(X_n) \\
+\end{bmatrix}\]</div>
+<h3 id="z-score">Z-Score</h3>
+<div class="arithmatex">\[z = \frac{\overline x - \mu}{\sigma}\]</div>
+<p>where <span class="arithmatex">\(x\)</span> is the data point, <span class="arithmatex">\(\mu\)</span> is the mean and <span class="arithmatex">\(\sigma\)</span> is the standard deviation.</p>
+<h2 id="random-variables">Random Variables</h2>
+<h3 id="discrete-random-variables">Discrete Random Variables</h3>
+<p><strong>Probability Mass Function (pmf)</strong>, <span class="arithmatex">\(p(x)\)</span> for a discrete random variable <span class="arithmatex">\(X\)</span> is given by 
+<script type="math/tex; mode=display"> p(x) = p_X(x) = P(X = x) = P(\{w \in \Omega:X(w) = x\}) </script> where <span class="arithmatex">\(x\)</span> is a value of the discrete RV <span class="arithmatex">\(X\)</span> and belongs to the set of real numbers <script type="math/tex; mode=display"> \{x \in R :f(x) \gt 0\} </script> and maps to the outcomes w and <span class="arithmatex">\((X = x)\)</span> is the corresponding event.
+Also,
+    <script type="math/tex; mode=display"> p(x) \geq 0 </script> and
+    <script type="math/tex; mode=display"> \sum_xp(x) = 1 </script>
+</p>
+<h3 id="continuous-random-variables">Continuous Random Variables</h3>
+<p>For any two numbers a and b, the <strong>probability density function (pdf)</strong> of a continuous RV <span class="arithmatex">\(X\)</span> is given by
+<script type="math/tex; mode=display"> P(a \leq X \leq b) = \int_a^bf(x)\ dx </script> where 
+<script type="math/tex; mode=display"> f(x) \geq 0 </script> for all <span class="arithmatex">\(x\)</span> and 
+<script type="math/tex; mode=display"> \int_{-\infty}^{\infty}f(x) \ dx = 1 </script> is the area under the entire graph of <span class="arithmatex">\(f(x)\)</span>. </p>
+<p><span class="arithmatex">\(f(x)dx\)</span> is the probability that <span class="arithmatex">\(X\)</span> is in an infinitesimal range around <span class="arithmatex">\(x\)</span> of width <span class="arithmatex">\(dx\)</span>.</p>
+<p>Also, <script type="math/tex; mode=display"> P(a \leq X \leq b) = P(a \lt X \lt b) = P(a \lt X \leq b) = P(a \leq X \lt b) </script>
+</p>
+<p><strong>Continuous RV at any single value</strong>
+<script type="math/tex; mode=display"> P(X = c) = \int_c^cf(x) \ dx = \lim_{\epsilon \to 0} \int_{c - \epsilon}^{c + \epsilon} f(x) \ dx = 0 </script>
+</p>
+<h3 id="expected-or-mean-value">Expected or Mean value</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Discrete RV</label><label for="__tabbed_9_2">Continuous RV</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition warning">
+<p>
+<script type="math/tex; mode=display"> E(X) = \mu_X = \sum_{x \in D}x . p(x) = \sum_{i=1}^n x_i . p(x_i) </script>
+where X is a discrete RV with set of possible values D and pmf p(x)</p>
+</div>
+<p>If <span class="arithmatex">\(p(x_i)=p(x_j) \ \forall \ i,j\)</span>, i.e. each outcome has the same probability and hence equal likelihood of happening, then
+    <script type="math/tex; mode=display"> E(X) = p(x)\sum_{i = 1}^kx_k = \frac{1}{k} \sum_{i = 1}^kx_k </script>
+    where 1/k is the probability of k terms with equal likelihood </p>
+<p>For any linear function <span class="arithmatex">\(h(X) = aX + b\)</span>,
+<script type="math/tex; mode=display"> \mu_{h(X)} = E[h(X)] = \sum_Dh(x).p(x) </script>
+</p>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<div class="arithmatex">\[ \mu_X = E(X) = \int_{-\infty}^{\infty}x.f(x) \ dx \]</div>
+</div>
+<div class="arithmatex">\[ \mu_{h(X)} = E[h(X)] = \int_{-\infty}^{\infty}h(x).f(x) \ dx \]</div>
+</div>
+</div>
+</div>
+<h4 id="rules-of-expected-value"><mark>Rules of Expected Value</mark></h4>
+<div class="arithmatex">\[ E(X + Y) = E(X) + E(Y) \]</div>
+<div class="arithmatex">\[ E(X - Y) = E(X) - E(Y) \]</div>
+<div class="arithmatex">\[ E(aX + bY) = aE(X) + bE(Y) \]</div>
+<p>If <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are independent,
+<script type="math/tex; mode=display"> E(XY) = E(X)E(Y) </script>
+</p>
+<p>For any linear function <span class="arithmatex">\(h(X) = aX + b\)</span>,
+<script type="math/tex; mode=display"> E(aX + b) = a. E(X) + b </script>
+<script type="math/tex; mode=display"> \mu_{aX + b} = a. \mu_X + b </script>
+</p>
+<h3 id="variance_1">Variance</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Discrete RV</label><label for="__tabbed_10_2">Continuous RV</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition warning">
+<div class="arithmatex">\[ V(X) = \sigma_X^2 = \sum_D(x - \mu)^2 . p(x) = \sum_{i=1}^n (x_i - \mu)^2 . p(x_i) \]</div>
+</div>
+<div class="arithmatex">\[ = E[(x- \mu)^2] \]</div>
+<div class="arithmatex">\[ = \biggl[\sum_D x^2 .p(x)\biggl] - \mu^2 \]</div>
+<div class="arithmatex">\[ = E(X^2) - [E(X)]^2 \]</div>
+<div class="arithmatex">\[ = E(X^2) - \mu^2 \]</div>
+<p>For any linear function <span class="arithmatex">\(h(X) = aX + b\)</span>,
+<script type="math/tex; mode=display"> V[h(X)] = \sigma_{h(X)}^2 = \sum_D\{h(X) - E[h(X)]\}^2 .p(x) </script>
+</p>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<div class="arithmatex">\[ V(X) = \sigma_X^2 = \int_{-\infty}^{\infty}(x - \mu)^2 . f(x) \ dx \]</div>
+</div>
+<div class="arithmatex">\[ = E[(x- \mu)^2] \]</div>
+</div>
+</div>
+</div>
+<h4 id="standard-deviation_1">Standard Deviation</h4>
+<div class="arithmatex">\[ \sigma_X = \sqrt{\sigma_X^2} \]</div>
+<h4 id="rules-of-variance-standard-deviation"><mark>Rules of Variance &amp; Standard Deviation</mark></h4>
+<div class="arithmatex">\[ Var(aX + bY) = a^2Var(X) + b^2Var(Y) + 2ab Cov(X,Y) \]</div>
+<div class="arithmatex">\[ Var(aX - bY) = a^2Var(X) + b^2Var(Y) - 2ab Cov(X,Y) \]</div>
+<div class="admonition warning">
+<p>If <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are independent,
+<script type="math/tex; mode=display"> Var(X + Y)  = Var(X) + Var(Y) = Var(X - Y) </script>
+<script type="math/tex; mode=display"> \sigma (X + Y) = \sqrt{Var(X) + Var(Y)} = \sqrt{{\sigma (X)}^2 + {\sigma (Y)}^2} = \sigma (X - Y) </script>
+</p>
+</div>
+<p>Standard Deviation, <script type="math/tex; mode=display"> \sigma_{aX + b} = |a|. \sigma_x </script>
+</p>
+<p>For any linear function <span class="arithmatex">\(h(X) = aX + b\)</span>,
+<script type="math/tex; mode=display"> Variance, \ V(aX + b) = \sigma_{aX + b}^2 = a^2. \sigma_x^2 = a^2 . Var(X) </script>
+</p>
+<p><span class="arithmatex">\(E[(X - a)^2]\)</span> is a minumum when <script type="math/tex; mode=display"> a = \mu = E(X) </script>
+</p>
+<p>Variance of any constant is zero and if a random variable has zero variance, then it is essentially constant.</p>
+<h3 id="covariance_1">Covariance</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Discrete RV</label><label for="__tabbed_11_2">Continuous RV</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition warning">
+<div class="arithmatex">\[ Cov(X, Y) = \sigma_{XY} = E[(X - \mu_X)(Y - \mu_Y)] = E(XY) - E(X)E(Y) \]</div>
+</div>
+<div class="arithmatex">\[ =\sum_x\sum_y(x - \mu_X)(y - \mu_Y)p(x,y) = \biggl(\sum_x\sum_y xyp(x,y)\biggl) - \mu_X\mu_Y \]</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<div class="arithmatex">\[ =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}(x - \mu_X)(y - \mu_Y)f(x,y) \ dx \ dy =\biggl(\int_a^b\int_c^dxyf(x,y) \ dx \ dy \biggl) - \mu_X\mu_Y \]</div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="rules-of-covariance"><mark>Rules of Covariance</mark></h4>
+<div class="arithmatex">\[ Cov(X, X) = E[(X - \mu_X)^2] = V(X) \]</div>
+<div class="arithmatex">\[ Cov(aX + b, cY + d) = acCov(X,Y) \]</div>
+<div class="arithmatex">\[ Cov(X, Y+Z) = Cov(X,Y) + Cov(X,Z) \]</div>
+<h3 id="correlation_1">Correlation</h3>
+<h4 id="rules-of-correlation"><mark>Rules of Correlation</mark></h4>
+<ul>
+<li>If <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(c\)</span> are either both positive or both negative,
+<script type="math/tex; mode=display"> Corr(aX + b, cY + d) = Corr(X,Y) </script>
+</li>
+<li>If <span class="arithmatex">\(ac \lt 0\)</span> ,
+<script type="math/tex; mode=display"> Corr(aX + b, cY + d) = -Corr(X,Y) </script>
+</li>
+<li>For any two rv’s X and Y, 
+<script type="math/tex; mode=display"> -1 \leq  Corr(X, Y) \leq 1 </script>
+</li>
+</ul>
+<h3 id="binomial-rv">Binomial RV</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Mean</label><label for="__tabbed_12_2">Variance</label><label for="__tabbed_12_3">Standard Deviation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> \mu_X = E(X) = np </script>
+where <span class="arithmatex">\(n\)</span> is the number of trials and <span class="arithmatex">\(p\)</span> is the probability of success in a single trial.</p>
+</div>
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> \sigma^2_X = np (1 - p) = npq </script>
+where <span class="arithmatex">\(q=1-p\)</span></p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_x = \sqrt{np (1 - p)} = \sqrt{npq} \]</div>
+</div>
+</div>
+</div>
+<h4 id="bernoulli-rv">Bernoulli RV</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Mean</label><label for="__tabbed_13_2">Variance</label><label for="__tabbed_13_3">Standard Deviation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \mu_X = p \]</div>
+</div>
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> \sigma^2_X = p (1 - p) = pq </script>
+where <span class="arithmatex">\(q=1-p\)</span></p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_x = \sqrt{p (1 - p)} = \sqrt{pq} \]</div>
+</div>
+</div>
+</div>
+<h3 id="geometric-rv">Geometric RV</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Mean</label><label for="__tabbed_14_2">Variance</label><label for="__tabbed_14_3">Standard Deviation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \mu_X = E(X) = \frac{1}{p} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma^2_X = \frac{1 - p}{p^2} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_x = \sqrt{\frac{1 - p}{p^2}} \]</div>
+</div>
+</div>
+</div>
+<h2 id="distributions">Distributions</h2>
+<h3 id="normal-distribution">Normal Distribution</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Probability Density Function (PDF)</label><label for="__tabbed_15_2">Cumulative Density Function (CDF)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ f(x; \mu, \sigma) = \frac{1}{\sqrt{2 \pi \sigma^2}}e^{-(x-\mu)^2/(2 \sigma^2)} \]</div>
+<p>where <span class="arithmatex">\(-\infty \lt x \lt \infty, -\infty \lt \mu \lt \infty, 0 \lt \sigma\)</span></p>
+<p>For n independent RVs,</p>
+<div class="arithmatex">\[ f(x_1,...,x_n;\mu,\sigma^2) = \frac{1}{\sqrt{2 \pi \sigma^2}}e^{-(x_1 -\mu)^2/(2 \sigma^2)} \cdot ... \cdot \frac{1}{\sqrt{2 \pi \sigma^2}}e^{-(x_n -\mu)^2/(2 \sigma^2)} \]</div>
+<div class="arithmatex">\[ = \biggl(\frac{1}{2 \pi \sigma^2}\biggl)^{n/2}e^{-\sum (x_i-\mu)^2/(2 \sigma^2)} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ F(x) = P(X \leq x) = \frac{1}{\sigma \sqrt{2 \pi}} \int_{-\infty}^x e^{-(v-\mu)^2/2 \sigma^2} dv \]</div>
+<div class="arithmatex">\[ P(a \leq X \leq b) = \int_a^b\frac{1}{\sqrt{2 \pi \sigma^2}}e^{-(x-\mu)^2/(2 \sigma^2)}dx \]</div>
+</div>
+</div>
+</div>
+<h3 id="standard-normal-distribution-z-distribution-z-sim-nmu0-sigma-1">Standard Normal Distribution (z-Distribution), <span class="arithmatex">\(Z \sim N(\mu=0, \sigma = 1)\)</span></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Probability Density Function (PDF)</label><label for="__tabbed_16_2">Cumulative Density Function (CDF)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> f(z; 0, 1) = \frac{1}{\sqrt{2 \pi}}e^{-z^2/2} </script>
+where <span class="arithmatex">\(-\infty \lt z \lt \infty\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>The CDF is obtained as the area under <span class="arithmatex">\(\phi\)</span>, to the left of <span class="arithmatex">\(z\)</span>.</p>
+<div class="arithmatex">\[ \phi(z) = P(Z \leq z) = \int_{-\infty}^z f(y;0,1)dy \]</div>
+<div class="arithmatex">\[ =\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^z e^{-u^2/2}du \]</div>
+<p>
+<script type="math/tex; mode=display"> =\frac{1}{2} + \frac{1}{\sqrt{2 \pi}} \int_0^z e^{-u^2/2}du </script>
+where the area of the standard normal curve to the right of 0 (between <span class="arithmatex">\(-\infty\)</span> to 0) is 1/2.</p>
+<p>For any <span class="arithmatex">\(c \gt 0\)</span>,
+<script type="math/tex; mode=display"> P(|Z| \gt c) = P(Z \gt c) + P(Z \lt -c) = 2P(Z \gt c) = 2[1 - \phi(c)] </script>
+</p>
+</div>
+</div>
+</div>
+<h3 id="binomial-distribution">Binomial Distribution</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Probability Mass Function (PMF)</label><label for="__tabbed_17_2">Cumulative Density Function (CDF)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ b(x; n,p) = \begin{cases}
+\binom nxp^x(1-p)^{n-x}, &amp; \ x=0,1,2,3,...,n \\
+0, &amp; \ otherwise
+\end{cases} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ B(x; n,p) = P(X \leq x) = \sum_{y=0}^xb(y;n,p)  \ \  x=0,1,2,...,n \]</div>
+</div>
+</div>
+</div>
+<p>** Use cumulative binomial probability table to find out the PMF and CDF values</p>
+<div class="admonition warning">
+<p>Binomial distribution approaches normal distribution when
+<script type="math/tex; mode=display"> \lim_{n \to \infty} p \biggl(a \leq \frac{X - np}{\sqrt{npq}} \leq b \biggl) = \frac{1}{\sqrt{2 \pi}} \int_a^b e^{-u^2/2}du </script>
+</p>
+<div class="arithmatex">\[ P(X \leq x) = B(x; n,p) \approx (area \ under \ normal \ curve \ to \ the \ left \ of \ x + .5) \]</div>
+<p>
+<script type="math/tex; mode=display"> =\phi(\frac{x + .5 - np}{\sqrt{npq}}) </script>
+<mark>provided <span class="arithmatex">\(np \geq 10\)</span> and <span class="arithmatex">\(nq \geq 10\)</span></mark></p>
+</div>
+<h4 id="bernoulli-distribution">Bernoulli Distribution</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Probability Mass Function (PMF)</label><label for="__tabbed_18_2">Cumulative Density Function (CDF)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>If <span class="arithmatex">\(P(X=1)=\alpha\)</span>, then <span class="arithmatex">\(P(X=0) = 1 - \alpha\)</span>. Hence
+<script type="math/tex; mode=display"> p(x; \alpha) = \begin{cases}
+1 - \alpha, & \ \text{if x = 0} \\
+\alpha, & \ \text{if x = 1} \\
+0, & \ \text{otherwise}
+\end{cases} </script>
+</p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ F(x; \alpha) = \begin{cases}
+0, &amp; \  x \lt 0 \\
+1 - \alpha, &amp; \  0 \leq x \lt 1 \\
+1, &amp; \ x \geq 1
+\end{cases} \]</div>
+</div>
+</div>
+</div>
+<h3 id="geometric-distribution">Geometric Distribution</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Probability Mass Function (PMF)</label><label for="__tabbed_19_2">Cumulative Density Function (CDF)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> p(x) = \begin{cases}
+(1 - p)^xp, & \ x = 0,1,2,3,... \\
+0, & \ \text{otherwise}
+\end{cases} </script>
+<script type="math/tex; mode=display"> = \begin{cases}
+(1 - p)^{x-1}p, & \ x = 1,2,3,... \\
+0, & \ \text{otherwise}
+\end{cases} </script>
+where <span class="arithmatex">\(x\)</span> is the number of failures before the first success</p>
+</div>
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> F(x) = P(X \leq x) = \begin{cases}
+0, & \ x \lt 1 \\
+1 - (1 - p)^{[x]}, & \ x \geq 1 
+\end{cases} </script>
+where <span class="arithmatex">\([x]\)</span> is the largest integer <span class="arithmatex">\(\leq x\)</span></p>
+</div>
+</div>
+</div>
+<h3 id="poisson-distribution">Poisson Distribution</h3>
+<div class="admonition warning">
+<div class="arithmatex">\[ p(x; \mu) = P(X = x) = \frac{\mu^x e^{- \mu}}{x!} \ \ x=0,1,2... \]</div>
+</div>
+<p>From <strong>Maclaurin series expansion</strong> of <span class="arithmatex">\(e^\mu\)</span>:
+<script type="math/tex; mode=display"> e^\mu = 1 + \mu + \frac{\mu^2}{2!} + \frac{\mu^3}{3!} + ... = \sum_{x = 0}^{\infty} \frac{\mu^x}{x!} </script>
+<script type="math/tex; mode=display"> \implies \sum p(x; \mu) = \sum_{x = 0}^{\infty} \frac{e^{-\mu} \cdot \mu^x}{x!} = 1 </script>
+</p>
+<div class="admonition warning">
+<p>Probability that <span class="arithmatex">\(k\)</span> events will be observed during any particular time interval of length <span class="arithmatex">\(t\)</span>
+<script type="math/tex; mode=display"> P_k(t) = \frac{e^{-\alpha t} \cdot (\alpha t)^k}{k!} </script>
+where <span class="arithmatex">\(\mu = \alpha t\)</span> and <span class="arithmatex">\(\alpha\)</span> is the rate of the event process, the expected number of events occuring in unit time. 
+Also see <a href="../prob-cheatsheet/#poisson-probability">Poisson Probability</a></p>
+</div>
+<div class="arithmatex">\[ P(X_1 \leq t) = 1 - P(X_1 \gt t) = 1 - e^{-\alpha t} \]</div>
+<p>Also, <script type="math/tex; mode=display"> P(X_1 \leq t) = \sum_{x=0}^t P(X = x) = \sum_{x=0}^t \frac{\mu^x e^{- \mu}}{x!} </script>
+</p>
+<p>And, <script type="math/tex; mode=display"> P(X_1 \geq (t + 1)) = 1 - P(X_1 \leq t) = 1 - (\sum_{x=0}^t P(X = x)) = 1 - (\sum_{x=0}^t \frac{\mu^x e^{- \mu}}{x!}) </script>
+</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:1"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Cumulative Density Function (CDF)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ F_X(x) = \frac{\Gamma(x + 1, \mu)}{x!} \]</div>
+<p>where <span class="arithmatex">\(\Gamma\)</span> is the <strong><mark>upper incomplete gamma function</mark></strong>, a special function that is normally defined in terms of an integral</p>
+<div class="arithmatex">\[ \Gamma(s,x) = \int_x^\infty t^{s - 1}e^{-t} dt \]</div>
+</div>
+</div>
+</div>
+<p><BR></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Mean</label><label for="__tabbed_21_2">Variance</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ E(X) = \mu \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ V(X) = \mu \]</div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p>Poisson distribution approaches normal distribution when
+<script type="math/tex; mode=display"> \lim_{\mu \to \infty} p \biggl(a \leq \frac{X - \mu}{\sqrt{\mu}} \leq b \biggl) = \frac{1}{\sqrt{2 \pi}} \int_a^b e^{-u^2/2}du </script>
+where <span class="arithmatex">\(\frac{X - \mu}{\sqrt\mu}\)</span> is the standardized random variable</p>
+</div>
+<h3 id="students-t-distribution">Students T-Distribution</h3>
+<h4 id="degrees-of-freedom">Degrees of Freedom</h4>
+<div class="arithmatex">\[df = n − 1\]</div>
+<p>where <span class="arithmatex">\(n\)</span> is the sample size</p>
+<p>Also see <a href="#confidence-interval-for-difference-of-means">CI for Difference of Means</a> and <a href="#confidence-interval-for-pooled-procedures">CI for Pooled Procedures</a> for T Distribution for degrees of freedom for two sample tests.</p>
+<h2 id="sampling">Sampling</h2>
+<h3 id="finite-correction-factor-fpc">Finite Correction Factor (FPC)</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Variance</label><label for="__tabbed_22_2">Standard Deviation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \frac{N - n}{N - 1} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sqrt \frac{N - n}{N - 1} \]</div>
+</div>
+</div>
+</div>
+<h3 id="sampling-distribution-of-the-sample-meansdsm">Sampling Distribution of the Sample Mean(SDSM)</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:4"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><input id="__tabbed_23_3" name="__tabbed_23" type="radio" /><input id="__tabbed_23_4" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Mean</label><label for="__tabbed_23_2">Variance</label><label for="__tabbed_23_3">Standard Deviation</label><label for="__tabbed_23_4">Z-Score</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \mu_{\overline X} = \mu_{\overline x} = \mu \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_{\overline X}^2 = \sigma_{\overline x}^2 = \frac{\sigma^2}{n} \approx \frac{s^2}{n} \]</div>
+</div>
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> \sigma_{\overline X} = \sigma_{\overline x} = \frac{\sigma}{\sqrt n} \approx \frac{s}{\sqrt n} </script>
+This is also called the <mark><strong>Standard Error (SE)</strong></mark></p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ z = \frac{\overline x - \mu}{\frac {\sigma}{\sqrt n}} \]</div>
+</div>
+</div>
+</div>
+<h3 id="sampling-distribution-of-the-sample-proportionsdsp">Sampling Distribution of the Sample Proportion(SDSP)</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:4"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><input id="__tabbed_24_3" name="__tabbed_24" type="radio" /><input id="__tabbed_24_4" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Mean</label><label for="__tabbed_24_2">Variance</label><label for="__tabbed_24_3">Standard Deviation</label><label for="__tabbed_24_4">Z-Score</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \mu_{\hat p} = p \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_{\hat p}^2 = \frac{p (1 - p)}{n} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_{\hat p} = \sqrt  \frac{p (1 - p)}{n} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ z_{\hat p} = \frac{\hat p - p}{\sigma_{\hat p}} \]</div>
+</div>
+</div>
+</div>
+<h3 id="sample-distribution-of-the-difference-of-means-sddm">Sample Distribution of the Difference of Means (SDDM)</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">Mean</label><label for="__tabbed_25_2">Standard Deviation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \mu_{\overline x_1 - \overline x_2} = \mu_{\overline x_1} - \mu_{\overline x_2} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_{\overline x_1 - \overline x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}} \]</div>
+</div>
+</div>
+</div>
+<h3 id="pooled-procedures">Pooled Procedures</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">Variance</label><label for="__tabbed_26_2">Standard Deviation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_p^2 = \frac{(n_1 - 1)\sigma_1^2 + (n_2 - 1)\sigma_2^2}{n_1 + n_2 - 2} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_{\overline x_1 - \overline x_2} = \sigma_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}} \]</div>
+<p>where
+<script type="math/tex; mode=display"> \sigma_p = \sqrt{\frac{(n_1 - 1)\sigma_1^2 + (n_2 - 1)\sigma_2^2}{n_1 + n_2 - 2}} </script>
+</p>
+</div>
+</div>
+</div>
+<h3 id="sample-distribution-of-the-difference-of-proportions-sddp">Sample Distribution of the Difference of Proportions (SDDP)</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">Mean</label><label for="__tabbed_27_2">Standard Deviation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ \hat p_1 - \hat p_2 = \frac{x_1}{n_1} - \frac{x_2}{n_2} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ \sigma_{\hat p_1 - \hat p_2} = \sqrt{\frac{\hat p_1 (1 - \hat p_1)}{n_1} + \frac{\hat p_2 (1 - \hat p_2)}{n_2}} \]</div>
+</div>
+</div>
+</div>
+<h2 id="confidence-interval">Confidence Interval</h2>
+<p id="cust-id-cs-alpha-val"></p>
+<div class="admonition warning">
+<p>
+<script type="math/tex; mode=display"> \alpha = 1 - CL </script>
+where CL is the Confidence Level</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="28:3"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><input id="__tabbed_28_3" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="__tabbed_28_1">Normal Distribution</label><label for="__tabbed_28_2">Normal with <a href="../stats-sampling/#finite-correction-factor-fpc">FPC</a></label><label for="__tabbed_28_3">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition warning">
+<p>For a normal distribution with mean <span class="arithmatex">\(\mu\)</span> and standard deviation <span class="arithmatex">\(\sigma\)</span>
+<script type="math/tex; mode=display"> CI = \overline x \pm z_ {\alpha/2} \cdot \frac{\sigma}{\sqrt n} </script>
+where <span class="arithmatex">\(\overline x\)</span> is the point estimate of mean <span class="arithmatex">\(\mu\)</span></p>
+</div>
+<div class="admonition warning">
+<p>A <strong>100(1 - <span class="arithmatex">\(\alpha\)</span>)% CI</strong> for the <span class="arithmatex">\(\mu\)</span> of a normal distribution with standard deviation <span class="arithmatex">\(\sigma\)</span> is</p>
+<div class="arithmatex">\[\overline x - z_{\alpha/2} \cdot \frac{\sigma}{\sqrt n} \lt \mu \lt \overline x + z_{\alpha/2} \cdot \frac{\sigma}{\sqrt n}\]</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = \overline x \pm z_ {\alpha/2} \cdot \frac{\sigma}{\sqrt n} \sqrt{\frac{N - n}{N - 1}} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = \overline x \pm t_{\alpha, n - 1} \cdot \frac{s}{\sqrt n} \]</div>
+</div>
+</div>
+</div>
+<p>Also see <a href="#confidence-interval-for-one-and-two-tailed-tests">Confidence Interval for One and Two Tailed Tests</a></p>
+<p><mark><strong>Bound on the error of estimation, B</strong> or <strong>Margin of Error, ME</strong></mark>
+<script type="math/tex; mode=display"> ME = z_ {\alpha/2} \cdot \frac{\sigma}{\sqrt n} </script>
+</p>
+<div class="arithmatex">\[ \implies CI = \overline x \pm ME \]</div>
+<p>Required sample size to estimate <span class="arithmatex">\(\mu\)</span> with a <span class="arithmatex">\(100(1 - \alpha)\)</span>% confidence and a fixed ME
+<script type="math/tex; mode=display"> n = \biggl(\frac {z_ {\alpha/2} \cdot \sigma}{ME}\biggl)^2 </script>
+</p>
+<h3 id="confidence-interval-for-the-proportion">Confidence Interval for the Proportion</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="29:2"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><input id="__tabbed_29_2" name="__tabbed_29" type="radio" /><div class="tabbed-labels"><label for="__tabbed_29_1">Normal Distribution</label><label for="__tabbed_29_2">Normal with <a href="../stats-sampling/#finite-correction-factor-fpc">FPC</a></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = \hat p \pm z_ {\alpha/2} \cdot \sqrt {\frac {\hat p (1 - \hat p)}{n}} \]</div>
+<p>where <span class="arithmatex">\(\hat p\)</span> is the percentage of the subjects that meet the criteria 
+<script type="math/tex; mode=display"> \hat p = \frac {number \ of \ subjects \ meeting \ the \ criteria}{n} </script>
+</p>
+<p>See <a href="../stats-sampling/#sampling-distribution-of-the-sample-proportionsdsp">SDSP Condition for Inferences</a></p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = \hat p \pm z_ {\alpha/2} \cdot \sqrt {\frac {\hat p (1 - \hat p)}{n}} \sqrt{\frac{N - n}{N - 1}} \]</div>
+</div>
+</div>
+</div>
+<p><strong>Margin of Error</strong></p>
+<div class="arithmatex">\[ z_ {\alpha/2} \cdot \sqrt{\frac {\hat p (1 - \hat p)}{n}} \]</div>
+<h3 id="confidence-interval-for-difference-of-means">Confidence Interval for Difference of Means</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="30:2"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio" /><input id="__tabbed_30_2" name="__tabbed_30" type="radio" /><div class="tabbed-labels"><label for="__tabbed_30_1">Normal Distribution</label><label for="__tabbed_30_2">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = (\overline x_1 - \overline x_2) \pm z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}} \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = (\overline x_1 - \overline x_2) \pm t_{\alpha/2}\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} \]</div>
+<p>with degree of freedom</p>
+<div class="arithmatex">\[ df = \frac{\biggl(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} \biggl)^2}{\frac{1}{n_1 - 1}\biggl(\frac{s_1^2}{n_1}\biggl)^2 + \frac{1}{n_2 - 1}\biggl(\frac{s_2^2}{n_2}\biggl)^2} \]</div>
+<p>
+<script type="math/tex; mode=display"> = \frac{[(se_1)^2 + (se_2)^2]^2}{\frac{(se_1)^4}{m - 1} + \frac{(se_2)^4}{n - 1}} </script>
+where <span class="arithmatex">\(se_1 = \frac{s_1}{\sqrt n_1}, se_2 = \frac{s_2}{\sqrt n_2}\)</span><BR>
+<mark><strong>Note: Round down when degree of freedom is not an integer, so that the estimate is more conservative</strong></mark></p>
+</div>
+</div>
+</div>
+<h3 id="confidence-interval-for-pooled-procedures">Confidence Interval for Pooled Procedures</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="31:1"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio" /><div class="tabbed-labels"><label for="__tabbed_31_1">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = (\overline x_1 - \overline x_2) \pm t_{\alpha/2} * s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}} \]</div>
+<p>with degree of freedom
+<script type="math/tex; mode=display"> df = n_1 + n_2 - 2 </script>
+</p>
+</div>
+</div>
+</div>
+<h3 id="confidence-interval-for-matched-pair-test">Confidence Interval for Matched-Pair Test</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="32:2"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio" /><input id="__tabbed_32_2" name="__tabbed_32" type="radio" /><div class="tabbed-labels"><label for="__tabbed_32_1">Normal Distribution</label><label for="__tabbed_32_2">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> CI = \overline d \pm z_{\alpha/2} * \frac{\sigma_d}{\sqrt n} </script>
+where <span class="arithmatex">\(\overline d\)</span> is the mean difference for the matched pair.</p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = \overline d \pm t_{\alpha/2} * \frac{s_d}{\sqrt n} \]</div>
+<p>with degree of freedom
+<script type="math/tex; mode=display"> df = n - 1 </script>
+</p>
+</div>
+</div>
+</div>
+<h3 id="confidence-interval-for-difference-of-proportions">Confidence Interval for Difference of Proportions</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="33:1"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio" /><div class="tabbed-labels"><label for="__tabbed_33_1">Normal Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ CI = (\hat p_1 - \hat p_2) \pm z_{\alpha/2}\sqrt{\frac{\hat p_1 (1 - \hat p_1)}{n_1} + \frac{\hat p_2 (1 - \hat p_2)}{n_2}} \]</div>
+</div>
+</div>
+</div>
+<h2 id="hypothesis-testing">Hypothesis Testing</h2>
+<h3 id="type-1-error-rate">Type 1 Error Rate</h3>
+<div class="arithmatex">\[ \alpha=P(rejecting \ H_0|H_0) \]</div>
+<div class="arithmatex">\[ =P(p-value \leq \text{significance level} | H_0) \]</div>
+<h3 id="power">Power</h3>
+<div class="arithmatex">\[ 1 - \beta \]</div>
+<h3 id="one-and-two-tailed-tests">One and Two Tailed Tests</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="34:3"><input checked="checked" id="__tabbed_34_1" name="__tabbed_34" type="radio" /><input id="__tabbed_34_2" name="__tabbed_34" type="radio" /><input id="__tabbed_34_3" name="__tabbed_34" type="radio" /><div class="tabbed-labels"><label for="__tabbed_34_1">Upper Tailed Test</label><label for="__tabbed_34_2">Lower Tailed Test</label><label for="__tabbed_34_3">Two Tailed Test</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ H_A: \mu \gt \mu_0 \]</div>
+<div class="arithmatex">\[ H_0: \mu \leq \mu_0 \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ H_A: \mu \lt \mu_0 \]</div>
+<div class="arithmatex">\[ H_0: \mu \geq \mu_0 \]</div>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ H_A: \mu \neq \mu_0 \]</div>
+<div class="arithmatex">\[ H_0: \mu = \mu_0 \]</div>
+</div>
+</div>
+</div>
+<h4 id="confidence-interval-for-one-and-two-tailed-tests">Confidence Interval for One and Two Tailed Tests</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="35:3"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><input id="__tabbed_35_3" name="__tabbed_35" type="radio" /><div class="tabbed-labels"><label for="__tabbed_35_1">Upper Tailed Test</label><label for="__tabbed_35_2">Lower Tailed Test</label><label for="__tabbed_35_3">Two Tailed Test</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Normal Distribution</strong>
+<script type="math/tex; mode=display"> CI = \overline x + z_ {\alpha/2} \cdot \frac{\sigma}{\sqrt n} </script>
+</p>
+<p><strong>T Distribution</strong>
+<script type="math/tex; mode=display"> CI = \overline x + t_{\alpha, n - 1} \cdot \frac{s}{\sqrt n} </script>
+</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Normal Distribution</strong>
+<script type="math/tex; mode=display"> CI = \overline x - z_ {\alpha/2} \cdot \frac{\sigma}{\sqrt n} </script>
+</p>
+<p><strong>T Distribution</strong>
+<script type="math/tex; mode=display"> CI = \overline x - t_{\alpha, n - 1} \cdot \frac{s}{\sqrt n} </script>
+</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Normal Distribution</strong>
+<script type="math/tex; mode=display"> CI = \overline x \pm z_ {\alpha/2} \cdot \frac{\sigma}{\sqrt n} </script>
+</p>
+<p><strong>T Distribution</strong>
+<script type="math/tex; mode=display"> CI = \overline x \pm t_{\alpha, n - 1} \cdot \frac{s}{\sqrt n} </script>
+</p>
+</div>
+</div>
+</div>
+<h3 id="test-statistic">Test Statistic</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="36:2"><input checked="checked" id="__tabbed_36_1" name="__tabbed_36" type="radio" /><input id="__tabbed_36_2" name="__tabbed_36" type="radio" /><div class="tabbed-labels"><label for="__tabbed_36_1">Normal Distribution</label><label for="__tabbed_36_2">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> z = \frac{\overline x - \mu_0}{\sigma/\sqrt n} </script>
+where <span class="arithmatex">\(\mu_0\)</span> is the Null Hypothesis Mean</p>
+</div>
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> t = \frac{\overline x - \mu_0}{s/\sqrt {df}}  </script>
+where <span class="arithmatex">\(df\)</span> is the <a href="#degrees-of-freedom">degrees of freedom</a></p>
+</div>
+</div>
+</div>
+<h4 id="test-statistic-for-the-proportion">Test Statistic for the Proportion</h4>
+<div class="arithmatex">\[ z = \frac{\hat p - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</div>
+<h4 id="test-statistic-for-difference-of-means">Test Statistic for Difference of Means</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="37:2"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">Normal Distribution</label><label for="__tabbed_37_2">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ z = \frac{(\overline x_1 - \overline x_2) - (\mu_1 - \mu_2)}{\sqrt {\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \]</div>
+</div>
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> t = \frac{(\overline x_1 - \overline x_2) - (\mu_1 - \mu_2)}{\sqrt {\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} </script>
+with degrees of freedom as shown in <a href="#confidence-interval-for-difference-of-means">CI for Difference of Means</a>  </p>
+</div>
+</div>
+</div>
+<h4 id="test-statistic-for-pooled-procedures">Test Statistic for Pooled Procedures</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="38:2"><input checked="checked" id="__tabbed_38_1" name="__tabbed_38" type="radio" /><input id="__tabbed_38_2" name="__tabbed_38" type="radio" /><div class="tabbed-labels"><label for="__tabbed_38_1">Normal Distribution</label><label for="__tabbed_38_2">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ z = \frac{(\overline x_1 - \overline x_2) - (\mu_1 - \mu_2)}{s_p\sqrt {\frac{1}{n_1} + \frac{1}{n_2}}} \]</div>
+</div>
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> t = \frac{(\overline x_1 - \overline x_2) - (\mu_1 - \mu_2)}{s_p\sqrt {\frac{1}{n_1} + \frac{1}{n_2}}} </script>
+with degrees of freedom as shown in <a href="#confidence-interval-for-pooled-procedures">CI for Pooled Procedures</a></p>
+</div>
+</div>
+</div>
+<h4 id="test-statistic-for-matched-pair-test">Test Statistic for Matched-Pair Test</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="39:2"><input checked="checked" id="__tabbed_39_1" name="__tabbed_39" type="radio" /><input id="__tabbed_39_2" name="__tabbed_39" type="radio" /><div class="tabbed-labels"><label for="__tabbed_39_1">Normal Distribution</label><label for="__tabbed_39_2">T Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>
+<script type="math/tex; mode=display"> z = \frac{\overline d - \mu_d}{\sigma_d/\sqrt n} </script>
+where <span class="arithmatex">\(\mu_d\)</span> is the Null Hypothesis Mean Difference</p>
+</div>
+<div class="tabbed-block">
+<div class="arithmatex">\[ t = \frac{\overline d - \mu_d}{s_d/\sqrt n}  \]</div>
+</div>
+</div>
+</div>
+<h4 id="test-statistic-for-difference-of-proportions">Test Statistic for Difference of Proportions</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="40:1"><input checked="checked" id="__tabbed_40_1" name="__tabbed_40" type="radio" /><div class="tabbed-labels"><label for="__tabbed_40_1">Normal Distribution</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="arithmatex">\[ z = \frac{(\hat p_1 - \hat p_2) - (p_1 - p_2)}{\sqrt {\hat p (1 - \hat p)(\frac{1}{n_1} + \frac{1}{n_2})}} \]</div>
+<p>with 
+<script type="math/tex; mode=display"> \hat p = \frac{\hat p_1 n_1 + \hat p_2 n_2}{n_1 + n_2} </script>
+</p>
+<p>where <span class="arithmatex">\(\hat p_1 n_1\)</span> and <span class="arithmatex">\(\hat p_2 n_2\)</span> are the number of successes in each sample</p>
+</div>
+</div>
+</div>
+<h3 id="p-value">p-value</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="41:3"><input checked="checked" id="__tabbed_41_1" name="__tabbed_41" type="radio" /><input id="__tabbed_41_2" name="__tabbed_41" type="radio" /><input id="__tabbed_41_3" name="__tabbed_41" type="radio" /><div class="tabbed-labels"><label for="__tabbed_41_1">Upper Tailed Test</label><label for="__tabbed_41_2">Lower Tailed Test</label><label for="__tabbed_41_3">Two Tailed Test</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The p-value is the area under the standard normal curve to the right of <span class="arithmatex">\(z\)</span> 
+<script type="math/tex; mode=display"> p = 1-\phi(z) </script>
+</p>
+</div>
+<div class="tabbed-block">
+<p>The p-value is the area under the standard normal curve to the left of <span class="arithmatex">\(z\)</span> 
+<script type="math/tex; mode=display"> p= \phi(z) </script>
+</p>
+</div>
+<div class="tabbed-block">
+<p>The p-value is sum of the area under the standard normal curve to the left and right of <span class="arithmatex">\(z\)</span>
+<script type="math/tex; mode=display"> p = 2 * (1-\phi(z)) </script>
+</p>
+</div>
+</div>
+</div>
+<h2 id="simple-linear-regression-model">Simple Linear Regression Model</h2>
+<div class="arithmatex">\[ y = \beta_0 + \beta_1 x + u \]</div>
+<p>If all other factors (disturbance) are fixed, i.e. if <span class="arithmatex">\(\Delta u=0\)</span>, then</p>
+<div class="arithmatex">\[ \Delta y = \beta_1 \Delta x \]</div>
+<div class="admonition warning">
+<p><strong>Simplified Form (Equation of Line)</strong></p>
+<div class="arithmatex">\[ y = \beta_0 + \beta_1 x = a + bx \]</div>
+<p>Slope</p>
+<div class="arithmatex">\[ \beta_1 = b = \frac{n \sum {xy} - \sum x \sum y}{n \sum x^2 - (\sum x)^2} \]</div>
+<p>where <span class="arithmatex">\(n\)</span> is the number of data points</p>
+<p>Y-Intercept</p>
+<div class="arithmatex">\[ \beta_0 = a = \frac{\sum y - b \sum x}{n} \]</div>
+</div>
+<h3 id="errors">Errors</h3>
+<div class="arithmatex">\[ E(u) = 0 \]</div>
+<div class="arithmatex">\[ E(u|x)=E(u) \implies E(u|x) = 0 \]</div>
+<h3 id="residual">Residual</h3>
+<div class="arithmatex">\[ \hat u = y_i - \hat y_i = y_i - \hat \beta_0 - \hat \beta_1x_i \]</div>
+<p>where <span class="arithmatex">\(\hat u\)</span>, <span class="arithmatex">\(\hat y_i\)</span>,<span class="arithmatex">\(\hat \beta_0\)</span> and <span class="arithmatex">\(\hat \beta_1\)</span> are the estimated values. Here <span class="arithmatex">\(\hat u\)</span> is different from the error term <span class="arithmatex">\(u\)</span>.</p>
+<p id="cust-id-cs-reg-res-prop"></p>
+<p><strong>Residual Properties</strong></p>
+<div class="arithmatex">\[ \sum_{i=1}^n \hat u_i = 0 \]</div>
+<div class="arithmatex">\[ \overline {\hat u} = 0 \]</div>
+<div class="arithmatex">\[ \sum_{i=1}^n x_i \hat u_i = 0 \]</div>
+<div class="arithmatex">\[ \overline y = \hat \beta_0 + \hat \beta_1 \overline x \]</div>
+<h3 id="sum-of-squared-residuals">Sum of Squared Residuals</h3>
+<div class="arithmatex">\[ \sum_{i=1}^n \hat u_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2= \sum_{i=1}^n (y_i - \hat \beta_0 - \hat \beta_1 x_i)^2 \]</div>
+<h3 id="measures-of-variation">Measures of Variation</h3>
+<h5 id="explained-sum-of-squares">Explained Sum of Squares</h5>
+<div class="arithmatex">\[ SSE = \sum_{i=1}^n(\hat y_i - \overline y)^2 \]</div>
+<h5 id="residual-sum-of-squares">Residual Sum of Squares</h5>
+<div class="arithmatex">\[ SSR = \sum_{i=1}^n \hat u_i^2 \]</div>
+<h5 id="total-sum-of-squares">Total Sum of Squares</h5>
+<div class="arithmatex">\[ SST = \sum_{i=1}^n(y_i - \overline y)^2 \]</div>
+<div class="arithmatex">\[ SST = SSE + SSR \]</div>
+<h5 id="mean-square-of-regression">Mean Square of Regression</h5>
+<div class="arithmatex">\[ MSR = \frac{SSR}{degrees \ of \ freedom \ of \ SSR} \]</div>
+<h5 id="root-mean-square-error">Root Mean Square Error</h5>
+<div class="arithmatex">\[ RMSE = \sqrt {\frac{SSR}{n}} \]</div>
+<h2 id="chi-square-tests">Chi Square Tests</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="42:2"><input checked="checked" id="__tabbed_42_1" name="__tabbed_42" type="radio" /><input id="__tabbed_42_2" name="__tabbed_42" type="radio" /><div class="tabbed-labels"><label for="__tabbed_42_1">Homogeneity and Association/Independence</label><label for="__tabbed_42_2">Goodness of Fit</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Expected Values</strong></p>
+<div class="arithmatex">\[ Expected_i = \frac{Observed_{x_{itot}} * Observed_{y_{itot}}}{Observed_{tot}} \]</div>
+<p>where <span class="arithmatex">\(Observed_{x_{itot}}\)</span> and <span class="arithmatex">\(Observed_{y_{itot}}\)</span> are the total observed counts corresponding to the ith group of the categorical variables <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> respectively and <span class="arithmatex">\(Observed_{tot}\)</span> is the total count for all variables</p>
+<div class="admonition warning">
+<div class="arithmatex">\[ \chi^2 = \sum{\frac{(observed - expected)^2}{expected}} \]</div>
+</div>
+<p><strong>Degrees of Freedom</strong>
+<script type="math/tex; mode=display"> df = (number \ of \ rows - 1)(number \ of \ columns - 1) </script>
+</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Expected Values</strong>
+<script type="math/tex; mode=display"> Expected_i = \frac{Observed_{tot}}{n} </script>
+where <span class="arithmatex">\(Observed_{tot}\)</span> is the total count for all variables</p>
+<p><strong>Degrees of Freedom</strong>
+<script type="math/tex; mode=display"> df = n - 1 </script>
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2043 Angshuman Paul
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
