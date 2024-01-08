@@ -1,0 +1,83 @@
+# Project information
+site_name: Machine Learning Notes
+site_url: https://paulang1807.github.io/learn-ml/
+site_author: Angshuman Paul
+site_description: >-
+  Notes taken while learning Machine Learning
+
+# Repository - Adds repo link to the top left side of the page
+repo_name: Github
+repo_url: https://github.com/paulang1807/learn-ml
+
+# Copyright - Added as footer
+copyright: Copyright &copy; 2023 - 2043 Angshuman Paul
+
+# Configuration
+theme: 
+  name: material
+  features:
+    - content.tabs.link
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    admonition:
+      success: fontawesome/solid/calculator
+
+# Additional configuration
+# For specifying custom css related to the schemes under the themes section
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  # Required for inline latex
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  
+# Extensions  
+markdown_extensions:
+  # Required for latex
+  - mdx_math
+  - pymdownx.arithmatex:
+      generic: true
+  # Required for formatting (https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#caret-mark-tilde)
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Required for admonitions (https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+  - admonition
+  - pymdownx.details
+  # Required for content tabs and admonitions
+  - pymdownx.superfences
+  # Required for content tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+
+# Page tree
+nav:
+  - Home: index.md
+  - Statistics:
+    - Basics: stats-basics.md
+    - Distributions: stats-distributions.md
+    - Random Variables: stats-rv.md
+    - Sampling: stats-sampling.md
+    - Hypothesis Testing: stats-hypo-test.md
+    - Regression: stats-reg.md
+    - Cheatsheet: stats-cheatsheet.md
+    - Vizuals: stat-viz.md
+  - Probability: 
+    - Basics: probability.md
+    - Cheatsheet: prob-cheatsheet.md
+  - Other Math Concepts:
+    - Permutation and Combination: perm-com.md
