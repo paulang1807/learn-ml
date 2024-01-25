@@ -273,6 +273,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -282,6 +293,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-steps" class="md-nav__link">
+    Modeling Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handle-missing-data" class="md-nav__link">
+    Handle missing data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encode-categorical-data" class="md-nav__link">
+    Encode Categorical Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-training-and-test-data" class="md-nav__link">
+    Split training and test data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-scaling" class="md-nav__link">
+    Feature Scaling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -656,6 +727,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-steps" class="md-nav__link">
+    Modeling Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Modeling Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#handle-missing-data" class="md-nav__link">
+    Handle missing data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encode-categorical-data" class="md-nav__link">
+    Encode Categorical Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-training-and-test-data" class="md-nav__link">
+    Split training and test data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-scaling" class="md-nav__link">
+    Feature Scaling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -673,6 +793,109 @@
 
 
 <h1 id="machine-learning-home">Machine Learning Home</h1>
+<h2 id="modeling-steps">Modeling Steps</h2>
+<ul>
+<li>Data Preparation - Generate or Read data</li>
+<li>Separate the independent and dependent variables</li>
+<li>Handle missing data (Needed if there is missing data)</li>
+<li>Encode Categorical Data (Needed if there is categorical data)</li>
+<li>Split training and test data</li>
+<li>Feature Scaling (Needed only for some models)</li>
+</ul>
+<h3 id="handle-missing-data">Handle missing data</h3>
+<p>Common Approach - Replace missing value with average of all values in the column</p>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html">Simple Imputer</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">imputer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Include all numeric columns</span>
+<span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></p>
+</div>
+<h3 id="encode-categorical-data">Encode Categorical Data</h3>
+<ul>
+<li>Encoding the Independent Variable<ul>
+<li>This usually pushes the encoded columns to the front of the array</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html">Column Transformer</a> </p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html">One Hot Encoder</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+
+<span class="n">ct</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span><span class="n">transformers</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;encoder&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(),</span> <span class="p">[</span><span class="mi">0</span><span class="p">])],</span> <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</code></pre></div></p>
+</div>
+<ul>
+<li>Encoding the Dependent Variable</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html">Label Encoder</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<h3 id="split-training-and-test-data">Split training and test data</h3>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">Train Test Split</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<h3 id="feature-scaling">Feature Scaling</h3>
+<ul>
+<li>Used in some ML models(not all) </li>
+<li>Done in order to avoid some features dominating the other features</li>
+<li>Feature scaling is always applied to columns</li>
+<li><mark>Should not be applied to encoded columns</mark><ul>
+<li>Will result in loss of interpretation (of the original categories) if applied </li>
+</ul>
+</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Remember</p>
+<p>Feature Scaling should always be done after splitting the training and test data. The test data should be clean and not a part of the feature scaling process.</p>
+</div>
+<p>Common Forms:</p>
+<ul>
+<li>Standardization<ul>
+<li>This will result in all the features taking values between -3 and 3</li>
+<li>Works all the time irrespective of the distribution of the features
+<script type="math/tex; mode=display"> x_{stand} = \frac{x - mean(x)}{standard \ deviation (x)} </script>
+</li>
+</ul>
+</li>
+<li>Normalization<ul>
+<li>This will result in all the features taking values between 0 and 1</li>
+<li>Recommended when the distribution for most of the features are normalized
+<script type="math/tex; mode=display"> x_{norm} = \frac{x - min(x)}{max(x) - min (x)} </script>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">Standard Scaler</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="c1"># Scale only the non-encoded colummns</span>
+<span class="c1"># Since the encoded columns are present in the front of the array, we usually just take everything from the index of the first non encoded numerical column</span>
+<span class="n">X_train</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:]</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:])</span>
+</code></pre></div></p>
+</div>
 
 
 
