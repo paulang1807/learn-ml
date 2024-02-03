@@ -2,62 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://paulang1807.github.io/learn-ml/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://paulang1807.github.io/learn-ml/ml-reg/</loc>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/perm-com/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/prob-cheatsheet/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/probability/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stat-viz/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stats-basics/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stats-cheatsheet/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stats-distributions/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stats-hypo-test/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stats-reg/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stats-rv/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://paulang1807.github.io/learn-ml/stats-sampling/</loc>
-         <lastmod>2024-01-25</lastmod>
+         <lastmod>2024-02-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
