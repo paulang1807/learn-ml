@@ -67,6 +67,8 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - Models:
+    - Regression: ml-reg.md
   - Statistics:
     - Basics: stats-basics.md
     - Distributions: stats-distributions.md

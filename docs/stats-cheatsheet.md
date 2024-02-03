@@ -64,6 +64,19 @@ Also see [Random Variables: Variance](#variance_1)
 
 Also see [Random Variables: Covariance](#covariance_1)
 
+### Variance Covariance Matrix
+$$vcov(x,y) = \begin{bmatrix}
+var(x) & cov(x,y) \\
+cov(x,y) & var(y)
+\end{bmatrix}$$
+
+$$var(X) = \begin{bmatrix}
+var(X_1) & cov(X_1, X_2) & \dots & cov(X_1, X_n) \\
+cov(X_2, X_1) & var(X_2) & \dots & cov(X_2, X_n) \\
+\vdots & \ & \ddots \\
+cov(X_n, X_1) & cov(X_n, X_2) & \dots & var(X_n) \\
+\end{bmatrix}$$
+
 ### Correlation
 
 $$ r = \frac{1}{n - 1}\sum {\biggl(\frac{x_i - \overline x}{S_x}\biggl)\biggl(\frac{y_i - \overline y}{S_y}\biggl)} = \frac{1}{n - 1}\sum {(z_x)(z_y)}$$
@@ -82,18 +95,26 @@ $S_x$ and $S_y$ are the standard deviations with respect to x and y and $z_x$ an
 
 Also see [Random Variables: Correlation](#correlation_1)
 
-### Variance Covariance Matrix
-$$vcov(x,y) = \begin{bmatrix}
-var(x) & cov(x,y) \\
-cov(x,y) & var(y)
+#### Correlation Matrix
+
+$$r(X) = \begin{bmatrix}
+1 & r(X_1, X_2) & \dots & r(X_1, X_n) \\
+r(X_2, X_1) & 1 & \dots & r(X_2, X_n) \\
+\vdots & \ & \ddots \\
+r(X_n, X_1) & r(X_n, X_2) & \dots & 1 \\
 \end{bmatrix}$$
 
-$$var(X) = \begin{bmatrix}
-var(X_1) & cov(X_1, X_2) & \dots & cov(X_1, X_n) \\
-cov(X_2, X_1) & var(X_2) & \dots & cov(X_2, X_n) \\
-\vdots & \ & \ddots \\
-cov(X_n, X_1) & cov(X_n, X_2) & \dots & var(X_n) \\
-\end{bmatrix}$$
+#### Tolerance
+$$ T = 1 – R^2 $$
+
+#### Variance Inflation Factor
+$$  VIF = \frac{1}{T} $$
+
+#### Durbin Watson Statistic
+$$ d = \frac{\sum_{t=2}^T (e_t - e_{t-1})^2}{\sum_{t=1}^T e_t^2} $$
+
+#### Homoscedasticity
+$$ var(u|x_1,...,x_k) = \sigma^2$$
 
 ### Z-Score
 $$z = \frac{\overline x - \mu}{\sigma}$$
@@ -708,6 +729,14 @@ $$ MSR = \frac{SSR}{degrees \ of \ freedom \ of \ SSR} $$
 
 ##### Root Mean Square Error
 $$ RMSE = \sqrt {\frac{SSR}{n}} $$
+
+## Multiple Linear Regression Model
+
+$$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n $$
+
+## Polynomial Regression Model
+
+$$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + ... + \beta_n x_1^n $$
 
 ## Chi Square Tests
 === "Homogeneity and Association/Independence"

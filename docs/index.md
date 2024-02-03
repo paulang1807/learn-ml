@@ -1,5 +1,3 @@
-# Machine Learning Home
-
 ## Modeling Steps
 - Data Preparation - Generate or Read data
 - Separate the independent and dependent variables

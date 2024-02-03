@@ -1,5 +1,4 @@
-## Ordinary Least Squares Regression
-### [Simple Linear Regression Model](../stats-cheatsheet/#simple-linear-regression-model)
+## [Simple Linear Regression Model](../stats-cheatsheet/#simple-linear-regression-model)
 
 **Regression is the process of estimating the value of the dependent variable from the independent variable(s).**
 
@@ -52,13 +51,15 @@ If the data is clustered
     - Correlation between residuals and regressors is zero, $\sum_{i=1}^n x_i \hat u_i = 0$
     - Sample averages of y and x (point $\overline x, \overline y$) lie on a regression line, $\overline y = \hat \beta_0 + \hat \beta_1 \overline x$
 
-#### [Sum of Squared Residuals](../stats-cheatsheet/#sum-of-squared-residuals)
+### [Sum of Squared Residuals](../stats-cheatsheet/#sum-of-squared-residuals)
 To find the best fitting regression line that shows the trend in the data, we want to minimize all the residual values, because doing so would minimize the distance of the data points from the line of best fit. 
 
 In order to minimize the residual, we actually minimize the squae of the residuals so that the positive and negative values of the residuals do not cancel out and all residuals get minimized.
 
-#### [Measures of Variation](../stats-cheatsheet/#measures-of-variation)
-##### Coefficient of Determination, $r^2$
+This form of regression is also referred to as ==**Ordinary Least Squares Regression**== as we are trying to minimize the squae of the residuals.
+
+### [Measures of Variation](../stats-cheatsheet/#measures-of-variation)
+#### Coefficient of Determination, $r^2$
 Measures the percentage of error we eliminated by using least-squares regression instead of just mean,$\overline y$. See [Correlation](../stats-cheatsheet/#correlation)
 
 - Tells us how well the regression line approximates the data
@@ -68,7 +69,7 @@ Measures the percentage of error we eliminated by using least-squares regression
         - The higher the value, the more data points pass through the line
         - Very small values indicate that the regression line does not pass through many data points
 
-##### [Root Mean Square Error (RMSE)](../stats-cheatsheet/#root-mean-square-error)
+#### [Root Mean Square Error (RMSE)](../stats-cheatsheet/#root-mean-square-error)
 The standard deviation of the residuals
 
 - Also called the ==**Root Mean Square Deviation(RMSD)**==
@@ -81,6 +82,82 @@ The standard deviation of the residuals
         - ==68.2% of the data points will fall between 1 * RMSE of the regression line==
         - ==95.4% of the data points will fall between 2 * RMSE of the regression line==
         - ==99.7% of the data points will fall between 3 * RMSE of the regression line==
+
+## [Multiple Linear Regression Model](../stats-cheatsheet/#multiple-linear-regression-model)
+
+### Assumptions
+
+- **Linearity** - The relationship between the independent and dependent variables should be linear.  
+    - It is also important to check for outliers since linear regression is ==sensitive to outlier effects==
+    - The linearity assumption can best be ==tested with scatter plots==
+    !!! danger "Remember"
+        Always analyze the data distribution in order to determine if Linear Regression can be used to model the data. See [Anscombe's Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)
+- **Multivariate Normality** - All variables should be multivariate normal, i.e. the data points should be normally distributed along the line of linear regression.  
+    - This assumption can best be ==checked with a histogram or a Q-Q-Plot==
+    - ==Normality can be checked with a goodness of fit test==, e.g., the Kolmogorov-Smirnov test
+    - When the data is not normally distributed, a ==non-linear transformation== (e.g., log-transformation) might fix this issue
+- **Lack of MultiCollinearity** - There should be little or no multicollinearity in the data, i.e the predictors (independent variables) are not correlated to each other.
+    - Multicollinearity may be tested with three central criteria:
+        - [Correlation matrix](../stats-cheatsheet/#correlation-matrix) – when computing the matrix of Pearson’s Bivariate Correlation among all independent variables the correlation coefficients need to be smaller than 1
+        - [Tolerance](../stats-cheatsheet/#tolerance) – the tolerance measures the influence of one independent variable on all other independent variables  
+        !!! tip
+            - With T < 0.1 there might be multicollinearity in the data 
+            - With T < 0.01 there  is multicollinearity in the data
+        - [Variance Inflation Factor (VIF)](../stats-cheatsheet/#variance-inflation-factor) - This is good indicator when the sample size is small but is of limited use for large sample sizes
+        !!! tip
+            - With VIF > 5 there is an indication that multicollinearity may be present
+            - With VIF > 10 there is certainly multicollinearity among the variables 
+        - Condition Index – the condition index is calculated using a factor analysis on the independent variables.  
+            - Values of 10-30 indicate a mediocre multicollinearity
+            - Values > 30 indicate strong multicollinearity
+    - If multicollinearity is found in the data
+        - Centering the data (deducting the mean of the variable from each score) might help to solve the problem
+- **Independence (Autocorrelation or Serial Correlation)** - There should be little or no autocorrelation in the data.  Autocorrelation occurs when the residuals/rows are not independent from each other
+    - occurs when the value of current row y(x) is not independent from the value of the previous row y(x-1)
+    - common for time series data
+    - can be tested with the ==**Durbin-Watson test**==
+        - [Durbin-Watson’s d](../stats-cheatsheet/#durbin-watson-statistic) tests the null hypothesis that the residuals are not linearly auto-correlated.  
+            - d can assume values between 0 and 4
+            - ==values of 1.5 < d < 2.5 show that there is no auto-correlation in the data==
+            - only analyses linear autocorrelation and only between direct neighbors(successive data points), which are first order effects
+- **[Homoscedasticity](../stats-cheatsheet/#homoscedasticity)** - data should be homoscedastic, i.e. the variance in the error term, $u$, is the same for all combinations of outcomes of the independent variables.  
+    - Scatter plot should not show cone shaped distribution
+
+### Modeling Methods
+- **Use all variables**
+    - Not preferred unless there is a compelling reason
+- !!! example "Backward Elimination"
+    - Select significance level (e.g. $\alpha$ = 0.05)
+    - Fit model with all variables
+    - If the variable with the highest **p-value** is greater than $\alpha$
+        - Remove the variable 
+        - Fit the model again with the remaining variables
+        - Repeat process till the highest **p-value** is no longer greater than $\alpha$
+- !!! example "Forward Selection"
+    - Select significance level (e.g. $\alpha$ = 0.05)
+    - Create separate **Simple Linear Regression models** by fitting each variable separately
+    - Select the model with the lowest **p-value**
+        - Create separate Regression models by fitting each of the remaining variables separately to this model
+        - Repeat process till the lowest p-value is no longer lesser than $\alpha$
+        - Use the model prior to the one that resulted in p-value greater than $\alpha$
+- !!! example "Bidirectional Elimination (Stepwise Regression)"
+    - Select significance levels to enter and stay in the model - both can be same (e.g. $\alpha$ = 0.05)
+    - Perform **Forward Selection** step
+        - Select the model with the lowest **p-value** 
+        - Perform **Backward Selection** step with remaining variables
+        - Remove the variables where **p-value** is greater than $\alpha$
+        - Create separate Regression models by fitting each of the remaining variables separately to the **Forward Selection** model
+        - Repeat the process till there are no variables to enter or exit
+- !!! example "Score Comparison"
+    - Select a criterion of goodness of fit (e.g. Akaike criterion)
+    - Construct all possible regression models (discusssed above)
+        - $2^N - 1$ total models can be created
+    - Select the model with the best criterion
+
+==**When writing python code, we usually don't have to worry about using a certain method for selecting the most statistically significant features. This is taken care of by the regression class in scikit learn package automatically.**==
+
+## [Polynomial Regression Model](../stats-cheatsheet/#polynomial-regression-model)
+The polynomial regression model is a linear regression even though the variables are not linear (they grow expnentially) as the linearity in the regression model is based on the coefficients of the independent variables(which are linear in this case).
 
 ## [Chi Square Tests](../stats-cheatsheet/#chi-square-tests)
 Helps investigate the relationship betweem categorical variables. Refer [Chi Square Distribution Table](https://www.math.arizona.edu/~jwatkins/chi-square-table.pdf)
