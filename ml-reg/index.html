@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simple-linear-regression" class="md-skip">
+        <a href="#model-types" class="md-skip">
           Skip to content
         </a>
       
@@ -365,23 +365,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#model-types" class="md-nav__link">
+    Model Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#simple-linear-regression" class="md-nav__link">
     Simple Linear Regression
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#multiple-linear-regression" class="md-nav__link">
     Multiple Linear Regression
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#polynomial-regression" class="md-nav__link">
     Polynomial Regression
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-vector-regression" class="md-nav__link">
+    Support Vector Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-tree-regression" class="md-nav__link">
+    Decision Tree Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-regression" class="md-nav__link">
+    Random Forest Regression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -775,23 +809,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#model-types" class="md-nav__link">
+    Model Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#simple-linear-regression" class="md-nav__link">
     Simple Linear Regression
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#multiple-linear-regression" class="md-nav__link">
     Multiple Linear Regression
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#polynomial-regression" class="md-nav__link">
     Polynomial Regression
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-vector-regression" class="md-nav__link">
+    Support Vector Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-tree-regression" class="md-nav__link">
+    Decision Tree Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-regression" class="md-nav__link">
+    Random Forest Regression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -815,7 +883,14 @@
 
   <h1>Regression</h1>
 
-<h2 id="simple-linear-regression"><a href="../stats-reg/#simple-linear-regression-model">Simple Linear Regression</a></h2>
+<h2 id="model-types">Model Types</h2>
+<h3 id="simple-linear-regression"><a href="../stats-reg/#simple-linear-regression-model">Simple Linear Regression</a></h3>
+<ul>
+<li>Predict dependent variable based on a single independent variable</li>
+<li>Works well on linear pattern</li>
+<li>Joining data points result in a single line</li>
+<li>Does not require Feature Scaling</li>
+</ul>
 <div class="admonition abstract">
 <p class="admonition-title">SkLearn API</p>
 <p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">Linear Regression</a></p>
@@ -828,7 +903,13 @@
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
-<h2 id="multiple-linear-regression"><a href="../stats-reg/#multiple-linear-regression-model">Multiple Linear Regression</a></h2>
+<h3 id="multiple-linear-regression"><a href="../stats-reg/#multiple-linear-regression-model">Multiple Linear Regression</a></h3>
+<ul>
+<li>Predict dependent variable based on multiple independent variables</li>
+<li>Works well on linear pattern</li>
+<li>Joining data points result in a single line</li>
+<li>Does not require Feature Scaling</li>
+</ul>
 <div class="admonition danger">
 <p class="admonition-title">Remember</p>
 <p>For ML models, the categorical variables need to be transformed to dummy variables (using one hot encoding, for example). However, care should be taken not to include all the resulting dummy variables for multiple regression models, as it will result in <strong>multicollinearity</strong>. This is also referred to as the <mark><strong>Dummy Variable Trap</strong></mark>. </p>
@@ -855,7 +936,14 @@
 <span class="n">regressor_OLS</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </code></pre></div></p>
 </div>
-<h2 id="polynomial-regression"><a href="../stats-reg/#polynomial-regression-model">Polynomial Regression</a></h2>
+<h3 id="polynomial-regression"><a href="../stats-reg/#polynomial-regression-model">Polynomial Regression</a></h3>
+<ul>
+<li>Predict dependent variable based on single independent variable</li>
+<li>Works well on non-linear pattern</li>
+<li>Joining data points result in a single line</li>
+<li>Does not require Feature Scaling</li>
+<li>Need to choose the right polynomial degree for a good bias/variance tradeoff</li>
+</ul>
 <div class="admonition abstract">
 <p class="admonition-title">SkLearn API</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html">Polynomial Features</a></p>
@@ -864,11 +952,88 @@
 <span class="n">num_features</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">pf4</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">num_features</span><span class="p">,</span> <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">X4</span> <span class="o">=</span> <span class="n">pf4</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="n">lr4</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
 <span class="n">lr4</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X4</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">lr4</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">lr4</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">lr4</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X4</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<h3 id="support-vector-regression"><a href="../stats-reg/#support-vector-regression-model">Support Vector Regression</a></h3>
+<ul>
+<li>Predict dependent variable based on single independent variable</li>
+<li>Works very well on non linear problems</li>
+<li>Not biased by outliers</li>
+<li>Joining data points result in a single line</li>
+<li>Requires Feature Scaling</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html">Support Vector Regressor</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Scale Data</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="c1"># Apply feature scaling to independent variables</span>
+<span class="c1"># Also apply to dependent variables, if needed</span>
+<span class="n">sc_x</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">sc_y</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">sc_x</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">sc_y</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
+<span class="n">r_svr</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="s1">&#39;rbf&#39;</span><span class="p">)</span>  <span class="c1"># Using radial basis function kernel</span>
+<span class="n">r_svr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_sc</span> <span class="o">=</span> <span class="n">r_svr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sc_x</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+<span class="c1"># Inverse Transform to get the predicted value in the original scale</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">sc_y</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_pred_sc</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></p>
+</div>
+<h3 id="decision-tree-regression">Decision Tree Regression</h3>
+<ul>
+<li>Predict dependent variable based on one or more independent variables<ul>
+<li>More applicable to datasets with high number of independent variables</li>
+</ul>
+</li>
+<li>Works on both linear / nonlinear problems</li>
+<li>Does not require Feature Scaling</li>
+<li>Poor results if dataset is too small<ul>
+<li>Overfitting can easily occur</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.tree.DecisionTreeRegressor.html">Decision Tree Regressor</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="n">r_dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">r_dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">r_dt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<h3 id="random-forest-regression">Random Forest Regression</h3>
+<ul>
+<li>Predict dependent variable based on one or more independent variables</li>
+<li>Is an ensemble method<ul>
+<li>Create multiple models (such as decision trees) using different combinations of subset of the independent variables</li>
+<li>Need to choose the number of trees</li>
+<li>Final prediction is based on an aggregated value (e.g. avg) of all the predictions</li>
+</ul>
+</li>
+<li>Does not require Feature Scaling</li>
+<li>Difficult to interpret</li>
+<li>Overfitting can easily occur</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.ensemble.RandomForestRegressor.html">Random Forest Regressor</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="n">r_rf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">r_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">r_rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 

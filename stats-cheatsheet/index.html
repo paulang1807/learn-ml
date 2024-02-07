@@ -1140,19 +1140,19 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sum-of-squared-residuals" class="md-nav__link">
-    Sum of Squared Residuals
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#measures-of-variation" class="md-nav__link">
     Measures of Variation
   </a>
   
     <nav class="md-nav" aria-label="Measures of Variation">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-squared-residuals" class="md-nav__link">
+    Sum of Squared Residuals
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#explained-sum-of-squares" class="md-nav__link">
@@ -1171,6 +1171,20 @@
           <li class="md-nav__item">
   <a href="#total-sum-of-squares" class="md-nav__link">
     Total Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coefficient-of-determination" class="md-nav__link">
+    Coefficient of Determination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusted-r-squared" class="md-nav__link">
+    Adjusted R-Squared
   </a>
   
 </li>
@@ -1216,6 +1230,13 @@
         <li class="md-nav__item">
   <a href="#chi-square-tests" class="md-nav__link">
     Chi Square Tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-vector-regression-model" class="md-nav__link">
+    Support Vector Regression Model
   </a>
   
 </li>
@@ -2019,19 +2040,19 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sum-of-squared-residuals" class="md-nav__link">
-    Sum of Squared Residuals
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#measures-of-variation" class="md-nav__link">
     Measures of Variation
   </a>
   
     <nav class="md-nav" aria-label="Measures of Variation">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-squared-residuals" class="md-nav__link">
+    Sum of Squared Residuals
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#explained-sum-of-squares" class="md-nav__link">
@@ -2050,6 +2071,20 @@
           <li class="md-nav__item">
   <a href="#total-sum-of-squares" class="md-nav__link">
     Total Sum of Squares
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coefficient-of-determination" class="md-nav__link">
+    Coefficient of Determination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusted-r-squared" class="md-nav__link">
+    Adjusted R-Squared
   </a>
   
 </li>
@@ -2095,6 +2130,13 @@
         <li class="md-nav__item">
   <a href="#chi-square-tests" class="md-nav__link">
     Chi Square Tests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-vector-regression-model" class="md-nav__link">
+    Support Vector Regression Model
   </a>
   
 </li>
@@ -2939,19 +2981,25 @@ where <span class="arithmatex">\(\mu_d\)</span> is the Null Hypothesis Mean Diff
 <div class="arithmatex">\[ \overline {\hat u} = 0 \]</div>
 <div class="arithmatex">\[ \sum_{i=1}^n x_i \hat u_i = 0 \]</div>
 <div class="arithmatex">\[ \overline y = \hat \beta_0 + \hat \beta_1 \overline x \]</div>
-<h3 id="sum-of-squared-residuals">Sum of Squared Residuals</h3>
-<div class="arithmatex">\[ \sum_{i=1}^n \hat u_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2= \sum_{i=1}^n (y_i - \hat \beta_0 - \hat \beta_1 x_i)^2 \]</div>
 <h3 id="measures-of-variation">Measures of Variation</h3>
-<h5 id="explained-sum-of-squares">Explained Sum of Squares</h5>
+<h4 id="sum-of-squared-residuals">Sum of Squared Residuals</h4>
+<div class="arithmatex">\[ \sum_{i=1}^n \hat u_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2= \sum_{i=1}^n (y_i - \hat \beta_0 - \hat \beta_1 x_i)^2 \]</div>
+<h4 id="explained-sum-of-squares">Explained Sum of Squares</h4>
 <div class="arithmatex">\[ SSE = \sum_{i=1}^n(\hat y_i - \overline y)^2 \]</div>
-<h5 id="residual-sum-of-squares">Residual Sum of Squares</h5>
-<div class="arithmatex">\[ SSR = \sum_{i=1}^n \hat u_i^2 \]</div>
-<h5 id="total-sum-of-squares">Total Sum of Squares</h5>
+<h4 id="residual-sum-of-squares">Residual Sum of Squares</h4>
+<div class="arithmatex">\[ SSR = \sum_{i=1}^n \hat u_i^2  = \sum_{i=1}^n (y_i - \hat y_i)^2 \]</div>
+<h4 id="total-sum-of-squares">Total Sum of Squares</h4>
 <div class="arithmatex">\[ SST = \sum_{i=1}^n(y_i - \overline y)^2 \]</div>
 <div class="arithmatex">\[ SST = SSE + SSR \]</div>
-<h5 id="mean-square-of-regression">Mean Square of Regression</h5>
+<h4 id="coefficient-of-determination">Coefficient of Determination</h4>
+<div class="arithmatex">\[ R^2 = 1 - \frac{SSR}{SST} \]</div>
+<h4 id="adjusted-r-squared">Adjusted R-Squared</h4>
+<p>
+<script type="math/tex; mode=display"> Adj \ R^2 = 1 - (1 - R^2) * \frac{n -1}{n - k - 1} </script>
+where <span class="arithmatex">\(n\)</span> is the sample size and <span class="arithmatex">\(k\)</span> is the number of independent variables</p>
+<h4 id="mean-square-of-regression">Mean Square of Regression</h4>
 <div class="arithmatex">\[ MSR = \frac{SSR}{degrees \ of \ freedom \ of \ SSR} \]</div>
-<h5 id="root-mean-square-error">Root Mean Square Error</h5>
+<h4 id="root-mean-square-error">Root Mean Square Error</h4>
 <div class="arithmatex">\[ RMSE = \sqrt {\frac{SSR}{n}} \]</div>
 <h2 id="multiple-linear-regression-model">Multiple Linear Regression Model</h2>
 <div class="arithmatex">\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n \]</div>
@@ -2981,6 +3029,10 @@ where <span class="arithmatex">\(Observed_{tot}\)</span> is the total count for 
 </div>
 </div>
 </div>
+<h2 id="support-vector-regression-model">Support Vector Regression Model</h2>
+<div class="arithmatex">\[ \frac{1}{2}||w||^2 + C \sum_{i=1}^m (\xi_i + \xi_i^*) \]</div>
+<p>Minimize</p>
+<div class="arithmatex">\[ C \sum_{i=1}^m (\xi_i + \xi_i^*) \]</div>
 
 
 
