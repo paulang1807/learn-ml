@@ -22,7 +22,7 @@ Common Approach - Replace missing value with average of all values in the column
     ```
 
 ### Encode Categorical Data
-- Encoding the Independent Variable
+- Encoding the Categorical data when order does not matter
     - This usually pushes the encoded columns to the front of the array
 !!! abstract "SkLearn API"
     [Column Transformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) 
@@ -37,7 +37,7 @@ Common Approach - Replace missing value with average of all values in the column
     ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remainder='passthrough')
     X = np.array(ct.fit_transform(X))
     ```
-- Encoding the Dependent Variable
+- Encoding the Categorical data when order matters (e.g. small,medium,large etc.)
 !!! abstract "SkLearn API"
     [Label Encoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
 
@@ -61,6 +61,7 @@ Common Approach - Replace missing value with average of all values in the column
 
 ### Feature Scaling
 - Used in some ML models(not all) 
+    - Models where there is an implicit relation between the dependent and independent variables (e.g. Support Vector Regression Model)
 - Done in order to avoid some features dominating the other features
 - Feature scaling is always applied to columns
 - ==Should not be applied to encoded columns==
@@ -91,3 +92,8 @@ $$ x_{norm} = \frac{x - min(x)}{max(x) - min (x)} $$
     # Since the encoded columns are present in the front of the array, we usually just take everything from the index of the first non encoded numerical column
     X_train[:, 3:] = sc.fit_transform(X_train[:, 3:])
     ```
+
+### Model Evaluation
+
+!!! abstract "SkLearn API"
+    [R2 Score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score)

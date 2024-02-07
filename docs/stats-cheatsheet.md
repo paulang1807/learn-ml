@@ -708,26 +708,33 @@ $$ \sum_{i=1}^n x_i \hat u_i = 0 $$
 
 $$ \overline y = \hat \beta_0 + \hat \beta_1 \overline x $$
 
-### Sum of Squared Residuals
-$$ \sum_{i=1}^n \hat u_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2= \sum_{i=1}^n (y_i - \hat \beta_0 - \hat \beta_1 x_i)^2 $$
-
 ### Measures of Variation
 
-##### Explained Sum of Squares
+#### Sum of Squared Residuals
+$$ \sum_{i=1}^n \hat u_i^2 = \sum_{i=1}^n (y_i - \hat y_i)^2= \sum_{i=1}^n (y_i - \hat \beta_0 - \hat \beta_1 x_i)^2 $$
+
+#### Explained Sum of Squares
 $$ SSE = \sum_{i=1}^n(\hat y_i - \overline y)^2 $$
 
-##### Residual Sum of Squares
-$$ SSR = \sum_{i=1}^n \hat u_i^2 $$
+#### Residual Sum of Squares
+$$ SSR = \sum_{i=1}^n \hat u_i^2  = \sum_{i=1}^n (y_i - \hat y_i)^2 $$
 
-##### Total Sum of Squares
+#### Total Sum of Squares
 $$ SST = \sum_{i=1}^n(y_i - \overline y)^2 $$
 
 $$ SST = SSE + SSR $$
 
-##### Mean Square of Regression
+#### Coefficient of Determination
+$$ R^2 = 1 - \frac{SSR}{SST} $$
+
+#### Adjusted R-Squared
+$$ Adj \ R^2 = 1 - (1 - R^2) * \frac{n -1}{n - k - 1} $$
+where $n$ is the sample size and $k$ is the number of independent variables
+
+#### Mean Square of Regression
 $$ MSR = \frac{SSR}{degrees \ of \ freedom \ of \ SSR} $$
 
-##### Root Mean Square Error
+#### Root Mean Square Error
 $$ RMSE = \sqrt {\frac{SSR}{n}} $$
 
 ## Multiple Linear Regression Model
@@ -759,3 +766,11 @@ $$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + ... + \beta_n x_1^n $$
 
     **Degrees of Freedom**
     $$ df = n - 1 $$
+
+## Support Vector Regression Model
+
+$$ \frac{1}{2}||w||^2 + C \sum_{i=1}^m (\xi_i + \xi_i^*) $$
+
+Minimize
+
+$$ C \sum_{i=1}^m (\xi_i + \xi_i^*) $$

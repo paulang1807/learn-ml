@@ -51,38 +51,6 @@ If the data is clustered
     - Correlation between residuals and regressors is zero, $\sum_{i=1}^n x_i \hat u_i = 0$
     - Sample averages of y and x (point $\overline x, \overline y$) lie on a regression line, $\overline y = \hat \beta_0 + \hat \beta_1 \overline x$
 
-### [Sum of Squared Residuals](../stats-cheatsheet/#sum-of-squared-residuals)
-To find the best fitting regression line that shows the trend in the data, we want to minimize all the residual values, because doing so would minimize the distance of the data points from the line of best fit. 
-
-In order to minimize the residual, we actually minimize the squae of the residuals so that the positive and negative values of the residuals do not cancel out and all residuals get minimized.
-
-This form of regression is also referred to as ==**Ordinary Least Squares Regression**== as we are trying to minimize the squae of the residuals.
-
-### [Measures of Variation](../stats-cheatsheet/#measures-of-variation)
-#### Coefficient of Determination, $r^2$
-Measures the percentage of error we eliminated by using least-squares regression instead of just mean,$\overline y$. See [Correlation](../stats-cheatsheet/#correlation)
-
-- Tells us how well the regression line approximates the data
-!!! tip
-    - Expressed as percentage
-        - 100% describes a line that is a perfect fit to data
-        - The higher the value, the more data points pass through the line
-        - Very small values indicate that the regression line does not pass through many data points
-
-#### [Root Mean Square Error (RMSE)](../stats-cheatsheet/#root-mean-square-error)
-The standard deviation of the residuals
-
-- Also called the ==**Root Mean Square Deviation(RMSD)**==
-!!! tip
-    - Can be thought of as lines representing the standard deviation of the residuals
-        - Parallel to the regression line
-        - Distance between the lines represents the fit
-            - The lesser the distance, the better the fit
-    - The concept of normal distribution probability based on standard deviations(see [here](../stats-distributions/#cust-id-dst-ndist-tip)) can be applied here
-        - ==68.2% of the data points will fall between 1 * RMSE of the regression line==
-        - ==95.4% of the data points will fall between 2 * RMSE of the regression line==
-        - ==99.7% of the data points will fall between 3 * RMSE of the regression line==
-
 ## [Multiple Linear Regression Model](../stats-cheatsheet/#multiple-linear-regression-model)
 
 ### Assumptions
@@ -185,3 +153,56 @@ Three types:
     - Whether two variables in the **same group** are related
 - $\chi^2$ test for goodness of fit
     - Whether data (in a single data table) fits a specified distribution
+
+## [Support Vector Regression Model](../stats-cheatsheet/#support-vector-regression-model)
+- Disregards any error within the ==$\varepsilon$ insensitive cube== (a cube with a buffer area around the regression line)
+- Care about the errors above($\xi$) and below($\xi^*$) the cube area
+
+    - These error points are vectors and are referred to as ==**support vectors**==
+
+## [Measures of Variation](../stats-cheatsheet/#measures-of-variation)
+
+### [Sum of Squared Residuals](../stats-cheatsheet/#sum-of-squared-residuals)
+To find the best fitting regression line that shows the trend in the data, we want to minimize all the residual values, because doing so would minimize the distance of the data points from the line of best fit. 
+
+In order to minimize the residual, we actually minimize the square of the residuals so that the positive and negative values of the residuals do not cancel out and all residuals get minimized.
+
+This form of regression is also referred to as ==**Ordinary Least Squares Regression**== as we are trying to minimize the squae of the residuals.
+
+### [Coefficient of Determination, $R^2$](../stats-cheatsheet/#coefficient-of-determination)
+Measures the percentage of error we eliminated by using least-squares regression instead of just mean,$\overline y$. 
+
+- For Simple Linear Regression, square of the [Correlation Coefficient ($r^2$)](../stats-cheatsheet/#correlation) is used instead of $R^2$. 
+
+- Tells us how well the regression line approximates the data
+!!! tip
+    - Ranges between 0 and 1
+    - Expressed as percentage
+        - 100% describes a line that is a perfect fit to data
+            - Very rare (almost non -existant) for ML models
+        - The higher the value, the more data points pass through the line
+        - Very small values indicate that the regression line does not pass through many data points
+
+### [Adjusted R-Squared](../stats-cheatsheet/#adjusted-r-squared)
+
+- Better measure for model evaluation
+- Sensitive to the number of independent variables in the model
+- Penalizes the model when increasing independent variables
+    - As we put more variables into the model, R-squared increases even if those variables are unrelated to the outcome
+        - OLS tries to predict variables that reduce the residuals
+        - Sets coefficients of additional independent variables to 0 if they don't contribute to reducing residuals
+    - Adjusted R-squared attempts to correct for this by deflating R-squared based on increase of additional predictors
+
+### [Root Mean Square Error (RMSE)](../stats-cheatsheet/#root-mean-square-error)
+The standard deviation of the residuals
+
+- Also called the ==**Root Mean Square Deviation(RMSD)**==
+!!! tip
+    - Can be thought of as lines representing the standard deviation of the residuals
+        - Parallel to the regression line
+        - Distance between the lines represents the fit
+            - The lesser the distance, the better the fit
+    - The concept of normal distribution probability based on standard deviations(see [here](../stats-distributions/#cust-id-dst-ndist-tip)) can be applied here
+        - ==68.2% of the data points will fall between 1 * RMSE of the regression line==
+        - ==95.4% of the data points will fall between 2 * RMSE of the regression line==
+        - ==99.7% of the data points will fall between 3 * RMSE of the regression line==
