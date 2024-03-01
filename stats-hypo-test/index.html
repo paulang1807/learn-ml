@@ -335,6 +335,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-cls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-clustr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clustering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -575,6 +635,46 @@
   
   <span class="md-ellipsis">
     Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-cls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-clustr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clustering
   </span>
   
 
@@ -892,13 +992,27 @@
 </ul>
 </div>
 <h2 id="type-i-and-type-ii-errors">Type I and Type II errors</h2>
-<p><strong><b id="cust-id-hyptst-typ1"><a href="../stats-cheatsheet/#type-1-error-rate">Type I error</a></b></strong>: When we mistakenly REJECT a null hypothesis that’s actually true. </p>
+<p><strong><b id="cust-id-hyptst-typ1"><a href="../stats-cheatsheet/#type-1-error-rate">Type I error</a></b></strong>: </p>
 <ul>
+<li>When we mistakenly REJECT a null hypothesis that’s actually true. <ul>
 <li>The probability of making a Type I error is given by <a href="../stats-distributions/#cust-id-dst-alpha-val">Alpha <span class="arithmatex">\(\alpha\)</span></a></li>
 </ul>
-<p><strong>Type II error</strong>: When we mistakenly DO NOT REJECT a null hypothesis that’s actually false. </p>
+</li>
+<li>In Machine Learning, this happens when the model incorrectly predicts a positive result (1) although the actual value is negative (0)<ul>
+<li>This is also referred to as <mark><strong>False Positives</strong></mark></li>
+</ul>
+</li>
+</ul>
+<p><strong>Type II error</strong>: </p>
 <ul>
+<li>When we mistakenly DO NOT REJECT a null hypothesis that’s actually false. <ul>
 <li>The probability of making a Type II error is given by Beta <span class="arithmatex">\(\beta\)</span>.</li>
+</ul>
+</li>
+<li>In Machine Learning, this happens when the model incorrectly predicts a negative result (0) although the actual value is positive (1)<ul>
+<li>This is also referred to as <mark><strong>False Negatives</strong></mark></li>
+</ul>
+</li>
 </ul>
 <p><strong><a href="../stats-cheatsheet/#power">Power</a></strong>: The probability that we’ll reject the null hypothesis when it’s false. </p>
 <ul>

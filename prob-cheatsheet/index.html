@@ -335,6 +335,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-cls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-clustr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clustering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -489,6 +549,46 @@
   
   <span class="md-ellipsis">
     Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-cls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-clustr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clustering
   </span>
   
 
@@ -1041,13 +1141,14 @@
 <div class="arithmatex">\[ = P(A|B,C)P(B|C)P(C) = P(B|A,C)P(C|A)P(A) \]</div>
 <h3 id="odds">Odds</h3>
 <p>If probability <span class="arithmatex">\(P(E) = p\)</span>, then odds
-<script type="math/tex; mode=display"> O(E) = q = \frac{p}{1 - p} = \frac{p}{p'} </script>
-<script type="math/tex; mode=display"> p = \frac{q}{1 + q} </script>
+<script type="math/tex; mode=display"> O(E) = \frac{p}{1 - p} = \frac{p}{p'} </script>
 </p>
-<ul>
-<li><span class="arithmatex">\(0 \leq p \leq 1; \ 0 \leq q \leq \infty\)</span></li>
-<li><span class="arithmatex">\(P(E^C) = 1 - P(E); \ O(E^C) = 1/O(E)\)</span></li>
-</ul>
+<!-- $$ O(E) = q = \frac{p}{1 - p} = \frac{p}{p'} $$
+$$ p = \frac{q}{1 + q} $$
+
+* $0 \leq p \leq 1; \ 0 \leq q \leq \infty$
+* $P(E^C) = 1 - P(E); \ O(E^C) = 1/O(E)$ -->
+
 <h3 id="union-and-intersection">Union and Intersection</h3>
 <ul>
 <li><strong>A and B</strong> (<span class="arithmatex">\(P(A \cap B)\)</span>) is the set of outcomes in both A and B, which implies 
@@ -1132,13 +1233,13 @@
 <ul>
 <li>
 <p>For any three events
-<script type="math/tex; mode=display"> P(Z|X \cap Y) = \frac{P(X \cap Y \cap Z)}{P(X \cap Y)} </script>
+<script type="math/tex; mode=display"> P(C|A \cap B) = \frac{P(A \cap B \cap C)}{P(A \cap B)} </script>
 </p>
 </li>
 <li>
 <p><strong>Bayesian Updating</strong></p>
 <p>Posterior Probability = <span class="arithmatex">\(\frac{\text{Likelihood} \times \text{Prior}}{\text{Sum of products of Likelihood and Prior (also known as Normalizer)}}\)</span> <BR>
-where Likelihood is P(Data|Hypothesis), i.e.P(Y|X) and Posterior = P(Hypothesis|Data), i.e. P(X|Y)</p>
+where Likelihood is P(Data|Hypothesis), i.e.P(B|A) and Posterior = P(Hypothesis|Data), i.e. P(A|B)</p>
 </li>
 </ul>
 <h3 id="bayes-factor">Bayes Factor</h3>

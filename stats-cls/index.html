@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stats-distributions/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stats-cls/">
       
       
-        <link rel="prev" href="../stats-basics/">
+        <link rel="prev" href="../stats-reg/">
       
       
-        <link rel="next" href="../stats-rv/">
+        <link rel="next" href="../stats-clustr/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Distributions - Machine Learning Notes</title>
+        <title>Classification - Machine Learning Notes</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#normal-distribution-gaussian-distribution-x-sim-nmu-sigma2" class="md-skip">
+        <a href="#logistic-regression" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Distributions
+              Classification
             
           </span>
         </div>
@@ -464,27 +464,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Distributions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../stats-distributions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -493,100 +475,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#normal-distribution-gaussian-distribution-x-sim-nmu-sigma2" class="md-nav__link">
-    Normal distribution (Gaussian Distribution), \(X \sim N(\mu, \sigma^2)\)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#outliers" class="md-nav__link">
-    Outliers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#z-scores" class="md-nav__link">
-    Z-Scores
-  </a>
-  
-    <nav class="md-nav" aria-label="Z-Scores">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#critical-values" class="md-nav__link">
-    Critical Values
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chebyshevs-theorem" class="md-nav__link">
-    Chebyshev’s Theorem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#binomial-distribution-x-sim-binnp" class="md-nav__link">
-    Binomial Distribution, \(X \sim Bin(n,p)\)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#geometric-distribution" class="md-nav__link">
-    Geometric Distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#poisson-distribution" class="md-nav__link">
-    Poisson Distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#students-t-distribution" class="md-nav__link">
-    Students T-Distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#confidence-intervals-ci" class="md-nav__link">
-    Confidence Intervals (CI)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -676,9 +564,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../stats-cls/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Classification
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -687,6 +593,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
+  </a>
+  
+    <nav class="md-nav" aria-label="Logistic Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#likelihood-function" class="md-nav__link">
+    Likelihood Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-nearest-neighbor" class="md-nav__link">
+    K-Nearest Neighbor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-vector-machine-svm" class="md-nav__link">
+    Support Vector Machine (SVM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Support Vector Machine (SVM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-kernels" class="md-nav__link">
+    Using Kernels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naive-bayes" class="md-nav__link">
+    Naive Bayes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-tree-classification" class="md-nav__link">
+    Decision Tree Classification
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -930,30 +915,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#normal-distribution-gaussian-distribution-x-sim-nmu-sigma2" class="md-nav__link">
-    Normal distribution (Gaussian Distribution), \(X \sim N(\mu, \sigma^2)\)
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#outliers" class="md-nav__link">
-    Outliers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#z-scores" class="md-nav__link">
-    Z-Scores
-  </a>
-  
-    <nav class="md-nav" aria-label="Z-Scores">
+    <nav class="md-nav" aria-label="Logistic Regression">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#critical-values" class="md-nav__link">
-    Critical Values
+  <a href="#likelihood-function" class="md-nav__link">
+    Likelihood Function
   </a>
   
 </li>
@@ -964,43 +935,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#chebyshevs-theorem" class="md-nav__link">
-    Chebyshev’s Theorem
+  <a href="#k-nearest-neighbor" class="md-nav__link">
+    K-Nearest Neighbor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#binomial-distribution-x-sim-binnp" class="md-nav__link">
-    Binomial Distribution, \(X \sim Bin(n,p)\)
+  <a href="#support-vector-machine-svm" class="md-nav__link">
+    Support Vector Machine (SVM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Support Vector Machine (SVM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-kernels" class="md-nav__link">
+    Using Kernels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naive-bayes" class="md-nav__link">
+    Naive Bayes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#geometric-distribution" class="md-nav__link">
-    Geometric Distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#poisson-distribution" class="md-nav__link">
-    Poisson Distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#students-t-distribution" class="md-nav__link">
-    Students T-Distribution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#confidence-intervals-ci" class="md-nav__link">
-    Confidence Intervals (CI)
+  <a href="#decision-tree-classification" class="md-nav__link">
+    Decision Tree Classification
   </a>
   
 </li>
@@ -1023,197 +993,77 @@
   
 
 
-  <h1>Distributions</h1>
+  <h1>Classification</h1>
 
-<h2 id="normal-distribution-gaussian-distribution-x-sim-nmu-sigma2"><a href="../stats-cheatsheet/#normal-distribution">Normal distribution (Gaussian Distribution), <span class="arithmatex">\(X \sim N(\mu, \sigma^2)\)</span></a></h2>
-<p>A symmetric, bell-shaped distribution for Continuous Random Variables that models measurement error, intelligence/ability, height, averages of lots of data</p>
-<p><img alt="Normal Distribution" src="../img/normal-dist.png" /></p>
-<p id="cust-id-dst-ndist-tip"></p>
-
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The probability of a random variable falling within </p>
+<p><strong>Classification is the process of estimating the value of the dependent categorical variable from the independent variable(s).</strong></p>
+<h2 id="logistic-regression"><a href="../stats-cheatsheet/#logistic-regression-model">Logistic Regression</a></h2>
 <ul>
-<li>1 Standard Deviation is <strong>68.2%</strong> i.e., 68.2% of the normal distribution area is between standard deviation -1 and 1</li>
-<li>2 Standard Deviations is <strong>95.4%</strong> i.e., 95.4% of the normal distribution area is between standard deviation -2 and 2</li>
-<li>3 Standard Deviations is <strong>99.7%</strong> i.e., 99.7% of the normal distribution area is between standard deviation -3 and 3</li>
+<li>Predict a categorical dependent variable from a set of independent variables</li>
+<li>Curve is defined by the <a href="../stats-cheatsheet/#cust-id-cs-log-res-sig">sigmoid function</a></li>
+<li>Parameters are estimated using the <mark><strong>Maximum Likelihood Estimation</strong></mark></li>
 </ul>
-<p>Also see <a href="#cust-id-dst-zscore-tip">z-score tip</a> and <a href="#cust-id-dst-zval-for-ci">Z-Values for Common Confidence Levels</a></p>
-</div>
-<p><strong>Symmetric distribution:</strong> The distribution’s mean and median are at the very center of the distribution, with an equal about of data to the left and right</p>
-<p><strong>Skewed distribution:</strong> A non-symmetric distribution that leans right or left. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<h3 id="likelihood-function"><a href="../stats-cheatsheet/#likelihood-function">Likelihood Function</a></h3>
 <ul>
-<li>Negatively/left-skewed/left-tailed distributions have their tail on the left<ul>
-<li>Mean &lt; Median &lt; Mode</li>
+<li>To estimate <span class="arithmatex">\(\beta\)</span> vectors consider a sample of data points with labels either 0 or 1</li>
+<li>Projection of data points on the sigmoid curve gives the probability of success (probability of the point being labelled as 1) for the data point<ul>
+<li>Likelihood for samples labeled as <code>1</code><ul>
+<li>we try to estimate <span class="arithmatex">\(\beta\)</span> such that the product of probability of all data points is as close to 1 as possible</li>
+<li>the projection of the data point on the sigmoid curve gives the probability of success, so <span class="arithmatex">\(p(x)\)</span> gives the probability of being close to 1</li>
 </ul>
 </li>
-<li>Positively/right-skewed/right-tailed distributions have their tail on the right<ul>
-<li>Mean &gt; Median &gt; Mode</li>
+<li>Likelihood for samples labeled as <code>0</code><ul>
+<li>we try to estimate <span class="arithmatex">\(\beta\)</span> such that the product of probability of all data points is as close to 0 as possible </li>
+<li>the projection of the data point on the sigmoid curve gives the probability of success, so <span class="arithmatex">\(1 - p(x)\)</span> gives the probability of being close to 0</li>
+</ul>
+</li>
+<li>The <a href="../stats-cheatsheet/#cust-id-cs-likelihood">likelihood function</a> returns the probability of how well the model(curve) predicts the label<ul>
+<li>Combination (Product) of conditions for samples labeled as <code>1</code> and <code>0</code></li>
 </ul>
 </li>
 </ul>
-</div>
-<h2 id="outliers">Outliers</h2>
-<div class="admonition success">
-<p class="admonition-title">Expression</p>
-<p><strong>Low outliers:</strong>  <span class="arithmatex">\(Q1 - 1.5(IQR)\)</span></p>
-<p><strong>High outliers:</strong>  <span class="arithmatex">\(Q3 + 1.5(IQR)\)</span></p>
-</div>
-<p><mark>When we have a data set with outliers that skew the data,</mark></p>
-<ul>
-<li><mark>the median will be a better measure of central tendency than the mean</mark></li>
-<li><mark>the interquartile range will be a better measure of spread than standard deviation</mark></li>
+</li>
+<li>The likelihood function across multiple models (sigmoid curves) is optimized to get the maximum likelihood</li>
 </ul>
-<p>That’s because mean and standard deviation will take into account all points in the data set, including the outliers. But median and IQR can ignore these outliers, giving us more accurate measurements of the data. </p>
-<h2 id="z-scores"><a href="../stats-cheatsheet/#z-score">Z-Scores</a></h2>
-<p>The <strong>z-score</strong> for a data point x is the score that tells us the <mark><strong>number of standard deviations between between x and the mean of μ</strong></mark>. </p>
+<h2 id="k-nearest-neighbor">K-Nearest Neighbor</h2>
 <ul>
-<li>Use z-score to find out the probability(p-value) of finding a random point in a normal distribution. </li>
-<li>Use <strong><a href="https://www.z-table.com/">z score tables</a></strong> (also known as <mark>Standard normal curve table</mark>) to find the probability corresponding to a given z score. <ul>
-<li>The probability values in the table represent the probability of finding the point in the entire area to the left of the point. </li>
-<li>In order to find the probability between the mean (which is 0 for normal distribution and will be at the 50% mark) and the point, subtract 50 from the probability value shown in the table.</li>
-<li>Data points that are less than the mean will be to the left of the mean and will have a <mark>negative z-score</mark>. They should be looked up in the table of negative z-scores </li>
-<li>Data points that are greater than the mean will be to the right of the mean and will have a <mark>positive z-score</mark>. They should be looked up in the table of positive z-scores </li>
-<li><mark><strong>The z-table always gives us the percentage of data that is below our data point. Therefore, to find the percentage of data above our data point, we have to take 1 minus the value from the table</strong></mark></li>
-<li>z score tables can also be used to find the z row and column values (<a href="#critical-values">z critical value</a>) corresponding to the percentile</li>
+<li>Steps<ul>
+<li>Choose number of neighbors (K) - usually an odd number</li>
+<li>Take the K nearest neighbors measured by the <a href="../ml-cheatsheet/#euclidean-distance">Euclidean distance</a> (most common distance calculation used)</li>
+<li>Count the number of data points in each category among the neighbors</li>
+<li>Predict dependent data point to be in the category with the most neighbors</li>
 </ul>
 </li>
 </ul>
-<h3 id="critical-values">Critical Values</h3>
-<p><mark>The <strong>z-critical value</strong>, <span class="arithmatex">\(z_\alpha\)</span> is the <span class="arithmatex">\(100(1 - \alpha)\)</span>th percentile of the standard normal distribution</mark></p>
+<h2 id="support-vector-machine-svm">Support Vector Machine (SVM)</h2>
 <ul>
-<li>We can use <mark>qnorm</mark> to find the z critical values : <span class="arithmatex">\(z_{0.05} = qnorm(0.95, 0,1)\)</span> </li>
-<li>
-<p>For finding the z-critical value corresponding to <span class="arithmatex">\(\alpha\)</span> = 5 find the row and column corresponding to .95 (this will be equal to 1.64)</p>
-<p><p id="cust-id-dst-zscore-tip"></p></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>95% of the area of standard normal distribution is within (to the left of) <span class="arithmatex">\(Z = 1.64\)</span></li>
-<li>99.5% of the area of standard normal distribution is within (to the left of) <span class="arithmatex">\(Z = 2.58\)</span></li>
-<li>68% of the area is within 1 standard deviation of the mean, <span class="arithmatex">\(P(-1 \leq Z \leq 1) = .6826\)</span></li>
-<li>95% is within 2 standard deviations, <span class="arithmatex">\(P(-2 \leq Z \leq 2) \approx .95\)</span> ; more precisely <span class="arithmatex">\(P(-1.96 \leq Z \leq 1.96) = .95\)</span></li>
-<li>99% is within <span class="arithmatex">\(P(-2.58 \leq Z \leq 2.58)\)</span> ; more precisely <span class="arithmatex">\(P(-2.58 \leq Z \leq 2.58) = .9902\)</span></li>
-<li>99.7% is within 3 standard deviations, <span class="arithmatex">\(P(-3 \leq Z \leq 3) \approx .997\)</span> ; more precisely <span class="arithmatex">\(P(-3.29 \leq Z \leq 3.29) = .999\)</span></li>
-<li><span class="arithmatex">\(P(Z \lt 1) \approx 0.8413\)</span></li>
-<li><span class="arithmatex">\(P(Z \lt 2) \approx 0.9772\)</span></li>
-<li><span class="arithmatex">\(P(Z \lt 3) \approx 0.9987\)</span></li>
-</ul>
-<p>Also see <a href="#cust-id-dst-ndist-tip">normal distribution tip</a> and <a href="#cust-id-dst-zval-for-ci">Z-Values for Common Confidence Levels</a></p>
-</div>
-</li>
-<li>
-<p>Use <mark>pnorm</mark> with z value as parameter to get the corresponding percentile and use <mark>qnorm</mark> with the percentile to get the corresponding z value</p>
-</li>
-<li>If the z-critical value falls in the <a href="#cust-id-dst-reject-reg">rejection region</a>, we reject the <a href="">Null Hypothesis</a><ul>
-<li>Also see <a href="../stats-hypo-test/#cust-id-hyptst-null-reject-z">Rejecting Null Hypothesis Based on critical values</a></li>
-</ul>
-</li>
-<li>z-critical value, <span class="arithmatex">\(z_ {\alpha/2}\)</span> for the upper tail is the <mark><strong>right critical value</strong></mark> (<span class="arithmatex">\(P(Z \gt \alpha/2) = \alpha/2\)</span>) and that for the lower tail is the <mark><strong>left critical value</strong></mark> (<span class="arithmatex">\(P(Z \lt \alpha/2) = - \alpha/2)\)</span><ul>
-<li><span class="arithmatex">\(\pm z_ {\alpha/2}\)</span> are also referred to as the <mark><strong>boundaries of the region of rejection</strong></mark></li>
+<li>Helps deine the best decision boundary to separate the categories</li>
+<li>Determines the plane for the <mark><strong>Maximum Margin Hyperplane (Maximum Margin Classifier)</strong></mark><ul>
+<li>Equidistant from the <mark><strong>Support Vectors</strong></mark></li>
+<li><strong>Support Vectors</strong> are the vectors that are closest to the <strong>Maximum Margin Hyperplane</strong><ul>
+<li>Think of these as the vectors which are the most similar (most challenging to differentiate) across the categories</li>
 </ul>
 </li>
 </ul>
-<h2 id="chebyshevs-theorem">Chebyshev’s Theorem</h2>
-<p>For all <span class="arithmatex">\(k \gt 1\)</span>, at least <span class="arithmatex">\((1 - \frac{1}{k^2})\)</span>% of our data must be within <span class="arithmatex">\(k\)</span> standard deviations of the mean, regardless of the shape of the data’s distribution.  </p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<ul>
-<li>At least <strong>75 % of the data must be within k = 2</strong> standard deviations of the mean. </li>
-<li>At least <strong>89 % of the data must be within k = 3</strong> standard deviations of the mean. </li>
-<li>At least <strong>94 % of the data must be within k = 4</strong> standard deviations of the mean.</li>
+</li>
+<li>Objective is to maximize the sum of the distances of the Maximum Margin plane from the support vectors</li>
 </ul>
-</div>
-<h2 id="binomial-distribution-x-sim-binnp"><a href="../stats-cheatsheet/#binomial-distribution">Binomial Distribution, <span class="arithmatex">\(X \sim Bin(n,p)\)</span></a></h2>
-<p>This type of distribution is based on <a href="../stats-rv/#binomial-random-variables">Binomial Variables</a> (Discrete RV)</p>
-<p>Suppose we are repeating an experiment having only two outcomes <span class="arithmatex">\(\{\text{success},\text{failure}\}\)</span>, <span class="arithmatex">\(n\)</span> times in such are way that their outcomes are independent where <span class="arithmatex">\(p = P(\text{success})\)</span>, then the probability of <span class="arithmatex">\(x\)</span> successes in <span class="arithmatex">\(n\)</span> trials is given by the <strong><a href="../prob-cheatsheet/#binomial-probability">Binomial Probability</a></strong></p>
-<h2 id="geometric-distribution"><a href="../stats-cheatsheet/#geometric-distribution">Geometric Distribution</a></h2>
-<p>This type of distribution is based on <a href="../stats-rv/#geometric-random-variables">Geometric Variables</a>  (Discrete RV)</p>
-<p>Also see <a href="../prob-cheatsheet/#geometric-probability">Geometric Probability</a>.</p>
-<h2 id="poisson-distribution"><a href="../stats-cheatsheet/#poisson-distribution">Poisson Distribution</a></h2>
-<p><strong>Poisson process:</strong> Calculates the number of times an event occurs in a period of time, or in a particular area, or over some distance, or within any other kind of measurement.</p>
+<h3 id="using-kernels">Using Kernels</h3>
 <ul>
-<li>The experiment counts the number of occurrences of an event over some other measurement,</li>
-<li>The mean is the same for each interval,</li>
-<li>The count of events in each interval is independent of the other intervals,</li>
-<li>The intervals don’t overlap, and</li>
-<li>The probability of the event occurring is proportional to the period of time.</li>
-<li>Used to model Discrete RVs</li>
-</ul>
-<p>The probability that <span class="arithmatex">\(k\)</span> events will be observed during any particular time interval of length <span class="arithmatex">\(t\)</span> is given by the <strong><a href="../prob-cheatsheet/#poisson-probability">Poisson Probability</a></strong></p>
-<h2 id="students-t-distribution"><a href="../stats-cheatsheet/#students-t-distribution">Students T-Distribution</a></h2>
-<ul>
-<li>Similar to the standard normal distribution in the sense that it’s <ul>
-<li>symmetrical</li>
-<li>bell-shaped</li>
-<li>and centered around the mean μ = 0, </li>
+<li>Mapping non linear data points to higher planes allows us to define linear boundaries to separate them<ul>
+<li>We can then project them back to the original plane to get the non linear separator in the original plane</li>
 </ul>
 </li>
-<li>Heavier tails (flatter and wider distribution compared to standard normal distribution)<ul>
-<li>The larger the sample size, the taller and narrower the t-distribution gets. </li>
-<li>The smaller the sample size, the shorter and wider the t-distribution gets. </li>
+<li>Kernels help avoid the high compute intensive requirements that comes with mapping data points to higher planes</li>
 </ul>
-</li>
-<li><mark>Standard Deviation of the T-Distribution is larger than that of the Standard Normal Distribution</mark></li>
-<li>The exact shape depends on the number of <a href="../stats-cheatsheet/#degrees-of-freedom">degrees of freedom</a></li>
-<li>Smaller sample sizes <ul>
-<li>Becomes similar to normal distribution as sample size increases and approaches infinity (~ 30 degrees of freedom)</li>
-<li><mark><strong>Used when sample size is less than 30</strong></mark></li>
-</ul>
-</li>
-<li>Harder to reject the null hypothesis</li>
-<li>Use <a href="https://www.tdistributiontable.com/">t score table</a> to find the t critical value corresponding to a given t score<ul>
-<li>In the t-table, we see values for <mark>upper-tail probability along the top of the table</mark>, and <mark>confidence levels along the bottom of the table</mark></li>
-</ul>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Upper Tail Probabilities and Confidence Levels</p>
+<h2 id="naive-bayes"><a href="../probability/#bayes-theorem">Naive Bayes</a></h2>
 <ul>
-<li>Upper Tail Probability of 0.05    = Confidence Level of 90%</li>
-<li>Upper Tail Probability of 0.025   = Confidence Level of 95%</li>
-<li>Upper Tail Probability of 0.01    = Confidence Level of 98%</li>
-<li>Upper Tail Probability of 0.005   = Confidence Level of 99%</li>
+<li>Assumes the dependent variables to be independent ( and are not correlated)</li>
 </ul>
-</div>
-<h2 id="confidence-intervals-ci"><a href="../stats-cheatsheet/#confidence-interval">Confidence Intervals (CI)</a></h2>
-<p><strong>Point estimate</strong>: An estimator for a singular value, like the sample mean for the population mean, or the sample standard deviation for the population standard deviation</p>
-<p><strong>Interval estimate</strong>: A range of values that estimate the interval in with some parameter may lie</p>
-<p><strong>Confidence level</strong>: The probability that an interval estimate will include the population parameter</p>
-<p><mark><strong><b id="cust-id-dst-alpha-val"><a href="../stats-cheatsheet/#cust-id-cs-alpha-val">Alpha Value</a></b></strong></mark>: The probability of making a <a href="../stats-hypo-test/#cust-id-hyptst-typ1">Type 1 Error</a>. It is also called the <mark><strong>Level of Significance</strong></mark></p>
+<h2 id="decision-tree-classification">Decision Tree Classification</h2>
 <ul>
-<li><mark>A (<span class="arithmatex">\(1 - \alpha\)</span>) CI has a significance level of <span class="arithmatex">\(\alpha\)</span></mark></li>
-<li><span class="arithmatex">\(\alpha\)</span> is split evenly between the upper and lower tails (<span class="arithmatex">\(\frac {\alpha}{2}\)</span>)</li>
-<li>The region under <span class="arithmatex">\(\alpha\)</span> is referred to as the <mark><strong><b id="cust-id-dst-reject-reg">Rejection region</b></strong></mark> <ul>
-<li>It is the region outside the confidence interval, in the tail(s) of the probability distribution.</li>
+<li>Also See <a href="../stats-reg/#decision-tree-regression">Decision Tree Regression</a></li>
+<li>Uses entropy for splitting data</li>
 </ul>
-</li>
-</ul>
-<p><mark>Confidence Interval can be denoted as the point estimate of <span class="arithmatex">\(\mu \pm (z\)</span> critical value) (standard error of the mean)</mark></p>
-<p id="cust-id-dst-zval-for-ci"></p>
-<div class="admonition tip">
-<p class="admonition-title">Z-Values for Common Confidence Levels</p>
-<ul>
-<li>For a 90% CL, <span class="arithmatex">\(\alpha\)</span> = .10, <span class="arithmatex">\(\alpha/2\)</span> = .05, <span class="arithmatex">\(z_{\frac{\alpha}{2}} = \pm 1.65\)</span></li>
-<li>For a 95% CL, <span class="arithmatex">\(\alpha\)</span> = .05, <span class="arithmatex">\(\alpha/2\)</span> = .025, <span class="arithmatex">\(z_{\frac{\alpha}{2}} = \pm 1.96\)</span></li>
-<li>For a 99% CL, <span class="arithmatex">\(\alpha\)</span> = .01, <span class="arithmatex">\(\alpha/2\)</span> = .005, <span class="arithmatex">\(z_{\frac{\alpha}{2}} = \pm 2.58\)</span></li>
-</ul>
-<p>Also see <a href="#cust-id-dst-zscore-tip">z-score tip</a> and <a href="#cust-id-dst-ndist-tip">normal distribution tip</a></p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>The higher the confidence level, the wider the confidence interval (because as <span class="arithmatex">\(z\)</span> gets larger, the ME will get larger which makes the confidence interval wider)</li>
-<li>The larger the population standard deviation <span class="arithmatex">\(\sigma\)</span>, the wider the confidence interval (because as <span class="arithmatex">\(\sigma\)</span> gets larger, the ME will get larger which makes the confidence interval wider)</li>
-<li>The larger the sample size <span class="arithmatex">\(n\)</span>, the narrower the confidence interval (because as <span class="arithmatex">\(n\)</span> gets larger, the ME will get smaller which makes the confidence interval narrower)</li>
-</ul>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Remember</p>
-<p><strong>We want the smallest confidence interval we can get because the smaller the confidence interval, the more accurately we can estimate the population parameter</strong></p>
-</div>
 
 
 
