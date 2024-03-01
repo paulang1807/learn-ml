@@ -154,11 +154,20 @@ Three types:
 - $\chi^2$ test for goodness of fit
     - Whether data (in a single data table) fits a specified distribution
 
+
+## Decision Tree Regression
+- At a very high level,
+    - Splits data to maximize categories and finding optimal splits
+    - The splitting process is repeated till all optimal splits are found
+        - The decision process for splitting data results in a tree like structure
+    - A split is also referred to as a leaf
+        - The last leaf is called the terminal leaf
+
 ## [Support Vector Regression Model](../stats-cheatsheet/#support-vector-regression-model)
 - Disregards any error within the ==$\varepsilon$ insensitive cube== (a cube with a buffer area around the regression line)
 - Care about the errors above($\xi$) and below($\xi^*$) the cube area
 
-    - These error points are vectors and are referred to as ==**support vectors**==
+    - These error points are vectors and are referred to as ==**support vectors**==. Also see [Support Vectors in Classification](../stats-cls/#support-vector-machine-svm)
 
 ## [Measures of Variation](../stats-cheatsheet/#measures-of-variation)
 

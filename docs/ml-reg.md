@@ -46,12 +46,14 @@
     **Sample Code**
     ```python
     import statsmodels.api as sm
-    # Statsmodel does not take into account the constant (intercept).
-    # So we need to add it in the form b0x0 where x0 is an array of 1s
 
     # Here X is the array after one hot encoding the independent variable
     X = X[:, 1:]   # Avoiding the Dummy Variable Trap
+
+    # Statsmodel does not take into account the constant (intercept).
+    # So we need to add it in the form b0x0 where x0 is an array of 1s
     X = np.append(arr = np.ones((50, 1)).astype(int), values = X, axis = 1)
+
     regressor_OLS = sm.OLS(endog = y, exog = X_optimal).fit()
     regressor_OLS.summary()
     ```
@@ -73,20 +75,20 @@
     from sklearn.preprocessing import PolynomialFeatures
     num_features = 4
     pf4 = PolynomialFeatures(degree=num_features, include_bias=False)
-    X4 = pf4.fit_transform(X)
+    X4 = pf4.fit_transform(X_train)
 
     from sklearn.linear_model import LinearRegression
     lr4 = LinearRegression()
     lr4.fit(X4, y)
     print (lr4.intercept_)
     print (lr4.coef_)
-    y_pred = lr4.predict(X4)
+    y_pred = lr4.predict(pf4.transform(X_test))
     ```
 
 ### [Support Vector Regression](../stats-reg/#support-vector-regression-model)
 
 - Predict dependent variable based on single independent variable
-- Works very well on non linear problems
+- Works very well on non linear problems; works with linear problems as well
 - Not biased by outliers
 - Joining data points result in a single line
 - Requires Feature Scaling
@@ -114,7 +116,7 @@
     y_pred = sc_y.inverse_transform(y_pred_sc.reshape(-1,1))
     ```
 
-### Decision Tree Regression
+### [Decision Tree Regression](../stats-reg/#decision-tree-regression)
 
 - Predict dependent variable based on one or more independent variables
     - More applicable to datasets with high number of independent variables

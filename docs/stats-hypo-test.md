@@ -18,13 +18,19 @@
     - If $H_0$ cannot be confidently rejected, then $H_a$ may or may not be true. 
 
 ## Type I and Type II errors
-**<b id="cust-id-hyptst-typ1">[Type I error](../stats-cheatsheet/#type-1-error-rate)</b>**: When we mistakenly REJECT a null hypothesis that’s actually true. 
+**<b id="cust-id-hyptst-typ1">[Type I error](../stats-cheatsheet/#type-1-error-rate)</b>**: 
 
-- The probability of making a Type I error is given by [Alpha $\alpha$](../stats-distributions/#cust-id-dst-alpha-val)
+- When we mistakenly REJECT a null hypothesis that’s actually true. 
+    - The probability of making a Type I error is given by [Alpha $\alpha$](../stats-distributions/#cust-id-dst-alpha-val)
+- In Machine Learning, this happens when the model incorrectly predicts a positive result (1) although the actual value is negative (0)
+    - This is also referred to as ==**False Positives**==
 
-**Type II error**: When we mistakenly DO NOT REJECT a null hypothesis that’s actually false. 
+**Type II error**: 
 
-- The probability of making a Type II error is given by Beta $\beta$.
+- When we mistakenly DO NOT REJECT a null hypothesis that’s actually false. 
+    - The probability of making a Type II error is given by Beta $\beta$.
+- In Machine Learning, this happens when the model incorrectly predicts a negative result (0) although the actual value is positive (1)
+    - This is also referred to as ==**False Negatives**==
 
 **[Power](../stats-cheatsheet/#power)**: The probability that we’ll reject the null hypothesis when it’s false. 
 

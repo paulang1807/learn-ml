@@ -63,12 +63,17 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - tables
+  # Use for tooltips (https://squidfunk.github.io/mkdocs-material/reference/tooltips/)
+  - abbr
 
 # Page tree
 nav:
   - Home: index.md
   - Models:
     - Regression: ml-reg.md
+    - Classification: ml-cls.md
+    - Clustering: ml-clustr.md
+    - Cheatsheet: ml-cheatsheet.md
   - Statistics:
     - Basics: stats-basics.md
     - Distributions: stats-distributions.md
@@ -76,6 +81,8 @@ nav:
     - Sampling: stats-sampling.md
     - Hypothesis Testing: stats-hypo-test.md
     - Regression: stats-reg.md
+    - Classification: stats-cls.md
+    - Clustering: stats-clustr.md
     - Cheatsheet: stats-cheatsheet.md
     - Vizuals: stat-viz.md
   - Probability: 

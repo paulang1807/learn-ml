@@ -35,11 +35,12 @@ $$ = P(A|B,C)P(B|C)P(C) = P(B|A,C)P(C|A)P(A) $$
 
 ### Odds
 If probability $P(E) = p$, then odds
-$$ O(E) = q = \frac{p}{1 - p} = \frac{p}{p'} $$
+$$ O(E) = \frac{p}{1 - p} = \frac{p}{p'} $$
+<!-- $$ O(E) = q = \frac{p}{1 - p} = \frac{p}{p'} $$
 $$ p = \frac{q}{1 + q} $$
 
 * $0 \leq p \leq 1; \ 0 \leq q \leq \infty$
-* $P(E^C) = 1 - P(E); \ O(E^C) = 1/O(E)$
+* $P(E^C) = 1 - P(E); \ O(E^C) = 1/O(E)$ -->
 
 ### Union and Intersection
 - **A and B** ($P(A \cap B)$) is the set of outcomes in both A and B, which implies 
@@ -108,12 +109,12 @@ $$ p(x) = \int_a^b p(x|\theta)f(\theta)d\theta $$
     $$ P(A|B)  = \frac{p(A \cap B)}{P(B)}  = \frac{p(B|A) P(A)}{P(B)} = \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|!A)P(!A)}$$
 
 - For any three events
-$$ P(Z|X \cap Y) = \frac{P(X \cap Y \cap Z)}{P(X \cap Y)} $$
+$$ P(C|A \cap B) = \frac{P(A \cap B \cap C)}{P(A \cap B)} $$
 
 - **Bayesian Updating**
 
     Posterior Probability = $\frac{\text{Likelihood} \times \text{Prior}}{\text{Sum of products of Likelihood and Prior (also known as Normalizer)}}$ <BR>
-    where Likelihood is P(Data|Hypothesis), i.e.P(Y|X) and Posterior = P(Hypothesis|Data), i.e. P(X|Y)
+    where Likelihood is P(Data|Hypothesis), i.e.P(B|A) and Posterior = P(Hypothesis|Data), i.e. P(A|B)
 
 ### Bayes Factor
 $$ \frac{P(D|H)}{P(D|H')} $$

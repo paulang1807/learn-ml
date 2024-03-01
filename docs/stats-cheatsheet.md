@@ -104,18 +104,6 @@ r(X_2, X_1) & 1 & \dots & r(X_2, X_n) \\
 r(X_n, X_1) & r(X_n, X_2) & \dots & 1 \\
 \end{bmatrix}$$
 
-#### Tolerance
-$$ T = 1 – R^2 $$
-
-#### Variance Inflation Factor
-$$  VIF = \frac{1}{T} $$
-
-#### Durbin Watson Statistic
-$$ d = \frac{\sum_{t=2}^T (e_t - e_{t-1})^2}{\sum_{t=1}^T e_t^2} $$
-
-#### Homoscedasticity
-$$ var(u|x_1,...,x_k) = \sigma^2$$
-
 ### Z-Score
 $$z = \frac{\overline x - \mu}{\sigma}$$
 
@@ -248,8 +236,8 @@ $$ -1 \leq  Corr(X, Y) \leq 1 $$
 
 ### Binomial RV
 === "Mean"
-    $$ \mu_X = E(X) = np $$
-    where $n$ is the number of trials and $p$ is the probability of success in a single trial.
+    $$ \mu_X = E(X) = np = n * (p * 1 + (1 - p) * 0) $$
+    where $n$ is the number of trials and $p$ is the probability of success and $q$ is the probability of failure in a single trial.
 === "Variance"
     $$ \sigma^2_X = np (1 - p) = npq $$
     where $q=1-p$
@@ -258,7 +246,7 @@ $$ -1 \leq  Corr(X, Y) \leq 1 $$
 
 #### Bernoulli RV
 === "Mean"
-    $$ \mu_X = p $$
+    $$ \mu_X = p = p * 1 + (1 - p) * 0 $$
 === "Variance"
     $$ \sigma^2_X = p (1 - p) = pq $$
     where $q=1-p$
@@ -741,6 +729,19 @@ $$ RMSE = \sqrt {\frac{SSR}{n}} $$
 
 $$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n $$
 
+### Tolerance
+$$ T = 1 – R^2 $$
+where $R$ is the [coefficient of determination](#coefficient-of-determination)
+
+### Variance Inflation Factor
+$$  VIF = \frac{1}{T} = \frac{1}{1 – R^2} $$
+
+### Durbin Watson Statistic
+$$ d = \frac{\sum_{t=2}^T (e_t - e_{t-1})^2}{\sum_{t=1}^T e_t^2} $$
+
+### Homoscedasticity
+$$ var(u|x_1,...,x_k) = \sigma^2$$
+
 ## Polynomial Regression Model
 
 $$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + ... + \beta_n x_1^n $$
@@ -774,3 +775,43 @@ $$ \frac{1}{2}||w||^2 + C \sum_{i=1}^m (\xi_i + \xi_i^*) $$
 Minimize
 
 $$ C \sum_{i=1}^m (\xi_i + \xi_i^*) $$
+
+## Logistic Regression Model
+
+$$ logit(p_i) = ln\biggl(\frac{p_i}{1 - p_i}\biggl) = \beta_0 + \beta_1x_{1,i}+\dots+\beta_Mx_{m,i} $$
+
+where $p_i$ is the probability $\frac{p_i}{1 - p_i}$ is the odds of success and $ln \frac{p_i}{1 - p_i}$ is the log of the [odds](../prob-cheatsheet/#odds) of success
+
+<p id="cust-id-cs-log-res-sig"></p>
+**Sigmoid Function**
+
+Solving the above for p, we get
+$$ p = g(z) = \frac{e^z}{e^z + 1} = \frac{1}{1 + e^{-z}} $$ 
+where $z = \beta_0 + \beta_1x_1+ \dots$
+
+### Likelihood Function
+
+**Intuition**
+$$ likelihood = \hat y * y + (1 – \hat y) * (1 – y) $$
+
+Also see `Mean` tab for [Binomial RV](#binomial-rv) and [Bernoulli RV](#bernoulli-rv)
+
+Likelihood for samples labelled as `1`:
+$$ \prod_{s \ in \ y_i = 1} p(x_i) $$
+
+where $x_i$ represents the feature vector for the $i^{th}$ sample
+
+Likelihood for samples labelled as `0`:
+$$ \prod_{s \ in \ y_i = 0} (1 - p(x_i)) $$
+
+<p id="cust-id-cs-likelihood"></p>
+Overall Likelihood:
+$$ L(\beta) = \prod_{s \ in \ y_i = 1} p(x_i) * \prod_{s \ in \ y_i = 0} (1 - p(x_i)) = \prod_s \biggl(p(x_i)^{y_i} * (1 - p(x_i))^{1 - y_i} \biggl) $$
+
+Log Likelihood:
+$$ l(\beta) = \sum_i^n {y_i log(p(x_i)) + (1 - y_i) log (1 - p(x_i))} $$
+
+## KMeans Clustering
+### WCSS
+$$ WCSS = \sum_i^m distance(P_{i1}C_1)^2 + \sum_i^m distance(P_{i2}C_2)^2 + \dots + \sum_i^m distance(P_{in}C_n)^2 $$
+where $P_{i1}$ is the $i^{th}$ point in cluster 1, $C_1$ is the center of cluster 1, $m$ is the number of points in a cluster, $n$ is the number of clusters and distance is the Euclidean distance between a point and the center of the cluster
