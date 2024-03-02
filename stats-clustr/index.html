@@ -641,6 +641,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hierarchical-clustering" class="md-nav__link">
+    Hierarchical Clustering
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -881,6 +888,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hierarchical-clustering" class="md-nav__link">
+    Hierarchical Clustering
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -935,6 +949,42 @@
 </ul>
 </li>
 <li>Helps avoiding the <strong>Random Initialization Trap</strong></li>
+</ul>
+<h2 id="hierarchical-clustering">Hierarchical Clustering</h2>
+<ul>
+<li>Two types:<ul>
+<li><mark><strong>Agglomerative</strong></mark><ul>
+<li>Uses the bottom up approach</li>
+<li>Consider each individual data point to be a separate cluster</li>
+<li>Combine the two nearest clusters into a single cluster</li>
+<li>Repeat the above step till you are left with the desired number of clusters</li>
+</ul>
+</li>
+<li><mark><strong>Divisive</strong></mark><ul>
+<li>Top Down approach</li>
+<li>Start by considering all data points to be part of a single cluster</li>
+<li>Split the clusters into smaller ones till you are left with the desired number of clusters</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cluster distance calculations<ul>
+<li>Min distance: Between the two closest points</li>
+<li>Max distance: Between the two farthest points</li>
+<li>Average distance: Average distance between every two points of the cluster</li>
+<li>Centroid distance: Between the centroids of the clusters </li>
+<li>Ward: Minimizes the variance between clusters</li>
+</ul>
+</li>
+<li>Distances are representative of the dis-similarity between the clusters</li>
+<li>Uses <strong>dendograms</strong> to remember the clustering steps<ul>
+<li>Height of the lines from x-axis represents the distance (and also the dis-similarity) between the clusters</li>
+<li>We set a threshold for the distance (or dis-similarity) beyond which we wont combine clusters (for agglomertive clustering)</li>
+<li>The threshold is represented by a horizontal line in the dendogram</li>
+<li><mark>The number of vertical lines crossing (intersecting) the threshold line gives us the number of clusters</mark></li>
+<li>One of the ways to find the optimal number of clusters is to <mark>draw the threshold line such that it crosses <strong>the vertical line that has the largest height and does not cross any extended horizontal line</strong></mark></li>
+</ul>
+</li>
 </ul>
 
 
