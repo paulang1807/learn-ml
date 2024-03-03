@@ -73,8 +73,9 @@ nav:
     - Regression: ml-reg.md
     - Classification: ml-cls.md
     - Clustering: ml-clustr.md
+    - Association Rule Learning: ml-arl.md
     - Cheatsheet: ml-cheatsheet.md
-  - Statistics:
+  - Statistics & ML Concepts:
     - Basics: stats-basics.md
     - Distributions: stats-distributions.md
     - Random Variables: stats-rv.md
@@ -83,9 +84,10 @@ nav:
     - Regression: stats-reg.md
     - Classification: stats-cls.md
     - Clustering: stats-clustr.md
+    - Association Rule Learning: stats-arl.md
     - Cheatsheet: stats-cheatsheet.md
     - Vizuals: stat-viz.md
-  - Probability: 
+  - Probability Concepts: 
     - Basics: probability.md
     - Cheatsheet: prob-cheatsheet.md
   - Other Math Concepts:
