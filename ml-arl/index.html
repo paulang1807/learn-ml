@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stats-sampling/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-arl/">
       
       
-        <link rel="prev" href="../stats-rv/">
+        <link rel="prev" href="../ml-clustr/">
       
       
-        <link rel="next" href="../stats-hypo-test/">
+        <link rel="next" href="../ml-cheatsheet/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Sampling - Machine Learning Notes</title>
+        <title>Association Rule Learning - Machine Learning Notes</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#central-limit-theorem-clt" class="md-skip">
+        <a href="#model-types" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sampling
+              Association Rule Learning
             
           </span>
         </div>
@@ -283,18 +283,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -308,7 +310,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -379,9 +381,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ml-arl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Association Rule Learning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -390,6 +410,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-types" class="md-nav__link">
+    Model Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apriori" class="md-nav__link">
+    Apriori
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -426,20 +484,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -453,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Statistics & ML Concepts
@@ -524,27 +580,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Sampling
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../stats-sampling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,113 +591,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#central-limit-theorem-clt" class="md-nav__link">
-    Central Limit Theorem (CLT)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sampling-concepts" class="md-nav__link">
-    Sampling Concepts
-  </a>
-  
-    <nav class="md-nav" aria-label="Sampling Concepts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#finite-correction-factor-fpc" class="md-nav__link">
-    Finite Correction Factor (FPC)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sampling-distribution-of-the-sample-meansdsm" class="md-nav__link">
-    Sampling Distribution of the Sample Mean(SDSM)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#standard-errorse" class="md-nav__link">
-    Standard Error(SE)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sampling-distribution-of-the-sample-proportionsdsp" class="md-nav__link">
-    Sampling Distribution of the Sample Proportion(SDSP)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#working-with-multiple-samples" class="md-nav__link">
-    Working With Multiple Samples
-  </a>
-  
-    <nav class="md-nav" aria-label="Working With Multiple Samples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sample-distribution-of-the-difference-of-means-sddm" class="md-nav__link">
-    Sample Distribution of the Difference of Means (SDDM)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pooled-procedures" class="md-nav__link">
-    Pooled Procedures
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dependent-samples" class="md-nav__link">
-    Dependent Samples
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sample-distribution-of-the-difference-of-proportions-sddp" class="md-nav__link">
-    Sample Distribution of the Difference of Proportions (SDDP)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -983,86 +914,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#central-limit-theorem-clt" class="md-nav__link">
-    Central Limit Theorem (CLT)
+  <a href="#model-types" class="md-nav__link">
+    Model Types
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sampling-concepts" class="md-nav__link">
-    Sampling Concepts
-  </a>
-  
-    <nav class="md-nav" aria-label="Sampling Concepts">
+    <nav class="md-nav" aria-label="Model Types">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#finite-correction-factor-fpc" class="md-nav__link">
-    Finite Correction Factor (FPC)
+  <a href="#apriori" class="md-nav__link">
+    Apriori
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sampling-distribution-of-the-sample-meansdsm" class="md-nav__link">
-    Sampling Distribution of the Sample Mean(SDSM)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#standard-errorse" class="md-nav__link">
-    Standard Error(SE)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sampling-distribution-of-the-sample-proportionsdsp" class="md-nav__link">
-    Sampling Distribution of the Sample Proportion(SDSP)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#working-with-multiple-samples" class="md-nav__link">
-    Working With Multiple Samples
-  </a>
-  
-    <nav class="md-nav" aria-label="Working With Multiple Samples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sample-distribution-of-the-difference-of-means-sddm" class="md-nav__link">
-    Sample Distribution of the Difference of Means (SDDM)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pooled-procedures" class="md-nav__link">
-    Pooled Procedures
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dependent-samples" class="md-nav__link">
-    Dependent Samples
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sample-distribution-of-the-difference-of-proportions-sddp" class="md-nav__link">
-    Sample Distribution of the Difference of Proportions (SDDP)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1089,98 +951,29 @@
   
 
 
-  <h1>Sampling</h1>
+  <h1>Association Rule Learning</h1>
 
-<h2 id="central-limit-theorem-clt">Central Limit Theorem (CLT)</h2>
-<p>Let <span class="arithmatex">\(X_1, X_2,…, X_n\)</span> be random samples from a distribution with mean <span class="arithmatex">\(\mu\)</span> and variance <span class="arithmatex">\(\sigma^2\)</span>. Then even if the population distribution is non-normal (or if the shape of the population distribution is not known), as long as the sample is sufficiently large (<span class="arithmatex">\(n\geq 30\)</span>), <span class="arithmatex">\(\overline X\)</span> has approximately a normal distribution and the distribution of the probabilities of the means of these samples (<a href="#sampling-distribution-of-the-sample-meansdsm">SDSM</a>) also follows a normal distribution,</p>
-<p>The larger the value of <span class="arithmatex">\(n\)</span>, the better the approximation.</p>
-<h2 id="sampling-concepts">Sampling Concepts</h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>When sampling with replacement, the number of possible samples when using a sample size of <span class="arithmatex">\(n\)</span> in a population <span class="arithmatex">\(N\)</span> is <span class="arithmatex">\(N^n\)</span></p>
-</div>
-<h4 id="finite-correction-factor-fpc"><mark><a href="../stats-cheatsheet/#finite-correction-factor-fpc">Finite Correction Factor (FPC)</a></mark></h4>
-<p>Correction factor applied when sampling</p>
-<ul>
-<li><mark>Without replacement</mark></li>
-<li><mark>Infinite population</mark></li>
-<li><mark>From more than 5% of a finite population (<span class="arithmatex">\(\frac{n}{N} \leq 0.05\)</span>)</mark></li>
-</ul>
-<h4 id="sampling-distribution-of-the-sample-meansdsm"><a href="../stats-cheatsheet/#sampling-distribution-of-the-sample-meansdsm">Sampling Distribution of the Sample Mean(SDSM)</a></h4>
-<p>The probability distribution of all possible sample means for a certain sample size <span class="arithmatex">\(n\)</span></p>
+<h2 id="model-types">Model Types</h2>
+<h3 id="apriori"><a href="../stats-arl/#apriori">Apriori</a></h3>
 <div class="admonition abstract">
-<p class="admonition-title">Conditions for Inference with SDSM</p>
-<p><strong>Normal Condition</strong></p>
-<ul>
-<li>Original population is normally distributed AND/OR</li>
-<li><span class="arithmatex">\(n \geq 30\)</span></li>
-</ul>
-<p><strong>Independent Condition</strong></p>
-<ul>
-<li>Sample with replacement AND/OR</li>
-<li><span class="arithmatex">\(n \leq \frac{N}{10}\)</span> (Sample size less than 10% of total population - <mark>10% Rule</mark>)</li>
-</ul>
+<p class="admonition-title">SkLearn API</p>
+<p><a href="https://github.com/ymoch/apyori/tree/master">Apriori</a></p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Read Data</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Get list of transactions from dataset as apriori expects the data as a list</span>
+<span class="c1"># Each element in the list of lists should be a string</span>
+<span class="n">transactions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7501</span><span class="p">):</span>
+    <span class="n">transactions</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)])</span>
+
+<span class="c1"># Train model</span>
+<span class="kn">from</span> <span class="nn">apyori</span> <span class="kn">import</span> <span class="n">apriori</span>
+<span class="n">rules</span> <span class="o">=</span> <span class="n">apriori</span><span class="p">(</span><span class="n">transactions</span> <span class="o">=</span> <span class="n">transactions</span><span class="p">,</span> <span class="n">min_support</span> <span class="o">=</span> <span class="mf">0.003</span><span class="p">,</span> <span class="n">min_confidence</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">min_lift</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">min_length</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_length</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span>
+</code></pre></div></p>
 </div>
-<h4 id="standard-errorse">Standard Error(SE)</h4>
-<p>Gives an idea of how accurate the mean of a any given sample is likely to be as an estimate of the actual population mean. It is calculated as the Population Standard Deviation divided by the square root of the sample size (see Standard Deviation tab <a href="../stats-cheatsheet/#sampling-distribution-of-the-sample-meansdsm">here</a>).</p>
-<ul>
-<li>Larger SE indicates that the sample means are more spread out, so it’s less likely that any given sample mean is an accurate representation of the true population mean</li>
-<li>Smaller SE indicates that the sample means are less spread out, so it’s more likely that any given sample mean is an accurate representation of the true population mean </li>
-</ul>
-<h4 id="sampling-distribution-of-the-sample-proportionsdsp"><a href="../stats-cheatsheet/#sampling-distribution-of-the-sample-proportionsdsp">Sampling Distribution of the Sample Proportion(SDSP)</a></h4>
-<p>The probability distribution of all possible sample proportions for a certain sample size <span class="arithmatex">\(n\)</span></p>
-<p><strong>Sample Proportion</strong> - The proportion of subjects in the sample that meet a cetain condition
-<script type="math/tex; mode=display"> \hat p = \frac{x}{n} </script>
-where <span class="arithmatex">\(x\)</span> is the number meeting the condition and <span class="arithmatex">\(n\)</span> is the sample size</p>
-<div class="admonition abstract">
-<p class="admonition-title">Conditions for Inference with SDSP</p>
-<p><strong>Normal Condition</strong></p>
-<ul>
-<li>Original population is normally distributed AND/OR</li>
-<li><span class="arithmatex">\(n \hat p \geq 10\)</span> and <span class="arithmatex">\(n(1 - \hat p) \geq 10 \implies np \geq 10\)</span> and <span class="arithmatex">\(nq \geq 10\)</span></li>
-</ul>
-<p><strong>Independent Condition</strong></p>
-<ul>
-<li>Sample with replacement AND/OR</li>
-<li><span class="arithmatex">\(n \leq \frac{N}{10}\)</span> (Sample size less than 10% of total population - <mark>10% Rule</mark>)</li>
-</ul>
-</div>
-<h3 id="working-with-multiple-samples">Working With Multiple Samples</h3>
-<h4 id="sample-distribution-of-the-difference-of-means-sddm"><a href="../stats-cheatsheet/#sample-distribution-of-the-difference-of-means-sddm">Sample Distribution of the Difference of Means (SDDM)</a></h4>
-<p>The probability distribution of every possible difference of means for certain sample sizes <span class="arithmatex">\(n_1\)</span> and <span class="arithmatex">\(n_2\)</span> from populations 1 and 2 respectively</p>
-<p>Also see: </p>
-<ul>
-<li><a href="../stats-cheatsheet/#confidence-interval-for-difference-of-means">CI for Difference of Means</a></li>
-<li><a href="../stats-cheatsheet/#test-statistic-for-difference-of-means">Test Statistic for Difference of Means</a></li>
-</ul>
-<h4 id="pooled-procedures"><a href="../stats-cheatsheet/#pooled-procedures">Pooled Procedures</a></h4>
-<p>If the sample variances are equal or almost equal, then we assume that the population variances are approximately equal as well, and we calculate a <mark><strong>pooled variance</strong></mark> by combining the two sample variances into one.</p>
-<ul>
-<li>Results in smaller <span class="arithmatex">\(\beta\)</span> for the same <span class="arithmatex">\(\alpha\)</span></li>
-<li><mark>As a rule of thumb, we can use pooled variance when the two samples were taken from the same population, or when neither sample variance is more than twice the other.</mark></li>
-</ul>
-<p>Also see: </p>
-<ul>
-<li><a href="../stats-cheatsheet/#confidence-interval-for-pooled-procedures">CI for Pooled Procedures</a></li>
-<li><a href="../stats-cheatsheet/#test-statistic-for-pooled-procedures">Test Statistic for Pooled Procedures</a></li>
-</ul>
-<h4 id="dependent-samples">Dependent Samples</h4>
-<p>Samples for which the observations from one sample are related to an the observations from the other sample</p>
-<ul>
-<li><mark>Hypothesis test with dependent samples is referred to as <strong>Matched-pair test</strong></mark></li>
-</ul>
-<p>Also see: </p>
-<ul>
-<li><a href="../stats-cheatsheet/#confidence-interval-for-matched-pair-test">CI for Matched-Pair Test</a></li>
-<li><a href="../stats-cheatsheet/#test-statistic-for-matched-pair-test">Test Statistic for Matched-Pair Test</a></li>
-</ul>
-<h4 id="sample-distribution-of-the-difference-of-proportions-sddp"><a href="../stats-cheatsheet/#sample-distribution-of-the-difference-of-proportions-sddp">Sample Distribution of the Difference of Proportions (SDDP)</a></h4>
-<p>The probability distribution of every possible difference of proportions for certain sample sizes <span class="arithmatex">\(n_1\)</span> and <span class="arithmatex">\(n_2\)</span> from populations 1 and 2 respectively</p>
-<p>Also see: </p>
-<ul>
-<li><a href="../stats-cheatsheet/#confidence-interval-for-difference-of-proportions">CI for Difference of Proportions</a></li>
-<li><a href="../stats-cheatsheet/#test-statistic-for-difference-of-proportions">Test Statistic for Difference of Proportions</a></li>
-</ul>
 
 
 
