@@ -74,6 +74,7 @@ nav:
     - Classification: ml-cls.md
     - Clustering: ml-clustr.md
     - Association Rule Learning: ml-arl.md
+    - Reinforcement Learning: ml-rein.md
     - Cheatsheet: ml-cheatsheet.md
   - Statistics & ML Concepts:
     - Basics: stats-basics.md
@@ -85,6 +86,7 @@ nav:
     - Classification: stats-cls.md
     - Clustering: stats-clustr.md
     - Association Rule Learning: stats-arl.md
+    - Reinforcement Learning: stats-rein.md
     - Cheatsheet: stats-cheatsheet.md
     - Vizuals: stat-viz.md
   - Probability Concepts: 

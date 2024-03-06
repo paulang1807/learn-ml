@@ -63,3 +63,10 @@ It is the ratio of the likelihoods
 
 * If BF  > 1  then  the  posterior  odds  are  greater  than  the  prior  odds.   So  the  data provides evidence for the hypothesis.
 *  If BF < 1 then the posterior odds are less than the prior odds.  So the data provides evidence against the hypothesis.
+
+### [Beta Distribution](../prob-cheatsheet/#beta-distribution)
+It is a probability distribution on probabilities
+
+- Gives the distribution of the probability of success given the number of past successes and failures
+- Left skewed for better success probabilities
+- Right skewed for weaker success probabilities

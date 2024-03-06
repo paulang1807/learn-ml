@@ -121,6 +121,11 @@ $$ \frac{P(D|H)}{P(D|H')} $$
 
 where D is the Data and H is the hypothesis.
 
+### Beta Distribution
+Probability Density Function (PDF) of the Beta Distribution is given by
+$$ f(x;\alpha,\beta) = x^\alpha \cdot (1 - x)^\beta \cdot \frac{1}{B(\alpha + 1, \beta + 1)} $$
+where $x$ is the probability of success and $\alpha$ and $\beta$ are the prior number of success and failures respectively
+
 ## Probability Distributions for Random Variables
 ### Binomial Probability
 !!! warning ""
