@@ -18,7 +18,7 @@
         <link rel="prev" href="../stats-clustr/">
       
       
-        <link rel="next" href="../stats-cheatsheet/">
+        <link rel="next" href="../stats-rein/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -401,6 +401,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../ml-rein/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reinforcement Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ml-cheatsheet/" class="md-nav__link">
         
   
@@ -696,6 +716,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../stats-rein/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reinforcement Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../stats-cheatsheet/" class="md-nav__link">
         
   
@@ -945,18 +985,22 @@
 <ul>
 <li>Can be used for predicting associations between transactions</li>
 <li>Intution: Using prior knowledge of People who bought or did something to predict that they will also buy or do something else </li>
-<li>Terms<ul>
-<li>Support 
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Terminology</p>
+<ul>
+<li><strong>Support</strong> 
 <script type="math/tex; mode=display"> Support = \frac{People \ who \ bought \ object1 \ or \ did \ action1}{Total \ Population \ buying \ or \ doing\ something} </script>
 </li>
-<li>Confidence
+<li><strong>Confidence</strong>
 <script type="math/tex; mode=display"> Confidence = \frac{Of \ the \ people \ who \ bought \ object2 \ or \ did \ action2 \ how \ many \ also \ bought \ object1 \ or \ did \ action1}{People \ who \ bought \ object2 \ or \ did \ action2} </script>
 </li>
-<li>Lift
+<li><strong>Lift</strong>
 <script type="math/tex; mode=display"> Lift = \frac{Confidence}{Support} </script>
 </li>
 </ul>
-</li>
+</div>
+<ul>
 <li>Steps<ul>
 <li>Set minimum support and confidence</li>
 <li>Take all subsets of population having higher support than minimum</li>
@@ -973,6 +1017,7 @@
 <ul>
 <li>Equivalence Class Clustering and Bottom-Up Lattice Traversal </li>
 <li>Intution: If two or more items appear in a set for a given number of transactions, any new transaction containing one of the items in the set will probably have one of the other items as well</li>
+<li>Similar to apriori but only takes into account support, and not confidence and lift</li>
 <li>Steps<ul>
 <li>Set minimum support</li>
 <li>Take all subsets of population having higher support than minimum</li>

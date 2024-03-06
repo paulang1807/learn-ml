@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stat-viz/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-rein/">
       
       
-        <link rel="prev" href="../stats-cheatsheet/">
+        <link rel="prev" href="../ml-arl/">
       
       
-        <link rel="next" href="../probability/">
+        <link rel="next" href="../ml-cheatsheet/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Vizuals - Machine Learning Notes</title>
+        <title>Reinforcement Learning - Machine Learning Notes</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-histograms" class="md-skip">
+        <a href="#model-types" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vizuals
+              Reinforcement Learning
             
           </span>
         </div>
@@ -283,18 +283,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -308,7 +310,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -399,9 +401,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ml-rein/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reinforcement Learning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -410,6 +430,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-types" class="md-nav__link">
+    Model Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upper-confidence-bound" class="md-nav__link">
+    Upper Confidence Bound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thompson-sampling-algorithm" class="md-nav__link">
+    Thompson Sampling Algorithm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -446,20 +511,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -473,7 +536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Statistics & ML Concepts
@@ -704,27 +767,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Vizuals
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../stat-viz/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -733,45 +778,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-histograms" class="md-nav__link">
-    Creating histograms
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whisker-plots" class="md-nav__link">
-    Whisker Plots
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#density-curves" class="md-nav__link">
-    Density Curves
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -955,23 +961,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-histograms" class="md-nav__link">
-    Creating histograms
+  <a href="#model-types" class="md-nav__link">
+    Model Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upper-confidence-bound" class="md-nav__link">
+    Upper Confidence Bound
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#whisker-plots" class="md-nav__link">
-    Whisker Plots
+        
+          <li class="md-nav__item">
+  <a href="#thompson-sampling-algorithm" class="md-nav__link">
+    Thompson Sampling Algorithm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#density-curves" class="md-nav__link">
-    Density Curves
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -993,28 +1005,91 @@
   
 
 
-  <h1>Vizuals</h1>
+  <h1>Reinforcement Learning</h1>
 
-<h2 id="creating-histograms">Creating histograms</h2>
-<ul>
-<li>Arrange data points in ascending order</li>
-<li>Calculate range = Max value - Min value</li>
-<li>Decide number of classes for histogram (number of groups)</li>
-<li>Calculate class width = Range / Number of classes (Round up if needed)</li>
-<li>Determine groups:<ul>
-<li>Group1: Min Val to (MinVal + Class Width)</li>
-<li>Group 2: Group1 Upper Val to (Group1 Upper Val+ Class Width)</li>
-<li>…</li>
-</ul>
-</li>
-</ul>
-<h2 id="whisker-plots">Whisker Plots</h2>
-<p><img alt="Whisker Plot" src="../img/boxplot.png" /></p>
-<h2 id="density-curves">Density Curves</h2>
-<ul>
-<li>The area under a density curve will always represent 100 % of the data, or 1.0. </li>
-<li>The curve will never dip below the x-axis. </li>
-</ul>
+<h2 id="model-types">Model Types</h2>
+<h3 id="upper-confidence-bound"><a href="../stats-rein/#upper-confidence-bound">Upper Confidence Bound</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (rows in the dataset)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
+<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">numbers_of_selections</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>   <span class="c1"># List of 10 0s, N_i(n)</span>
+<span class="n">sums_of_rewards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>         <span class="c1"># List of 10 0s, R_i(n)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">average_reward</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># The first round (n=0) is a trial round where each of the 10 ads are selected once</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+
+        <span class="c1"># For the first round, ensure each ad is selected once</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selection by 1</span>
+            <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>  <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
+
+        <span class="n">average_reward</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">delta_i</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">average_reward</span> <span class="o">+</span> <span class="n">delta_i</span>
+
+        <span class="c1"># Select the ad with the max upper bound</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">upper_bound</span> <span class="o">&gt;</span> <span class="n">max_upper_bound</span><span class="p">):</span>
+            <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="n">upper_bound</span>
+            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>   <span class="c1"># Set the selected ad as the one with the maximum upper bound</span>
+
+    <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>  <span class="c1"># Append the selected ad to the list of selected ads</span>
+
+    <span class="c1"># For each subequent round after the first round</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selected ad by 1</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>   <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
+        <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="n">reward</span>
+
+<span class="c1"># Visualize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></p>
+</div>
+<h3 id="thompson-sampling-algorithm"><a href="../stats-rein/#thompson-sampling-algorithm">Thompson Sampling Algorithm</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">SkLearn API</p>
+<p><strong>Sample Code</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (rows in the dataset)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
+<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">numbers_of_rewards_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i resulted in a reward ($N_i^1(n)$)</span>
+<span class="n">numbers_of_rewards_0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i did not result in a reward ($N_i^0(n)$)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_theta</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+        <span class="c1"># random.betavariate returns a random point from the beta distribution based on the current wins and losses </span>
+        <span class="n">random_beta</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">betavariate</span><span class="p">(</span><span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">random_beta</span> <span class="o">&gt;</span> <span class="n">max_theta</span><span class="p">):</span>
+            <span class="n">max_theta</span> <span class="o">=</span> <span class="n">random_beta</span>
+            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">reward</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># Visualize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></p>
+</div>
 
 
 
