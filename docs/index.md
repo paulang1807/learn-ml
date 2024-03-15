@@ -13,7 +13,6 @@ Common Approach - Replace missing value with average of all values in the column
 
     [Simple Imputer](https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html)
 
-    **Sample Code**
     ```python
     from sklearn.impute import SimpleImputer
     imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
@@ -25,10 +24,9 @@ Common Approach - Replace missing value with average of all values in the column
 - This usually pushes the encoded columns to the front of the array
 
 **Encoding the Categorical data when the data is related (e.g. male, female etc.) or the order matters (e.g. small,medium,large etc.)**
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Label Encoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
 
-    **Sample Code**
     ```python
     from sklearn.preprocessing import LabelEncoder
     le = LabelEncoder()
@@ -36,12 +34,11 @@ Common Approach - Replace missing value with average of all values in the column
     ```
 
 **Encoding the Categorical data when the data points are not related and the order does not matter (e.g. state names)**
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Column Transformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) 
 
     [One Hot Encoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)
 
-    **Sample Code**
     ```python
     from sklearn.compose import ColumnTransformer
     from sklearn.preprocessing import OneHotEncoder
@@ -52,10 +49,9 @@ Common Approach - Replace missing value with average of all values in the column
 
 ### Split training and test data
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Train Test Split](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html)
 
-    **Sample Code**
     ```python
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
@@ -82,10 +78,9 @@ $$ x_{stand} = \frac{x - mean(x)}{standard \ deviation (x)} $$
 - Recommended when the distribution for most of the features are normalized
 $$ x_{norm} = \frac{x - min(x)}{max(x) - min (x)} $$
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Standard Scaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
 
-    **Sample Code**
     ```python
     from sklearn.preprocessing import StandardScaler
     sc = StandardScaler()
@@ -104,10 +99,9 @@ $$ x_{norm} = \frac{x - min(x)}{max(x) - min (x)} $$
 
 ### [Model Evaluation](./ml-cheatsheet/#accuracy-and-error-rates)
 #### Regression Models
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [R2 Score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import r2_score
     r2_score(y_test, y_pred)
@@ -131,10 +125,9 @@ Also see [Type I and Type II Errors](./stats-hypo-test/#type-i-and-type-ii-error
 | Actual Negative | TN  | FP  |
 | Actual Positive | FN | TP|
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Confusion Matrix](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import confusion_matrix
     confusion_matrix(y_test, y_pred)
@@ -143,10 +136,9 @@ Also see [Type I and Type II Errors](./stats-hypo-test/#type-i-and-type-ii-error
 ##### Accuracy
 Fractions of samples predicted correctly
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Accuracy Score](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.accuracy_score.html#sklearn.metrics.accuracy_score)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import accuracy_score
     accuracy_score(y_test, y_pred)
@@ -155,10 +147,9 @@ Fractions of samples predicted correctly
 ##### Recall
 Fractions of positive events that are predicted correctly
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Recall Score](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.recall_score.html#sklearn.metrics.recall_score)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import recall_score
     recall_score(y_test, y_pred)
@@ -167,10 +158,9 @@ Fractions of positive events that are predicted correctly
 ##### Precision
 Fractions of predicted positive events that are actually positive
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Precision Score](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.precision_score.html#sklearn.metrics.precision_score)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import precision_score
     precision_score(y_test, y_pred)
@@ -181,10 +171,9 @@ Harmonic mean of recall and precision
 
 - The higher the score the better the model
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [F1 Score](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.f1_score.html#sklearn.metrics.f1_score)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import f1_score
     f1_score(y_test, y_pred)
@@ -200,10 +189,9 @@ Harmonic mean of recall and precision
     - fpr: the false positive rate (FP / (FP + TN)) for each threshold
     - tpr: the true positive rate (TP / (TP + FN)) for each threshold
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [ROC Curve](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.roc_curve.html#sklearn.metrics.roc_curve)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import roc_curve
     fpr, tpr, thresholds = roc_curve(y_test, y_pred_prob)
@@ -211,11 +199,63 @@ Harmonic mean of recall and precision
 
     [ROC AUC Score](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score)
 
-    **Sample Code**
     ```python
     from sklearn.metrics import roc_auc_score
     roc_auc_score(y_test, y_pred_prob)
     ```
 
-## Parameter Tuning
-- Used for tuning hyperparameters (parameters which are not learnt by the model)
+### Model Selection
+#### Bias-Variance Tradeoff
+!!! abstract "Terminology"
+    - **Bias**: Error in ML model due to incorrect assumptions 
+    - **Variance**: Changes in the model resulting from using different parts of the training dataset for training
+
+The ideal scenario is to have low bias and low variance
+
+#### K-Fold Cross Validation
+- Used to validate the model using various combinations of the training data
+    - Ensures that we don't just rely on a single validation using test data to determine how good or bad the model is
+- Steps
+    - Divide the training data into $k$ folds
+    - Iterate over the folds using $k -1$ folds for training and the 1 fold for testing
+
+!!! abstract "Sample Code"
+    [Cross Validation Score](https://scikit-learn.org/1.4/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score)
+
+    ```python
+    from sklearn.model_selection import cross_val_score
+    # Example for SVC classifier
+    accuracies = cross_val_score(estimator = c_svc, X = X_train, y = y_train, cv = 10)   # 10 training splits
+    accuracies
+    print("Accuracy: {:.2f} %".format(accuracies.mean()*100))
+    print("Standard Deviation: {:.2f} %".format(accuracies.std()*100))
+    ```
+
+#### Grid Search
+- Allows testing various hyperparameter combinations to get the base selection
+- Uses cross validation to ensure a good model selection with the optimal hyperparameters
+- Steps
+    - Choose the hyperparameters to test the model with
+    - Divide the training data into $k$ folds
+    - For each hyperparameter combination, iterate over the folds using $k -1$ folds for training and the 1 fold for testing
+
+!!! abstract "Sample Code"
+    [GridSearchCV](https://scikit-learn.org/1.4/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV)
+
+    ```python
+    # Example for SVC classifier
+    # Specify hyperparameters to test
+    parameters = [{'C': [0.2, 0.4, 0.6, 0.8, 1], 'kernel': ['linear']},
+                {'C': [0.2, 0.4, 0.6, 0.8, 1], 'kernel': ['rbf'], 'gamma': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]}]
+
+    grid_search = GridSearchCV(estimator = c_svc,
+                            param_grid = parameters,
+                            scoring = 'accuracy',
+                            cv = 10,
+                            n_jobs = -1)  # all processors in the machine will be used
+    grid_search.fit(X_train, y_train)
+    best_accuracy = grid_search.best_score_
+    best_parameters = grid_search.best_params_
+    print("Best Accuracy: {:.2f} %".format(best_accuracy*100))
+    print("Best Parameters:", best_parameters)
+    ```
