@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-rein/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stats-nlp/">
       
       
-        <link rel="prev" href="../ml-arl/">
+        <link rel="prev" href="../stats-rein/">
       
       
-        <link rel="next" href="../ml-nlp/">
+        <link rel="next" href="../stats-deepl/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Reinforcement Learning - Machine Learning Notes</title>
+        <title>Natural Language Processing - Machine Learning Notes</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#model-types" class="md-skip">
+        <a href="#bag-of-words" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reinforcement Learning
+              Natural Language Processing
             
           </span>
         </div>
@@ -264,20 +264,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -291,7 +289,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -402,27 +400,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Reinforcement Learning
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ml-rein/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -431,51 +411,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#model-types" class="md-nav__link">
-    Model Types
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#upper-confidence-bound" class="md-nav__link">
-    Upper Confidence Bound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thompson-sampling-algorithm" class="md-nav__link">
-    Thompson Sampling Algorithm
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -552,18 +487,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -577,7 +514,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Statistics & ML Concepts
@@ -788,9 +725,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../stats-nlp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Natural Language Processing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -799,6 +754,31 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bag-of-words" class="md-nav__link">
+    Bag Of Words
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1042,29 +1022,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#model-types" class="md-nav__link">
-    Model Types
+  <a href="#bag-of-words" class="md-nav__link">
+    Bag Of Words
   </a>
-  
-    <nav class="md-nav" aria-label="Model Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#upper-confidence-bound" class="md-nav__link">
-    Upper Confidence Bound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thompson-sampling-algorithm" class="md-nav__link">
-    Thompson Sampling Algorithm
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1086,89 +1046,18 @@
   
 
 
-  <h1>Reinforcement Learning</h1>
+  <h1>Natural Language Processing</h1>
 
-<h2 id="model-types">Model Types</h2>
-<h3 id="upper-confidence-bound"><a href="../stats-rein/#upper-confidence-bound">Upper Confidence Bound</a></h3>
 <div class="admonition abstract">
-<p class="admonition-title">Sample Code</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (subset of rows in the dataset)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
-<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">numbers_of_selections</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>   <span class="c1"># List of 10 0s, N_i(n)</span>
-<span class="n">sums_of_rewards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>         <span class="c1"># List of 10 0s, R_i(n)</span>
-
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">average_reward</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="c1"># The first round (n=0) is a trial round where each of the 10 ads are selected once</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-
-        <span class="c1"># For the first round, ensure each ad is selected once</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selection by 1</span>
-            <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>  <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
-
-        <span class="n">average_reward</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">delta_i</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">average_reward</span> <span class="o">+</span> <span class="n">delta_i</span>
-
-        <span class="c1"># Select the ad with the max upper bound</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">upper_bound</span> <span class="o">&gt;</span> <span class="n">max_upper_bound</span><span class="p">):</span>
-            <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="n">upper_bound</span>
-            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>   <span class="c1"># Set the selected ad as the one with the maximum upper bound</span>
-
-    <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>  <span class="c1"># Append the selected ad to the list of selected ads</span>
-
-    <span class="c1"># For each subequent round after the first round</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selected ad by 1</span>
-        <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>   <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
-        <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="n">reward</span>
-
-<span class="c1"># Visualize</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
+<p class="admonition-title">Terminology</p>
+<ul>
+<li><strong>Stopwords</strong>: Commonly used words (determinants, conjunctions, prepositions, pronouns, auxillary verbs etc.) in a language but do not carry much meaning or significance. </li>
+<li><strong>Corpus</strong>: A large collection of text documents or spoken language data used for training and testing NLP models</li>
+<li><strong>Stemming / Lemmatization</strong>: Reducing words to their base or root form to handle variations of the same word, such as singular/plural forms or verb tenses</li>
+</ul>
 </div>
-<h3 id="thompson-sampling-algorithm"><a href="../stats-rein/#thompson-sampling-algorithm">Thompson Sampling Algorithm</a></h3>
-<div class="admonition abstract">
-<p class="admonition-title">Sample Code</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (subset of rows in the dataset)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
-<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">numbers_of_rewards_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i resulted in a reward ($N_i^1(n)$)</span>
-<span class="n">numbers_of_rewards_0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i did not result in a reward ($N_i^0(n)$)</span>
-
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">max_theta</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-        <span class="c1"># random.betavariate returns a random point from the beta distribution based on the current wins and losses </span>
-        <span class="n">random_beta</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">betavariate</span><span class="p">(</span><span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">random_beta</span> <span class="o">&gt;</span> <span class="n">max_theta</span><span class="p">):</span>
-            <span class="n">max_theta</span> <span class="o">=</span> <span class="n">random_beta</span>
-            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>
-    <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>
-
-    <span class="k">if</span> <span class="n">reward</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="c1"># Visualize</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
-</div>
+<h2 id="bag-of-words">Bag Of Words</h2>
+<p>A simple text representation model in NLP that converts a document into a set of its constituent words, disregarding grammar and word order</p>
 
 
 

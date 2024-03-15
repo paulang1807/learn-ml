@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-rein/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-nlp/">
       
       
-        <link rel="prev" href="../ml-arl/">
+        <link rel="prev" href="../ml-rein/">
       
       
-        <link rel="next" href="../ml-nlp/">
+        <link rel="next" href="../ml-deepl/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Reinforcement Learning - Machine Learning Notes</title>
+        <title>Natural Language Processing - Machine Learning Notes</title>
       
     
     
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reinforcement Learning
+              Natural Language Processing
             
           </span>
         </div>
@@ -402,6 +402,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../ml-rein/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reinforcement Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -415,7 +435,7 @@
           
   
   <span class="md-ellipsis">
-    Reinforcement Learning
+    Natural Language Processing
   </span>
   
 
@@ -426,7 +446,7 @@
         
   
   <span class="md-ellipsis">
-    Reinforcement Learning
+    Natural Language Processing
   </span>
   
 
@@ -454,15 +474,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upper-confidence-bound" class="md-nav__link">
-    Upper Confidence Bound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thompson-sampling-algorithm" class="md-nav__link">
-    Thompson Sampling Algorithm
+  <a href="#bag-of-words" class="md-nav__link">
+    Bag of Words
   </a>
   
 </li>
@@ -476,26 +489,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ml-nlp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Natural Language Processing
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1050,15 +1043,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upper-confidence-bound" class="md-nav__link">
-    Upper Confidence Bound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thompson-sampling-algorithm" class="md-nav__link">
-    Thompson Sampling Algorithm
+  <a href="#bag-of-words" class="md-nav__link">
+    Bag of Words
   </a>
   
 </li>
@@ -1086,87 +1072,55 @@
   
 
 
-  <h1>Reinforcement Learning</h1>
+  <h1>Natural Language Processing</h1>
 
 <h2 id="model-types">Model Types</h2>
-<h3 id="upper-confidence-bound"><a href="../stats-rein/#upper-confidence-bound">Upper Confidence Bound</a></h3>
+<h3 id="bag-of-words"><a href="../stats-nlp/#bag-of-words">Bag of Words</a></h3>
 <div class="admonition abstract">
 <p class="admonition-title">Sample Code</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+<p><a href="https://www.nltk.org/api/nltk.corpus.html">NTLK Corpus</a></p>
+<p><a href="https://www.nltk.org/api/nltk.stem.html">NTLK Stem</a></p>
+<p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer">Count Vectorizer</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.stem.porter</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>   <span class="c1"># &#39;extracts&#39; the root of the words from their variations</span>
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (subset of rows in the dataset)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
-<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">numbers_of_selections</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>   <span class="c1"># List of 10 0s, N_i(n)</span>
-<span class="n">sums_of_rewards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>         <span class="c1"># List of 10 0s, R_i(n)</span>
+<span class="c1"># Clean Data and Build Corpus</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
 
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">average_reward</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">all_stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">all_stopwords</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;not&#39;</span><span class="p">)</span>
 
-    <span class="c1"># The first round (n=0) is a trial round where each of the 10 ads are selected once</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
+    <span class="n">review</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^a-zA-Z]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Review&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># replace all punctuations by space</span>
+    <span class="n">review</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>    <span class="c1"># convert to lowercase</span>
+    <span class="n">review</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>    <span class="c1"># split each review into list of words</span>
 
-        <span class="c1"># For the first round, ensure each ad is selected once</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selection by 1</span>
-            <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>  <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
+    <span class="n">review</span> <span class="o">=</span> <span class="p">[</span><span class="n">ps</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">review</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">all_stopwords</span><span class="p">)]</span>
+    <span class="n">review</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>   <span class="c1"># join back the stemmed words for the review</span>
+    <span class="n">corpus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>
 
-        <span class="n">average_reward</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">delta_i</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">average_reward</span> <span class="o">+</span> <span class="n">delta_i</span>
+<span class="c1"># Build Model</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="c1"># max features set to a number lower than the total number of words so that it excludes the sparsely occuring words</span>
+<span class="c1"># total number of words can be found by checking the length of X after the fit transform step</span>
+<span class="n">c_cv</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span> <span class="o">=</span> <span class="mi">1500</span><span class="p">)</span>  
+<span class="n">X</span> <span class="o">=</span> <span class="n">c_cv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
-        <span class="c1"># Select the ad with the max upper bound</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">upper_bound</span> <span class="o">&gt;</span> <span class="n">max_upper_bound</span><span class="p">):</span>
-            <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="n">upper_bound</span>
-            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>   <span class="c1"># Set the selected ad as the one with the maximum upper bound</span>
+<span class="c1"># Train Test Split</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
-    <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>  <span class="c1"># Append the selected ad to the list of selected ads</span>
-
-    <span class="c1"># For each subequent round after the first round</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selected ad by 1</span>
-        <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>   <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
-        <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="n">reward</span>
-
-<span class="c1"># Visualize</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
-</div>
-<h3 id="thompson-sampling-algorithm"><a href="../stats-rein/#thompson-sampling-algorithm">Thompson Sampling Algorithm</a></h3>
-<div class="admonition abstract">
-<p class="admonition-title">Sample Code</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (subset of rows in the dataset)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
-<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">numbers_of_rewards_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i resulted in a reward ($N_i^1(n)$)</span>
-<span class="n">numbers_of_rewards_0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i did not result in a reward ($N_i^0(n)$)</span>
-
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">max_theta</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-        <span class="c1"># random.betavariate returns a random point from the beta distribution based on the current wins and losses </span>
-        <span class="n">random_beta</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">betavariate</span><span class="p">(</span><span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">random_beta</span> <span class="o">&gt;</span> <span class="n">max_theta</span><span class="p">):</span>
-            <span class="n">max_theta</span> <span class="o">=</span> <span class="n">random_beta</span>
-            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>
-    <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>
-
-    <span class="k">if</span> <span class="n">reward</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="c1"># Visualize</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Train Model and Predict</span>
+<span class="c1"># This example uses Gaussian NB</span>
+<span class="c1"># Other classification models can also be used</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="n">c_gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">c_gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_gnb</span> <span class="o">=</span> <span class="n">c_gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div>
 </div>
 

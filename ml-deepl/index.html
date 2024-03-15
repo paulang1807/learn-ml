@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-rein/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-deepl/">
       
       
-        <link rel="prev" href="../ml-arl/">
+        <link rel="prev" href="../ml-nlp/">
       
       
-        <link rel="next" href="../ml-nlp/">
+        <link rel="next" href="../ml-cheatsheet/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Reinforcement Learning - Machine Learning Notes</title>
+        <title>Deep Learning - Machine Learning Notes</title>
       
     
     
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reinforcement Learning
+              Deep Learning
             
           </span>
         </div>
@@ -402,27 +402,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Reinforcement Learning
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ml-rein/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -431,51 +413,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#model-types" class="md-nav__link">
-    Model Types
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#upper-confidence-bound" class="md-nav__link">
-    Upper Confidence Bound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thompson-sampling-algorithm" class="md-nav__link">
-    Thompson Sampling Algorithm
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -505,9 +442,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ml-deepl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deep Learning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -516,6 +471,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-types" class="md-nav__link">
+    Model Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artificial-neural-networks" class="md-nav__link">
+    Artificial Neural Networks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolutional-neural-networks" class="md-nav__link">
+    Convolutional Neural Networks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1050,15 +1050,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upper-confidence-bound" class="md-nav__link">
-    Upper Confidence Bound
+  <a href="#artificial-neural-networks" class="md-nav__link">
+    Artificial Neural Networks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#thompson-sampling-algorithm" class="md-nav__link">
-    Thompson Sampling Algorithm
+  <a href="#convolutional-neural-networks" class="md-nav__link">
+    Convolutional Neural Networks
   </a>
   
 </li>
@@ -1086,87 +1086,119 @@
   
 
 
-  <h1>Reinforcement Learning</h1>
+  <h1>Deep Learning</h1>
 
 <h2 id="model-types">Model Types</h2>
-<h3 id="upper-confidence-bound"><a href="../stats-rein/#upper-confidence-bound">Upper Confidence Bound</a></h3>
+<h3 id="artificial-neural-networks"><a href="../stats-deepl/#artificial-neural-networks-ann">Artificial Neural Networks</a></h3>
+<ul>
+<li>Requires Feature Scaling<ul>
+<li>Scaling applied to all independent data points (including encoded ones)</li>
+</ul>
+</li>
+</ul>
 <div class="admonition abstract">
 <p class="admonition-title">Sample Code</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/Sequential">Sequential Keras Model</a></p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense">Dense Layer</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (subset of rows in the dataset)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
-<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">numbers_of_selections</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>   <span class="c1"># List of 10 0s, N_i(n)</span>
-<span class="n">sums_of_rewards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>         <span class="c1"># List of 10 0s, R_i(n)</span>
+<span class="c1"># Initializing the ANN</span>
+<span class="n">dl_ann</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">average_reward</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># Adding the first hidden layer</span>
+<span class="c1"># Here we are using Dense layers </span>
+<span class="c1"># units - neurons in hidden layer. its a hyperparameter and is determined by trial and error</span>
+<span class="c1"># relu is the rectifier activation function</span>
+<span class="n">dl_ann</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
-    <span class="c1"># The first round (n=0) is a trial round where each of the 10 ads are selected once</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<span class="c1"># Adding the second hidden layer</span>
+<span class="n">dl_ann</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
-        <span class="c1"># For the first round, ensure each ad is selected once</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selection by 1</span>
-            <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>  <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
+<span class="c1"># Adding the output layer</span>
+<span class="c1"># Since we are doing binary classification, the units in the output layer is set to 1</span>
+<span class="n">dl_ann</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 
-        <span class="n">average_reward</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">delta_i</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">average_reward</span> <span class="o">+</span> <span class="n">delta_i</span>
+<span class="c1"># Compile the ANN with an optimizer and loss function</span>
+<span class="c1"># Adam optimizer performs Stochastic Gradient Descent</span>
+<span class="n">dl_ann</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 
-        <span class="c1"># Select the ad with the max upper bound</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">upper_bound</span> <span class="o">&gt;</span> <span class="n">max_upper_bound</span><span class="p">):</span>
-            <span class="n">max_upper_bound</span> <span class="o">=</span> <span class="n">upper_bound</span>
-            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>   <span class="c1"># Set the selected ad as the one with the maximum upper bound</span>
+<span class="c1"># Training the ANN on the Training set</span>
+<span class="c1"># batch size and epochs are hyperparameters</span>
+<span class="n">dl_ann</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
 
-    <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>  <span class="c1"># Append the selected ad to the list of selected ads</span>
-
-    <span class="c1"># For each subequent round after the first round</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">numbers_of_selections</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># Increment the index of the selected ad by 1</span>
-        <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>   <span class="c1"># Check whether the selected ad has a reward in the actual dataset</span>
-        <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">sums_of_rewards</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="n">reward</span>
-
-<span class="c1"># Visualize</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">y_pred_ann</span> <span class="o">=</span> <span class="n">dl_ann</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+<span class="c1"># Convert predicted probability to prediction</span>
+<span class="n">y_pred_ann</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred_ann</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span>
 </code></pre></div>
 </div>
-<h3 id="thompson-sampling-algorithm"><a href="../stats-rein/#thompson-sampling-algorithm">Thompson Sampling Algorithm</a></h3>
+<h3 id="convolutional-neural-networks"><a href="../stats-deepl/#convolutional-neural-networks-cnn">Convolutional Neural Networks</a></h3>
 <div class="admonition abstract">
 <p class="admonition-title">Sample Code</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator">ImageDataGenerator</a></p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D">Conv2D Layer</a></p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/MaxPooling2D">Maxpool2D Layer</a></p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Flatten">Flatten Layer</a></p>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/utils">Keras Utils</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span>
+<span class="kn">import</span> <span class="nn">keras.utils</span> <span class="k">as</span> <span class="nn">image</span>
 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>   <span class="c1"># Number of rounds for which to run the test (subset of rows in the dataset)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Total number of options (columns in the dataset)</span>
-<span class="n">ads_selected</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">numbers_of_rewards_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i resulted in a reward ($N_i^1(n)$)</span>
-<span class="n">numbers_of_rewards_0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>  <span class="c1"># the number of times selection of the option i did not result in a reward ($N_i^0(n)$)</span>
+<span class="c1"># Preprocess training set</span>
+<span class="c1"># Image Augmentation - Transform data to avoid overfitting</span>
+<span class="n">train_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span>     <span class="c1"># Feature scale all pixels (divides by 255)</span>
+                                <span class="n">shear_range</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+                                <span class="n">zoom_range</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+                                <span class="n">horizontal_flip</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">training_set</span> <span class="o">=</span> <span class="n">train_datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="s1">&#39;data/CNNData1/training_set&#39;</span><span class="p">,</span>
+                                            <span class="n">target_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>   <span class="c1"># Final size of images before feeding to CNN; smaller size results in faster training</span>
+                                            <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>          <span class="c1"># Number of images in each batch</span>
+                                            <span class="n">class_mode</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span><span class="p">)</span>    <span class="c1"># cat/dog in this example</span>
 
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">ad</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">max_theta</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-        <span class="c1"># random.betavariate returns a random point from the beta distribution based on the current wins and losses </span>
-        <span class="n">random_beta</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">betavariate</span><span class="p">(</span><span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Preprocess test set</span>
+<span class="c1"># Only apply feature scaling to the test set. No transformations applied.</span>
+<span class="n">test_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">rescale</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span>
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">test_datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="s1">&#39;data/CNNData1/test_set&#39;</span><span class="p">,</span>
+                                            <span class="n">target_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+                                            <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span>
+                                            <span class="n">class_mode</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">random_beta</span> <span class="o">&gt;</span> <span class="n">max_theta</span><span class="p">):</span>
-            <span class="n">max_theta</span> <span class="o">=</span> <span class="n">random_beta</span>
-            <span class="n">ad</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="n">ads_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ad</span><span class="p">)</span>
-    <span class="n">reward</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">ad</span><span class="p">]</span>
+<span class="c1"># Initializing the CNN</span>
+<span class="n">cnn</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="n">reward</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_1</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">=</span> <span class="n">numbers_of_rewards_0</span><span class="p">[</span><span class="n">ad</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c1"># Step1 - Add Convolution Layer</span>
+<span class="c1"># input shae is needed only for the first layer</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
 
-<span class="c1"># Visualize</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ads_selected</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Step2 - Pooling</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Add a second convolution and pooling layer</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Step3 - Flattening</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">())</span>
+
+<span class="c1"># Full Connection</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+
+<span class="c1"># Output Layer</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
+
+<span class="c1"># Compile the CNN with an optimizer and loss function</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+
+<span class="c1"># Make a single prediction</span>
+<span class="n">test_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="s1">&#39;data/CNNData1/single_pred/cat_or_dog1.jpg&#39;</span><span class="p">,</span> <span class="n">target_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span> <span class="c1"># set size to 64 * 64 so that it matches the size used during training</span>
+<span class="n">test_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">test_image</span><span class="p">)</span>    <span class="c1"># convert to array</span>
+<span class="n">test_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">test_image</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># add a extra dummy dimension that will correspond to the batch size so that the format matches what the predict method expects </span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">cnn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_image</span><span class="p">)</span>
+<span class="n">training_set</span><span class="o">.</span><span class="n">class_indices</span>  <span class="c1"># allows us to know which index correspondes to which output. In this case, it will show that 1 is dog and 0 is cat</span>
+<span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="s1">&#39;dog&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="s1">&#39;cat&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 </code></pre></div>
 </div>
 
