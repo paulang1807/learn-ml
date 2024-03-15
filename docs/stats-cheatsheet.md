@@ -815,3 +815,16 @@ $$ l(\beta) = \sum_i^n {y_i log(p(x_i)) + (1 - y_i) log (1 - p(x_i))} $$
 ### WCSS
 $$ WCSS = \sum_i^m distance(P_{i1}C_1)^2 + \sum_i^m distance(P_{i2}C_2)^2 + \dots + \sum_i^m distance(P_{in}C_n)^2 $$
 where $P_{i1}$ is the $i^{th}$ point in cluster 1, $C_1$ is the center of cluster 1, $m$ is the number of points in a cluster, $n$ is the number of clusters and distance is the Euclidean distance between a point and the center of the cluster
+
+## Gradient Descent
+$$ f'(m, b) = \begin{bmatrix}
+    \frac{df}{dm} \\
+    \frac{df}{db}
+\end{bmatrix} = 
+\begin{bmatrix}
+\frac{1}{N} \sum_i^N { -2x_i(y_i - (mx_i + b)) } \\
+\frac{1}{N} \sum_i^N { -2(y_i - (mx_i + b)) }
+\end{bmatrix} $$
+
+### Cost Function
+$$ f(m, b) = \frac{1}{N} \sum_i^N { (y_i - (mx_i + b))^2 }$$

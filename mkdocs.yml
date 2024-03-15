@@ -68,16 +68,18 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: index.md
   - Models:
+    - Model Basics: index.md
     - Regression: ml-reg.md
     - Classification: ml-cls.md
     - Clustering: ml-clustr.md
     - Association Rule Learning: ml-arl.md
     - Reinforcement Learning: ml-rein.md
+    - Natural Language Processing: ml-nlp.md
+    - Deep Learning: ml-deepl.md
     - Cheatsheet: ml-cheatsheet.md
   - Statistics & ML Concepts:
-    - Basics: stats-basics.md
+    - Stats Basics: stats-basics.md
     - Distributions: stats-distributions.md
     - Random Variables: stats-rv.md
     - Sampling: stats-sampling.md
@@ -87,8 +89,10 @@ nav:
     - Clustering: stats-clustr.md
     - Association Rule Learning: stats-arl.md
     - Reinforcement Learning: stats-rein.md
+    - Natural Language Processing: stats-nlp.md
+    - Deep Learning: stats-deepl.md
     - Cheatsheet: stats-cheatsheet.md
-    - Vizuals: stat-viz.md
+    - Stats Vizuals: stat-viz.md
   - Probability Concepts: 
     - Basics: probability.md
     - Cheatsheet: prob-cheatsheet.md
