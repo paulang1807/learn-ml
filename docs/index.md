@@ -24,7 +24,18 @@ Common Approach - Replace missing value with average of all values in the column
 ### Encode Categorical Data
 - This usually pushes the encoded columns to the front of the array
 
-**Encoding the Categorical data when order does not matter**
+**Encoding the Categorical data when the data is related (e.g. male, female etc.) or the order matters (e.g. small,medium,large etc.)**
+!!! abstract "SkLearn API"
+    [Label Encoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
+
+    **Sample Code**
+    ```python
+    from sklearn.preprocessing import LabelEncoder
+    le = LabelEncoder()
+    y = le.fit_transform(y)
+    ```
+
+**Encoding the Categorical data when the data points are not related and the order does not matter (e.g. state names)**
 !!! abstract "SkLearn API"
     [Column Transformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) 
 
@@ -37,16 +48,6 @@ Common Approach - Replace missing value with average of all values in the column
     
     ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remainder='passthrough')
     X = np.array(ct.fit_transform(X))
-    ```
-**Encoding the Categorical data when order matters (e.g. small,medium,large etc.)**
-!!! abstract "SkLearn API"
-    [Label Encoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
-
-    **Sample Code**
-    ```python
-    from sklearn.preprocessing import LabelEncoder
-    le = LabelEncoder()
-    y = le.fit_transform(y)
     ```
 
 ### Split training and test data
@@ -164,7 +165,7 @@ Fractions of positive events that are predicted correctly
     ```
 
 ##### Precision
-Fractions of positive events that are actually positive
+Fractions of predicted positive events that are actually positive
 
 !!! abstract "SkLearn API"
     [Precision Score](https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.precision_score.html#sklearn.metrics.precision_score)
