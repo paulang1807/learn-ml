@@ -68,5 +68,6 @@ It is the ratio of the likelihoods
 It is a probability distribution on probabilities
 
 - Gives the distribution of the probability of success given the number of past successes and failures
+- Since Beta distribution models a probability, its domain is bounded between 0 and 1
 - Left skewed for better success probabilities
 - Right skewed for weaker success probabilities

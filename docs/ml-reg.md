@@ -6,11 +6,10 @@
 - Joining data points result in a single line
 - Does not require Feature Scaling
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
     [Linear Regression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
 
-    **Sample Code**
     ```python
     from sklearn.linear_model import LinearRegression
     lr = LinearRegression(fit_intercept=True)
@@ -66,11 +65,10 @@
 - Does not require Feature Scaling
 - Need to choose the right polynomial degree for a good bias/variance tradeoff
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
     [Polynomial Features](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html)
 
-    **Sample Code**
     ```python
     from sklearn.preprocessing import PolynomialFeatures
     num_features = 4
@@ -93,11 +91,10 @@
 - Joining data points result in a single line
 - Requires Feature Scaling
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
     [Support Vector Regressor](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html)
 
-    **Sample Code**
     ```python
     # Scale Data
     from sklearn.preprocessing import StandardScaler
@@ -125,11 +122,10 @@
 - Poor results if dataset is too small
     - Overfitting can easily occur
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
     [Decision Tree Regressor](https://scikit-learn.org/1.4/modules/generated/sklearn.tree.DecisionTreeRegressor.html)
 
-    **Sample Code**
     ```python
     from sklearn.tree import DecisionTreeRegressor
     r_dt = DecisionTreeRegressor(random_state = 0)
@@ -148,11 +144,10 @@
 - Difficult to interpret
 - Overfitting can easily occur
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
     [Random Forest Regressor](https://scikit-learn.org/1.4/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
 
-    **Sample Code**
     ```python
     from sklearn.ensemble import RandomForestRegressor
     r_rf = RandomForestRegressor(n_estimators = 10, random_state = 0)

@@ -3,10 +3,9 @@
 - The SkLearn Model outputs a numpy array with predicted cluster indices corresponding each data point
 - Works well irrespective of the dataset size
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [K-Means Clustering](https://scikit-learn.org/1.4/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans)
 
-    **Sample Code**
     ```python
     from sklearn.cluster import KMeans
     # Calcluate WCSS and plot
@@ -40,12 +39,11 @@
 ### [Hierarchical Clustering](../stats-clustr/#hierarchical-clustering)
 - Not appropriate for large datasets
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Hierarchical Clustering](https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html)
 
     [Agglomerative Clustering](https://scikit-learn.org/1.4/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering)
 
-    **Sample Code**
     ```python
     # Plot dendogram to find optimal number of clusters
     import scipy.cluster.hierarchy as sch

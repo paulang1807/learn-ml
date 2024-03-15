@@ -8,10 +8,9 @@
     - Useful for ranking predictions by their probability
     - Provides info on statistical significance of features
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Logistic Regression](https://scikit-learn.org/1.4/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)
 
-    **Sample Code**
     ```python
     from sklearn.linear_model import LogisticRegression
     c_lr = LogisticRegression(random_state = 0)
@@ -25,10 +24,9 @@
 - Not a linear classifier
 - Requires Feature Scaling
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [K Neighbors Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
 
-    **Sample Code**
     ```python
     from sklearn.neighbors import KNeighborsClassifier
     c_knn = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2)
@@ -49,10 +47,9 @@
     - Not sensitive to overfitting
 - Good for segmentation use cases
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Support Vector Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
 
-    **Sample Code**
     ```python
     from sklearn.svm import SVC
     c_svc_rbf = SVC(kernel = 'rbf', random_state=0)   # rbf kernel
@@ -70,10 +67,9 @@
 - Uses probabilistic approach
     - Useful for ranking predictions by their probability
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Gaussian Naive Bayes Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB)
 
-    **Sample Code**
     ```python
     from sklearn.naive_bayes import GaussianNB
     c_gnb = GaussianNB()
@@ -90,10 +86,9 @@
 - Not good with small datasets
     - May result in overfitting
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Decision Tree Classifier](https://scikit-learn.org/1.4/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
 
-    **Sample Code**
     ```python
     from sklearn.tree import DecisionTreeClassifier
     c_dt = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
@@ -107,10 +102,9 @@
 - Works with both linear and non linear problems
 - Also see [Random Forest Regression](../ml-reg/#random-forest-regression)
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Decision Tree Classifier](https://scikit-learn.org/1.4/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
 
-    **Sample Code**
     ```python
     from sklearn.ensemble import RandomForestClassifier
     c_rf = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)

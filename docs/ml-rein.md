@@ -1,13 +1,12 @@
 ## Model Types
 ### [Upper Confidence Bound](../stats-rein/#upper-confidence-bound)
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
-    **Sample Code**
     ```python
     import math
 
-    N = 5000   # Number of rounds for which to run the test (rows in the dataset)
+    N = 5000   # Number of rounds for which to run the test (subset of rows in the dataset)
     d = 10      # Total number of options (columns in the dataset)
     ads_selected = []
     numbers_of_selections = [0] * d   # List of 10 0s, N_i(n)
@@ -50,13 +49,12 @@
 
 ### [Thompson Sampling Algorithm](../stats-rein/#thompson-sampling-algorithm)
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
-    **Sample Code**
     ```python
     import random
 
-    N = 5000   # Number of rounds for which to run the test (rows in the dataset)
+    N = 5000   # Number of rounds for which to run the test (subset of rows in the dataset)
     d = 10      # Total number of options (columns in the dataset)
     ads_selected = []
     numbers_of_rewards_1 = [0] * d  # the number of times selection of the option i resulted in a reward ($N_i^1(n)$)
@@ -72,13 +70,13 @@
             if (random_beta > max_theta):
                 max_theta = random_beta
                 ad = i
-            ads_selected.append(ad)
-            reward = dataset.values[n, ad]
+        ads_selected.append(ad)
+        reward = dataset.values[n, ad]
 
-            if reward == 1:
-                numbers_of_rewards_1[ad] = numbers_of_rewards_1[ad] + 1
-            else:
-                numbers_of_rewards_0[ad] = numbers_of_rewards_0[ad] + 1
+        if reward == 1:
+            numbers_of_rewards_1[ad] = numbers_of_rewards_1[ad] + 1
+        else:
+            numbers_of_rewards_0[ad] = numbers_of_rewards_0[ad] + 1
 
     # Visualize
     plt.hist(ads_selected)

@@ -1,10 +1,9 @@
 ## Model Types
 ### [Apriori](../stats-arl/#apriori)
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
     [Apriori](https://github.com/ymoch/apyori/tree/master)
 
-    **Sample Code**
     ```python
     # Read Data
     dataset = pd.read_csv('data.csv', header = None)
