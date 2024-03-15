@@ -474,15 +474,42 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    Model Selection
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bias-variance-tradeoff" class="md-nav__link">
+    Bias-Variance Tradeoff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-fold-cross-validation" class="md-nav__link">
+    K-Fold Cross Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-search" class="md-nav__link">
+    Grid Search
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-tuning" class="md-nav__link">
-    Parameter Tuning
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1326,15 +1353,42 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    Model Selection
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bias-variance-tradeoff" class="md-nav__link">
+    Bias-Variance Tradeoff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-fold-cross-validation" class="md-nav__link">
+    K-Fold Cross Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-search" class="md-nav__link">
+    Grid Search
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-tuning" class="md-nav__link">
-    Parameter Tuning
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1372,12 +1426,11 @@
 <div class="admonition abstract">
 <p class="admonition-title">SkLearn API</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html">Simple Imputer</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
 <span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 <span class="n">imputer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Include all numeric columns</span>
 <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h3 id="encode-categorical-data">Encode Categorical Data</h3>
 <ul>
@@ -1385,35 +1438,32 @@
 </ul>
 <p><strong>Encoding the Categorical data when the data is related (e.g. male, female etc.) or the order matters (e.g. small,medium,large etc.)</strong></p>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html">Label Encoder</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
 <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <p><strong>Encoding the Categorical data when the data points are not related and the order does not matter (e.g. state names)</strong></p>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html">Column Transformer</a> </p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html">One Hot Encoder</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
 
 <span class="n">ct</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span><span class="n">transformers</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;encoder&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(),</span> <span class="p">[</span><span class="mi">0</span><span class="p">])],</span> <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h3 id="split-training-and-test-data">Split training and test data</h3>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">Train Test Split</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h3 id="feature-scaling">Feature Scaling</h3>
 <ul>
@@ -1447,9 +1497,8 @@
 </li>
 </ul>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">Standard Scaler</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
@@ -1463,17 +1512,16 @@
 <span class="c1"># Apply feature scaling to all independent variables</span>
 <span class="c1"># Also apply to dependent variables, if needed</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h3 id="model-evaluation"><a href="./ml-cheatsheet/#accuracy-and-error-rates">Model Evaluation</a></h3>
 <h4 id="regression-models">Regression Models</h4>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score">R2 Score</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h4 id="classification-models">Classification Models</h4>
 <h5 id="confusion-matrix">Confusion Matrix</h5>
@@ -1507,42 +1555,38 @@
 </tbody>
 </table>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix">Confusion Matrix</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
 <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h5 id="accuracy">Accuracy</h5>
 <p>Fractions of samples predicted correctly</p>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.accuracy_score.html#sklearn.metrics.accuracy_score">Accuracy Score</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h5 id="recall">Recall</h5>
 <p>Fractions of positive events that are predicted correctly</p>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.recall_score.html#sklearn.metrics.recall_score">Recall Score</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">recall_score</span>
 <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h5 id="precision">Precision</h5>
 <p>Fractions of predicted positive events that are actually positive</p>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.precision_score.html#sklearn.metrics.precision_score">Precision Score</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span>
 <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h5 id="f1-score">F1 Score</h5>
 <p>Harmonic mean of recall and precision</p>
@@ -1550,12 +1594,11 @@
 <li>The higher the score the better the model</li>
 </ul>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.f1_score.html#sklearn.metrics.f1_score">F1 Score</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
 <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
 <h5 id="roc-curve-and-roc-auc-score">ROC Curve and ROC AUC Score</h5>
 <ul>
@@ -1573,22 +1616,80 @@
 </li>
 </ul>
 <div class="admonition abstract">
-<p class="admonition-title">SkLearn API</p>
+<p class="admonition-title">Sample Code</p>
 <p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.roc_curve.html#sklearn.metrics.roc_curve">ROC Curve</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
 <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_prob</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score">ROC AUC Score</a></p>
-<p><strong>Sample Code</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
 <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_prob</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </div>
-<h2 id="parameter-tuning">Parameter Tuning</h2>
+<h3 id="model-selection">Model Selection</h3>
+<h4 id="bias-variance-tradeoff">Bias-Variance Tradeoff</h4>
+<div class="admonition abstract">
+<p class="admonition-title">Terminology</p>
 <ul>
-<li>Used for tuning hyperparameters (parameters which are not learnt by the model)</li>
+<li><strong>Bias</strong>: Error in ML model due to incorrect assumptions </li>
+<li><strong>Variance</strong>: Changes in the model resulting from using different parts of the training dataset for training</li>
 </ul>
+</div>
+<p>The ideal scenario is to have low bias and low variance</p>
+<h4 id="k-fold-cross-validation">K-Fold Cross Validation</h4>
+<ul>
+<li>Used to validate the model using various combinations of the training data<ul>
+<li>Ensures that we don't just rely on a single validation using test data to determine how good or bad the model is</li>
+</ul>
+</li>
+<li>Steps<ul>
+<li>Divide the training data into <span class="arithmatex">\(k\)</span> folds</li>
+<li>Iterate over the folds using <span class="arithmatex">\(k -1\)</span> folds for training and the 1 fold for testing</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Sample Code</p>
+<p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score">Cross Validation Score</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="c1"># Example for SVC classifier</span>
+<span class="n">accuracies</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">c_svc</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>   <span class="c1"># 10 training splits</span>
+<span class="n">accuracies</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: </span><span class="si">{:.2f}</span><span class="s2"> %&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracies</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standard Deviation: </span><span class="si">{:.2f}</span><span class="s2"> %&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracies</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<h4 id="grid-search">Grid Search</h4>
+<ul>
+<li>Allows testing various hyperparameter combinations to get the base selection</li>
+<li>Uses cross validation to ensure a good model selection with the optimal hyperparameters</li>
+<li>Steps<ul>
+<li>Choose the hyperparameters to test the model with</li>
+<li>Divide the training data into <span class="arithmatex">\(k\)</span> folds</li>
+<li>For each hyperparameter combination, iterate over the folds using <span class="arithmatex">\(k -1\)</span> folds for training and the 1 fold for testing</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Sample Code</p>
+<p><a href="https://scikit-learn.org/1.4/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV">GridSearchCV</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example for SVC classifier</span>
+<span class="c1"># Specify hyperparameters to test</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;kernel&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linear&#39;</span><span class="p">]},</span>
+            <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;kernel&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;rbf&#39;</span><span class="p">],</span> <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]}]</span>
+
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">c_svc</span><span class="p">,</span>
+                        <span class="n">param_grid</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">,</span>
+                        <span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">,</span>
+                        <span class="n">cv</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+                        <span class="n">n_jobs</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># all processors in the machine will be used</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">best_accuracy</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_score_</span>
+<span class="n">best_parameters</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Accuracy: </span><span class="si">{:.2f}</span><span class="s2"> %&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_accuracy</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Parameters:&quot;</span><span class="p">,</span> <span class="n">best_parameters</span><span class="p">)</span>
+</code></pre></div>
+</div>
 
 
 
