@@ -77,6 +77,7 @@ nav:
     - Reinforcement Learning: ml-rein.md
     - Natural Language Processing: ml-nlp.md
     - Deep Learning: ml-deepl.md
+    - Dimensionality Reduction: ml-dimred.md
     - Cheatsheet: ml-cheatsheet.md
   - Statistics & ML Concepts:
     - Stats Basics: stats-basics.md
@@ -91,6 +92,7 @@ nav:
     - Reinforcement Learning: stats-rein.md
     - Natural Language Processing: stats-nlp.md
     - Deep Learning: stats-deepl.md
+    - Dimensionality Reduction: stats-dimred.md
     - Cheatsheet: stats-cheatsheet.md
     - Stats Vizuals: stat-viz.md
   - Probability Concepts: 
