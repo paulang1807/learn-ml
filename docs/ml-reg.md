@@ -154,3 +154,15 @@
     r_rf.fit(X_train,y_train)
     y_pred = r_rf.predict(X_test)
     ```
+
+### XGB Regression
+
+!!! abstract "Sample Code"
+    [XGBoost Regressor](https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.XGBRegressor)
+
+    ```python
+    from xgboost import XGBRegressor
+    r_xgb = XGBRegressor()
+    r_xgb.fit(X_train, y_train)
+    y_pred_xgb = r_xgb.predict(X_test)
+    ```

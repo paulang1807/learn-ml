@@ -112,3 +112,16 @@
     # Predict
     y_pred_dt = c_rf.predict(sc.transform(X_test))
     ```
+    ```
+
+### XGB Classification
+
+!!! abstract "Sample Code"
+    [XGBoost Classifier](https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.XGBClassifier)
+
+    ```python
+    from xgboost import XGBClassifier
+    c_xgb = XGBClassifier()
+    c_xgb.fit(X_train, y_train)
+    y_pred_xgb = c_xgb.predict(X_test)
+    ```
