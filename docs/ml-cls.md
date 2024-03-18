@@ -125,3 +125,15 @@
     c_xgb.fit(X_train, y_train)
     y_pred_xgb = c_xgb.predict(X_test)
     ```
+
+### CatBoost Classification
+
+!!! abstract "Sample Code"
+    [CatBoost Classifier](https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier)
+
+    ```python
+    from catboost import CatBoostClassifier
+    c_cb = CatBoostClassifier()
+    c_cb.fit(X_train, y_train)
+    y_pred_cb = c_cb.predict(X_test)
+    ```
