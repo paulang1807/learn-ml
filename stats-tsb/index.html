@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stats-basics/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/stats-tsb/">
       
       
-        <link rel="prev" href="../ml-cheatsheet/">
+        <link rel="prev" href="../stats-hypo-test/">
       
       
-        <link rel="next" href="../stats-distributions/">
+        <link rel="next" href="../stats-reg/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Stats Basics - Machine Learning Notes</title>
+        <title>Time Series Forecasting - Machine Learning Notes</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#statistics-basics" class="md-skip">
+        <a href="#basics" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stats Basics
+              Time Series Forecasting
             
           </span>
         </div>
@@ -565,29 +565,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Stats Basics
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../stats-basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,68 +576,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#median-and-mode" class="md-nav__link">
-    Median and Mode
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#range-and-quartiles" class="md-nav__link">
-    Range and Quartiles
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variance-and-standard-deviation" class="md-nav__link">
-    Variance and Standard Deviation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shifting-and-scaling" class="md-nav__link">
-    Shifting and Scaling
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#covariance" class="md-nav__link">
-    Covariance
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#correlation" class="md-nav__link">
-    Correlation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -747,9 +665,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../stats-tsb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Time Series Forecasting
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -758,6 +694,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#white-noise" class="md-nav__link">
+    White Noise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-walk-drunkard-walk" class="md-nav__link">
+    Random Walk (Drunkard Walk)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stationarity" class="md-nav__link">
+    Stationarity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seasonality" class="md-nav__link">
+    Seasonality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocorrelation" class="md-nav__link">
+    Autocorrelation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-autocorrelation" class="md-nav__link">
+    Partial Autocorrelation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    Model Selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1133,8 +1149,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1143,44 +1157,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#median-and-mode" class="md-nav__link">
-    Median and Mode
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav" aria-label="Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#white-noise" class="md-nav__link">
+    White Noise
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#range-and-quartiles" class="md-nav__link">
-    Range and Quartiles
+        
+          <li class="md-nav__item">
+  <a href="#random-walk-drunkard-walk" class="md-nav__link">
+    Random Walk (Drunkard Walk)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#variance-and-standard-deviation" class="md-nav__link">
-    Variance and Standard Deviation
+        
+          <li class="md-nav__item">
+  <a href="#stationarity" class="md-nav__link">
+    Stationarity
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#shifting-and-scaling" class="md-nav__link">
-    Shifting and Scaling
+        
+          <li class="md-nav__item">
+  <a href="#seasonality" class="md-nav__link">
+    Seasonality
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#covariance" class="md-nav__link">
-    Covariance
+        
+          <li class="md-nav__item">
+  <a href="#autocorrelation" class="md-nav__link">
+    Autocorrelation
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#correlation" class="md-nav__link">
-    Correlation
+        
+          <li class="md-nav__item">
+  <a href="#partial-autocorrelation" class="md-nav__link">
+    Partial Autocorrelation
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    Model Selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1202,108 +1236,228 @@
   
 
 
-<h1 id="statistics-basics">Statistics Basics</h1>
-<h2 id="median-and-mode">Median and Mode</h2>
-<p><strong>Median:</strong> The value at the middle of the data set when we line up all the
-data points in order from least to greatest.</p>
-<p><strong>Sample median:</strong> Obtained by first ordering the n observations from smallest to largest (with any repeated values included so that every sample observation appears in the ordered list). Then,</p>
-<div class="admonition success">
-<p class="admonition-title">Expression</p>
-<div class="arithmatex">\[\tilde x = \begin{cases}
-\text{The single middle value if n is odd} = \biggl(\frac{n + 1}{2}\biggl)^{th} \text{ordered value} \\
-\text{The average of the two middle values if n is even} = {average of } \biggl(\frac{n}{2}\biggl)^{th} and \biggl(\frac{n}{2} + 1 \biggl)^{th} \text{ordered values}
-\end{cases} \]</div>
+  <h1>Time Series Forecasting</h1>
+
+<h2 id="basics">Basics</h2>
+<div class="admonition abstract">
+<p class="admonition-title">Terminology</p>
+<ul>
+<li><strong>Market Efficiency</strong>: Measures the level of difficulty in forecasting future values </li>
+<li><strong>Arbitrage</strong>: Buy and sell commodities and make a safe profit while the price adjusts</li>
+</ul>
 </div>
-<p><strong>Mode:</strong> The most frequently occuring value in the data set</p>
-<h2 id="range-and-quartiles">Range and Quartiles</h2>
-<p><strong>Range:</strong> The difference between the largest and the smallest value in the dataset.</p>
-<p><strong>Quartiles:</strong> A number that divides the data set into quarters. They are expressed as <span class="arithmatex">\(4^{th}\)</span>.</p>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1DBoFlqtpY1jBBz2mZRoac2KlQeNLpT3C">Sample EDA</a></li>
+<li>Intervals between data points should be identical<ul>
+<li>Encode / Impute missing data / time periods as needed<ul>
+<li>Setting the frequency (<code>df.asfreq()</code> method) will add rows corresponding to any missing periods for the desired frequency</li>
+<li>When handling missing data, it is usually NOT a good idea to fill the missing values with mean values<ul>
+<li>This is appropriate only when all data points for the column fluctuate heavilly around the mean which is rarely the case</li>
+<li>See <a href="../ml-tsb/#handle-missing-data">Handle Missing Data</a> for sample code</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We normally use dates as the dataframe indexes for time series data<ul>
+<li>When <a href="../ml-tsb/#cust-id-tsb-resampl">resampling</a> data, the date column is automatically set as the index column</li>
+</ul>
+</li>
+<li>In time series analysis, we normally work with one dependent variable at a time</li>
+<li><mark><strong>We cannot shuffle time series data as they need to be in chronological order</strong></mark></li>
+<li>
+<p>If the data has any non linear distribution (quadratic, polynomial, logarithmic, exponential etc.), </p>
+<ul>
+<li>converting the values to get a more linear trend can be helpful  </li>
+<li>
+<p>helps reducing the noise and bring out underlying trends</p>
+<ul>
+<li>
+<p>Various <strong>Power Transformation</strong> techniques can be used in such scenarios</p>
+<ul>
+<li><mark>Used only when there is no trend or seasonality in the series</mark></li>
+<li><mark><strong>Moving Average Smoothing</strong></mark> is the process of creating a new series where the values correspond to the <strong>"moving averages"</strong> of the original values<ul>
+<li>Involves determining the <strong>window width</strong> and <strong>position</strong> (leading, trailing, centered etc.)</li>
+<li>Centered and Leading positions require a knowledge of future values and are not useful in predictions (since future value is what we are trying to predict)</li>
+</ul>
+</li>
+<li><mark><strong><a href="../stats-cheatsheet/#exponential-smoothing">Exponential Smoothing</a></strong></mark> is the process of creating a new series where the values correspond to the <strong>"weighted averages"</strong> of the original values with larger weight given to the more recent values</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>The <span class="arithmatex">\(1^{st}\)</span> quartile, <span class="arithmatex">\(Q_1\)</span>, is equal to 1/4 or 0.25 quantile or 25th percentile and separates the lowest 25 % of data points from the second 25 % . </li>
-<li>The <span class="arithmatex">\(2^{nd}\)</span> quartile, <span class="arithmatex">\(Q_2\)</span>, is the <code>median</code>, and it separates the data set into halves. </li>
-<li>The <span class="arithmatex">\(3^{rd}\)</span> quartile, <span class="arithmatex">\(Q_3\)</span>, is equal to 3/4 or 0.75 quantile or 75th percentile and separates the third 25 % of data points from the upper 25 % of data points.</li>
-</ul>
-</div>
-<p><strong>Interquartile Range</strong> is the difference between the third and the first quartile</p>
-<div class="admonition success">
-<p class="admonition-title">Expression</p>
-<div class="arithmatex">\[IQR = Q_3 - Q_1\]</div>
-</div>
-<p><strong>Deciles</strong> are expressed as <span class="arithmatex">\(10^{th}\)</span>. For example, <span class="arithmatex">\(3^{rd}\)</span> decile is equal to 3/10 or 0.3 quantile</p>
-<h2 id="variance-and-standard-deviation">Variance and Standard Deviation</h2>
-<p><strong><a href="../stats-cheatsheet/#population-variance">Variance</a>:</strong> How far the data is spread from the mean.  </p>
-<p><strong><a href="../stats-cheatsheet/#population-standard-deviation">Standard Deviation</a>:</strong> Square root of the Variance.</p>
-<h2 id="shifting-and-scaling">Shifting and Scaling</h2>
-<p><strong>Shifting:</strong> Whether we add a constant to each data point or subtract a constant from each data point, <mark>the mean, median, and mode will change by the same amount</mark>, but <mark>the range, standard deviation and IQR will stay the same</mark></p>
-<div class="admonition success">
-<p class="admonition-title">Expression</p>
-<p>If <span class="arithmatex">\(y_1 = x_1 + c, y_2 = x_2 + c, ..., y_n = x_n + c, \ then \ s_y^2 = s_x^2\)</span></p>
-</div>
-<p><strong>Scaling:</strong> If we multiply or divide each data point in a dataset by a constant value, the mean, median, mode, range ,standard deviation and IQR will <mark>all get multiplied or divided by the same value</mark></p>
-<div class="admonition success">
-<p class="admonition-title">Expression</p>
-<p>If <span class="arithmatex">\(y_1 = cx_1, y_2 = cx_2, ..., y_n = cx_n, \ then \ s_y^2 = c^2s_x^2 \ and  \ s_y = |c|s_x\)</span></p>
-</div>
-<h2 id="covariance"><a href="../stats-cheatsheet/#covariance">Covariance</a></h2>
-<p><strong>Covariance</strong> measures the amount of <strong>linear dependence</strong> between two random variables, i.e., it reflects the directional relationship (but not the magnitude) between two random variables.</p>
-<ul>
-<li>If a positive change in one variable causes a positive change in the other variable (or a negative change in one causes a negative change in the other), then the variables have a positive relationship and we should expect positive covariance. </li>
-<li>But if a positive change in one variable causes a negative change in the other variable, then the variables have a negative relationship and we should expect negative covariance. </li>
-<li>And if the variables have no real discernible relationship, we’ll expect a value for covariance that’s close to 0.</li>
-</ul>
-<div class="admonition danger">
-<p class="admonition-title">Remember</p>
-<ul>
-<li><mark><strong>Covariance calculation can’t distinguish between different units of measure (e.g. using hours vs minutes - using minutes will result in a larger covariance value)</strong></mark></li>
-<li>To correct for covariance’s lack of sensitivity to the units of measure of each variable, we prefer instead to calculate the <mark><strong>correlation coefficient</strong></mark></li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>If <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are independent, 
-<script type="math/tex; mode=display"> Cov(X,Y) = 0 </script>
-</li>
-</ul>
-</div>
-<h2 id="correlation"><a href="../stats-cheatsheet/#correlation">Correlation</a></h2>
-<p><strong>Correlation</strong> is the degree of the relationship between two random variables. </p>
-<ul>
-<li>Correlation, <span class="arithmatex">\(\rho\)</span> is defined as the covariance of the standardizations of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span></li>
-<li>Correlation, <span class="arithmatex">\(\rho\)</span> is dimensionless (it's a ratio)</li>
-</ul>
-<p id="cust-id-base-corr-tip"></p>
-
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<ul>
-<li>varies between -1 and 1</li>
 <li>
-<p><span class="arithmatex">\(\rho = 1 \ or \ -1\)</span> iff <span class="arithmatex">\(Y = aX + b\)</span> for some numbers <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> with <span class="arithmatex">\(a \neq 0\)</span></p>
+<p>A <strong>Fast Learner</strong> model is one where the smoothing constant (<span class="arithmatex">\(\alpha\)</span>) is closer to 1</p>
 <ul>
-<li><span class="arithmatex">\(0 \leq \rho \leq 1\)</span> indicates positive slope for regression line</li>
-<li><span class="arithmatex">\(-1 \leq \rho \leq 0\)</span> indicates negative slope for regression line</li>
+<li>More importance given to the newer values</li>
 </ul>
 </li>
 <li>
-<p>the relationship is described as strong if <span class="arithmatex">\(| \rho | \geq .8\)</span>, moderate if <span class="arithmatex">\(.5 \lt |\rho | \lt .8\)</span>, and weak if <span class="arithmatex">\(| \rho| \leq .5\)</span></p>
+<p>A <strong>Slow Learner</strong> model is one where the smoothing constant (<span class="arithmatex">\(\alpha\)</span>) is closer to 0</p>
+<ul>
+<li>More importance given to the older values</li>
+</ul>
 </li>
-<li>doesn't change whether we add/multiply constants to/with the x or y variables</li>
-<li>if <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are independent, then <span class="arithmatex">\(\rho = 0\)</span>, but <span class="arithmatex">\(\rho = 0\)</span> does not imply independence</li>
 </ul>
 </div>
-<p>The <strong><a href="../stats-cheatsheet/#pearson-correlation-coefficient">Pearson Correlation Coefficient</a></strong> is one of several correlation coefficients that can be used to measure correlation. </p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>It makes sense to calculate the Pearson correlation coefficient if all of the following conditions are true: </p>
-<ul>
-<li>Both variables are quantitative.</li>
-<li>The variables are normally distributed or close to normally distributed. </li>
-<li>There are no outliers. The presence of outliers may significantly skew the data and the resulting Pearson correlation coefficient will not accurately reflect the correlation of the two variables. </li>
-<li>The relationship between the variables is linear. Pearson correlation is best for data sets that with a reasonably straight trend line.  </li>
+</li>
 </ul>
+</li>
+<li>
+<p>may result in better forecasting for some of the models</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Some time series models expect <strong>de-trended</strong> and <strong>de-seasonalized</strong> data
+    <p id="cust-id-tsb-diff"></p></p>
+<ul>
+<li>Use <mark><strong><a href="../stats-cheatsheet/#lag-k-differencing">Differencing</a></strong></mark> to remove the trend and seasonality from the data in such cases<ul>
+<li>Use <code>Lag 1 Differencing</code> to get rid of the linear trends<ul>
+<li>For getting rid of the quadratic trends, we apply differencing on the "differenced" series again.</li>
+</ul>
+</li>
+<li>Use <code>Lag 7 Differencing</code> to get rid of weekly seasonality, <code>Lag 12 Differencing</code> to get rid of monthly seasonality and so on<ul>
+<li>This is applied on the "differenced" data that was used to remove trends</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Plot data to understand patterns in data and use corresponding feature engineering techniques to address the patterns</p>
+<ul>
+<li>For example, use <strong>Lag Scatter plots</strong> to understand if there is any relation between lag periods and current periods<ul>
+<li>Use Lag Features to address these patterns</li>
+</ul>
+</li>
+<li>Refer <a href="https://colab.research.google.com/drive/1DBoFlqtpY1jBBz2mZRoac2KlQeNLpT3C">Sample EDA</a> for more examples</li>
+</ul>
+</li>
+<li><mark>For a good model the residuals will be random (stationary <strong>white noise</strong>) and the residual coefficients will not be significant</mark></li>
+<li>For train-test split we need to ensure that <ul>
+<li>Training data is from beginning to a certain cut off point in time</li>
+<li>Test data starts at the cut off point and continues till the end</li>
+</ul>
+</li>
+</ul>
+<h3 id="white-noise"><a href="https://colab.research.google.com/drive/10kKCr6cRvFVMWI89cGGLmp98KdvJM1_G#scrollTo=vqSgsmJBlBC5">White Noise</a></h3>
+<ul>
+<li>A special type of time series where the data does not follow a pattern<ul>
+<li>Is a random series</li>
+<li>Hence difficult to model or forecast</li>
+</ul>
+</li>
+<li>Conditions:<ul>
+<li>Have a constant mean and variance</li>
+<li>No autocorrelation in any period<ul>
+<li>No clear relation between the past and present values in the time series</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Is <a href="#stationarity">stationary</a></li>
+</ul>
+<h3 id="random-walk-drunkard-walk"><a href="https://colab.research.google.com/drive/10kKCr6cRvFVMWI89cGGLmp98KdvJM1_G#scrollTo=mRviui_llBC6">Random Walk (Drunkard Walk)</a></h3>
+<ul>
+<li>A special type of time series where the next value is only dependent on the current value<ul>
+<li>The best esitmator of today's value is yesterday's value</li>
+<li>The best estimator of tomorrow's value is today's value</li>
+<li>This process is also referred to as <mark><strong>Naive Forecasting</strong></mark></li>
+</ul>
+</li>
+<li>Apart from the dependency on the previous value, the entire series is random</li>
+</ul>
+<h3 id="stationarity"><a href="https://colab.research.google.com/drive/1u93tB_xbgIrgWNFWrHId_oom7ttz1T01#scrollTo=b8edb6e7-7a2c-4b3c-a09c-cb799cb22a02">Stationarity</a></h3>
+<ul>
+<li>Implies that taking consecutive sets of data <strong>with the same size</strong> should have <strong>identical covariances</strong> regarless of the starting point</li>
+<li>Also referred as <mark><strong>weak-form stationarity</strong></mark> or <mark><strong>covariance stationarity</strong></mark></li>
+<li>Assumptions:<ul>
+<li>Have a constant mean and variance</li>
+<li>Consitent covariance between periods at constant distance from one another</li>
+</ul>
+</li>
+<li>White Noise is an example of a weak form stationarity </li>
+<li><mark><strong>Dickey-Fuller Test</strong></mark> (also called DF Test) can be used to check if data is from a stationary process<ul>
+<li>Null hypothesis is that the data comes from a non-stationary process</li>
+<li><mark><strong>Reject Null hypothesis if the test statistic is less than the critical value for the desired significance level in the Dickey-Fuller table</strong></mark></li>
+</ul>
+</li>
+</ul>
+<h3 id="seasonality"><a href="https://colab.research.google.com/drive/1u93tB_xbgIrgWNFWrHId_oom7ttz1T01#scrollTo=b21f9a3d-c11c-43eb-815a-a374d3ec92eb">Seasonality</a></h3>
+<ul>
+<li>Suggests that certain trends in the data appear on a cyclical basis</li>
+<li>If the data is seasonal, we need to consider factors other than the current period for prediction</li>
+<li>Testing approaches<ul>
+<li><mark><strong>Decomposition (Naive Decomposition)</strong></mark><ul>
+<li>Splits the time series into 3 effects:<ul>
+<li>Trend -&gt; Consistent patterns in data</li>
+<li>Seasonal -&gt; Cyclical patterns</li>
+<li>Residual/Noise -&gt; Prediction Error or Random Variation</li>
+</ul>
+</li>
+<li>Expects a linear relationship between the three effects</li>
+<li>Uses the previous period values as trend-setter</li>
+<li>Types:<ul>
+<li>Approaches:<ul>
+<li><strong>Additive</strong>: For any time period, the observed value is the sum of the three effets</li>
+<li><strong>Multiplicative</strong>: For any time period, the observed value is the product of the three effets</li>
+</ul>
+</li>
+<li>If the data is seasonal, the resulting plot will show the seasonal pattern</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="autocorrelation"><a href="https://colab.research.google.com/drive/1u93tB_xbgIrgWNFWrHId_oom7ttz1T01#scrollTo=02191b9d-b9bc-488a-8d9f-9d47127665cf">Autocorrelation</a></h3>
+<ul>
+<li>Represents the correlation between an observation and a "lagged" version of itself<ul>
+<li>Includes both direct and indirect effects<ul>
+<li>Effect of lag t on current does includes the effects of lags t-1,t-2, etc. on lag t (which may indirectly effect the current data point)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Autocorrelation in data <ul>
+<li>at daily frequency checks for correlation between yesterday's and today's data</li>
+<li>at monthly frequency checks for correlation between last month and current month data</li>
+</ul>
+</li>
+<li>In the ACF plot, <ul>
+<li>X Axis represnts the lags</li>
+<li>Y Axis shows the correlation values</li>
+<li>The Blue region around the x axis represents significance</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">ACF Interpretation</p>
+<ul>
+<li>If the autocorrelation values are higher than the blue region, it suggests that the coefficients are significant indicating that there is time dependence in the data</li>
+<li>If the values fall withiin the blue area, the coefficients are not significant</li>
+<li>A sharp drop-off indicates the lag beyond which correlations are not significant</li>
+</ul>
+</div>
+<h3 id="partial-autocorrelation"><a href="https://colab.research.google.com/drive/1u93tB_xbgIrgWNFWrHId_oom7ttz1T01#scrollTo=83f87240-e49c-4df1-a15b-b344a1d004c8">Partial Autocorrelation</a></h3>
+<ul>
+<li>Measures the correlation between an observation and its lagged values <strong>while adjusting for the effects of intervening observations</strong> </li>
+<li>Helps identify the direct effect of a specific lagged version on the time series <ul>
+<li>Removes the influence of other intermediate lags on the concerned lags<ul>
+<li>Effect of lag t on current does not include the effects of lags t-1,t-2, etc. on lag t (which may indirectly effect the current data point)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="model-selection">Model Selection</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When comparing models, we should select the one with <strong>Higher Log Likelihood</strong> and <strong>Lower Information Criteria</strong> (<strong>AIC</strong> and <strong>BIC</strong> values)</p>
 </div>
 
 

@@ -482,6 +482,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../ml-tsb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time Series Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ml-cheatsheet/" class="md-nav__link">
         
   
@@ -632,6 +652,26 @@
   
   <span class="md-ellipsis">
     Hypothesis Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats-tsb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time Series Forecasting
   </span>
   
 
@@ -1608,6 +1648,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#time-series-concepts" class="md-nav__link">
+    Time Series Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Series Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-smoothing" class="md-nav__link">
+    Exponential Smoothing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lag-k-differencing" class="md-nav__link">
+    Lag k Differencing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoregressive-model-ar" class="md-nav__link">
+    Autoregressive Model (AR)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-average-model-ma" class="md-nav__link">
+    Moving Average Model (MA)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2574,6 +2655,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#time-series-concepts" class="md-nav__link">
+    Time Series Concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Time Series Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exponential-smoothing" class="md-nav__link">
+    Exponential Smoothing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lag-k-differencing" class="md-nav__link">
+    Lag k Differencing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoregressive-model-ar" class="md-nav__link">
+    Autoregressive Model (AR)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-average-model-ma" class="md-nav__link">
+    Moving Average Model (MA)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3511,6 +3633,23 @@ where <span class="arithmatex">\(P_{i1}\)</span> is the <span class="arithmatex"
 \end{bmatrix} \]</div>
 <h3 id="cost-function">Cost Function</h3>
 <div class="arithmatex">\[ f(m, b) = \frac{1}{N} \sum_i^N { (y_i - (mx_i + b))^2 }\]</div>
+<h2 id="time-series-concepts">Time Series Concepts</h2>
+<h3 id="exponential-smoothing">Exponential Smoothing</h3>
+<div class="arithmatex">\[ F_{t + 1} = \alpha y_t + \alpha (1 - \alpha) y_{t -1} + \alpha (1 - \alpha)^2 y_{t -2} + \dots\]</div>
+<p>where <span class="arithmatex">\(0 \leq \alpha \leq 1\)</span> is the smoothing constant</p>
+<h3 id="lag-k-differencing">Lag k Differencing</h3>
+<div class="arithmatex">\[ Difference = Y_t - Y_{t-k} \]</div>
+<h2 id="autoregressive-model-ar">Autoregressive Model (AR)</h2>
+<div class="arithmatex">\[ x_t = \phi_0 + \phi_1 x_{t - 1} + \epsilon_t \]</div>
+<p>where <span class="arithmatex">\(t\)</span> is the current period, <span class="arithmatex">\(t - 1\)</span> is the previous period, <span class="arithmatex">\(x_t\)</span> is the value for the current period, <span class="arithmatex">\(x_{t - 1}\)</span> is the value for the previous period, <span class="arithmatex">\(\phi_1\)</span> is the coefficient for the previous period value and <span class="arithmatex">\(\epsilon_t\)</span> is the residual error and should be just some unpredictable "white noise"</p>
+<p>and <span class="arithmatex">\(-1 \lt \phi_1 \lt 1\)</span></p>
+<p><strong>Pct Change</strong>
+<script type="math/tex; mode=display"> 100 * \frac{x_t - x_{t - 1}}{x_{t - 1}} </script>
+</p>
+<h2 id="moving-average-model-ma">Moving Average Model (MA)</h2>
+<div class="arithmatex">\[ x_t = \phi_0 + \phi_1  \epsilon_{t - 1} + \epsilon_t \]</div>
+<p>where <span class="arithmatex">\(t\)</span> is the current period, <span class="arithmatex">\(t - 1\)</span> is the previous period, <span class="arithmatex">\(\epsilon_t\)</span> is the residual for the current period, <span class="arithmatex">\(\epsilon_{t - 1}\)</span> is the residual for the previous period and <span class="arithmatex">\(\phi_1\)</span> is the coefficient for the previous period value</p>
+<p>and <span class="arithmatex">\(-1 \lt \phi_1 \lt 1\)</span></p>
 
 
 

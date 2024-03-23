@@ -12,13 +12,13 @@
         <meta name="author" content="Angshuman Paul">
       
       
-        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-cheatsheet/">
+        <link rel="canonical" href="https://paulang1807.github.io/learn-ml/ml-tsb/">
       
       
-        <link rel="prev" href="../ml-tsb/">
+        <link rel="prev" href="../ml-dimred/">
       
       
-        <link rel="next" href="../stats-basics/">
+        <link rel="next" href="../ml-cheatsheet/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Cheatsheet - Machine Learning Notes</title>
+        <title>Time Series Basics - Machine Learning Notes</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#k-nearest-neighbors" class="md-skip">
+        <a href="#modeling-steps" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cheatsheet
+              Time Series Basics
             
           </span>
         </div>
@@ -482,26 +482,6 @@
                 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../ml-tsb/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Time Series Basics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -515,7 +495,7 @@
           
   
   <span class="md-ellipsis">
-    Cheatsheet
+    Time Series Basics
   </span>
   
 
@@ -526,7 +506,7 @@
         
   
   <span class="md-ellipsis">
-    Cheatsheet
+    Time Series Basics
   </span>
   
 
@@ -546,106 +526,31 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#k-nearest-neighbors" class="md-nav__link">
-    K-Nearest Neighbors
+  <a href="#modeling-steps" class="md-nav__link">
+    Modeling Steps
   </a>
   
-    <nav class="md-nav" aria-label="K-Nearest Neighbors">
+    <nav class="md-nav" aria-label="Modeling Steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#euclidean-distance" class="md-nav__link">
-    Euclidean Distance
+  <a href="#data-prep" class="md-nav__link">
+    Data Prep
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-evaluation" class="md-nav__link">
-    Model Evaluation
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Evaluation">
+    <nav class="md-nav" aria-label="Data Prep">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#accuracy-and-error-rates" class="md-nav__link">
-    Accuracy and Error Rates
+  <a href="#resampling" class="md-nav__link">
+    Resampling
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#precision-and-recall" class="md-nav__link">
-    Precision and Recall
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#f1-score" class="md-nav__link">
-    F1 Score
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ann" class="md-nav__link">
-    ANN
-  </a>
-  
-    <nav class="md-nav" aria-label="ANN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#activation-functions" class="md-nav__link">
-    Activation Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Activation Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#threshold-functions" class="md-nav__link">
-    Threshold Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sigmoid-function" class="md-nav__link">
-    Sigmoid Function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rcctifier-function" class="md-nav__link">
-    Rcctifier Function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hyperbolic-tangent-function-tanh" class="md-nav__link">
-    Hyperbolic Tangent Function (tanh)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#softmax-function" class="md-nav__link">
-    Softmax Function
+  <a href="#handle-missing-data" class="md-nav__link">
+    Handle missing data
   </a>
   
 </li>
@@ -656,8 +561,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cost-function" class="md-nav__link">
-    Cost Function
+  <a href="#feature-engineering" class="md-nav__link">
+    Feature Engineering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-data" class="md-nav__link">
+    Explore Data
   </a>
   
 </li>
@@ -671,6 +583,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheatsheet
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1217,106 +1149,31 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#k-nearest-neighbors" class="md-nav__link">
-    K-Nearest Neighbors
+  <a href="#modeling-steps" class="md-nav__link">
+    Modeling Steps
   </a>
   
-    <nav class="md-nav" aria-label="K-Nearest Neighbors">
+    <nav class="md-nav" aria-label="Modeling Steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#euclidean-distance" class="md-nav__link">
-    Euclidean Distance
+  <a href="#data-prep" class="md-nav__link">
+    Data Prep
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-evaluation" class="md-nav__link">
-    Model Evaluation
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Evaluation">
+    <nav class="md-nav" aria-label="Data Prep">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#accuracy-and-error-rates" class="md-nav__link">
-    Accuracy and Error Rates
+  <a href="#resampling" class="md-nav__link">
+    Resampling
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#precision-and-recall" class="md-nav__link">
-    Precision and Recall
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#f1-score" class="md-nav__link">
-    F1 Score
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ann" class="md-nav__link">
-    ANN
-  </a>
-  
-    <nav class="md-nav" aria-label="ANN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#activation-functions" class="md-nav__link">
-    Activation Functions
-  </a>
-  
-    <nav class="md-nav" aria-label="Activation Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#threshold-functions" class="md-nav__link">
-    Threshold Functions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sigmoid-function" class="md-nav__link">
-    Sigmoid Function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rcctifier-function" class="md-nav__link">
-    Rcctifier Function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hyperbolic-tangent-function-tanh" class="md-nav__link">
-    Hyperbolic Tangent Function (tanh)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#softmax-function" class="md-nav__link">
-    Softmax Function
+  <a href="#handle-missing-data" class="md-nav__link">
+    Handle missing data
   </a>
   
 </li>
@@ -1327,8 +1184,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cost-function" class="md-nav__link">
-    Cost Function
+  <a href="#feature-engineering" class="md-nav__link">
+    Feature Engineering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-data" class="md-nav__link">
+    Explore Data
   </a>
   
 </li>
@@ -1356,54 +1220,350 @@
   
 
 
-  <h1>Cheatsheet</h1>
+  <h1>Time Series Basics</h1>
 
-<h2 id="k-nearest-neighbors">K-Nearest Neighbors</h2>
-<h3 id="euclidean-distance">Euclidean Distance</h3>
-<div class="arithmatex">\[ \sqrt {(x_2^2 - x_1^2) + (y_2^2 - y_1^2)} \]</div>
-<h2 id="model-evaluation">Model Evaluation</h2>
-<h3 id="accuracy-and-error-rates">Accuracy and Error Rates</h3>
-<p>Accuracy Rate
-<script type="math/tex; mode=display"> AR = \frac{Correct}{Total} = \frac{TN + TP}{Total} </script>
-where <span class="arithmatex">\(TN\)</span> and <span class="arithmatex">\(TP\)</span> are the total true negatives and true positives respectively</p>
-<p>Error Rate
-<script type="math/tex; mode=display"> ER = \frac{Incorrect}{Total} = \frac{FN + FP}{Total} </script>
-where <span class="arithmatex">\(FN\)</span> and <span class="arithmatex">\(FP\)</span> are the total false negatives and false positives respectively</p>
-<h3 id="precision-and-recall">Precision and Recall</h3>
-<p>Precision
-<script type="math/tex; mode=display"> \frac{TP}{TP + FP} </script>
-</p>
-<p>Recall(Sensitivity)
-<script type="math/tex; mode=display"> \frac{TP}{TP + FN} </script>
-</p>
-<h3 id="f1-score">F1 Score</h3>
-<div class="arithmatex">\[ F1 = \frac{2}{\frac{1}{Precision} + \frac{1}{Recall}} = \frac{2 * (Precision * Recall)}{Precision + Recall}\]</div>
-<h2 id="ann">ANN</h2>
-<h3 id="activation-functions">Activation Functions</h3>
-<h4 id="threshold-functions">Threshold Functions</h4>
-<div class="arithmatex">\[ \phi(x) = \begin{cases}
-1 \ if \ x \geq 0 \\
-0 \ if \ x \lt 0
-\end{cases} \]</div>
-<h4 id="sigmoid-function">Sigmoid Function</h4>
-<div class="arithmatex">\[ \phi(x) = \frac{1}{1 + e^{-x}} \]</div>
+<h2 id="modeling-steps">Modeling Steps</h2>
 <ul>
-<li>Anything below 0 drops off, above 0 approximates to 1</li>
+<li>Data Preparation - Generate or Read data<ul>
+<li>Ensure that date column is of date datatype</li>
 </ul>
-<h4 id="rcctifier-function">Rcctifier Function</h4>
-<div class="arithmatex">\[ \phi(x) = max(x, 0) \]</div>
-<h4 id="hyperbolic-tangent-function-tanh">Hyperbolic Tangent Function (tanh)</h4>
-<div class="arithmatex">\[ \phi(x) = \frac{1 - e^{-2x}}{1 + e^{-2x}} \]</div>
+</li>
+</ul>
+<p id="cust-id-tsb-resampl"></p>
 <ul>
-<li>Ranges from -1 to 1</li>
+<li><abbr title="Changing the frequency of the available data to match the desired forecast frequency">Resampling</abbr> or Changing Frequency<ul>
+<li>Downsampling (e.g. Quarterly to Yearly)</li>
+<li>Upsampling (e.g. Quarterly to Monthly)<ul>
+<li>May result in missing data for lower level rows. Also see <a href="">Handle Missing Data</a></li>
 </ul>
-<h4 id="softmax-function">Softmax Function</h4>
-<div class="arithmatex">\[ f_j(x) = \frac{e^{x_j}}{\sum_k e^{x_k}} \]</div>
-<h3 id="cost-function">Cost Function</h3>
-<p>
-<script type="math/tex; mode=display"> C = \sum_i^n {\frac{1}{2} (\hat y_i - y_i)^2 }</script>
-where <span class="arithmatex">\(n\)</span> is the total number of rows in the dataset and <span class="arithmatex">\(i\)</span> is the <span class="arithmatex">\(i^{th}\)</span> row</p>
-<p>Also see <a href="../stats-cheatsheet/#cost-function">Gradient Descent Cost Function</a></p>
+</li>
+<li>Set Frequency<ul>
+<li>Set date column as index (if not the index already)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Handle missing data </li>
+<li>Feature Engineering<ul>
+<li>Add Basic Date Time features</li>
+<li>Add Lag features</li>
+<li>Add Windowing features</li>
+<li>Add Expanding/Cumulative features</li>
+<li>Add / Remove other columns as needed</li>
+</ul>
+</li>
+<li>Explore Data<ul>
+<li>Test for Stationarity</li>
+<li>Test for Seasonality<ul>
+<li>Apply <a href="../stats-tsb/#cust-id-tsb-diff">Differencing</a> as needed</li>
+</ul>
+</li>
+<li>Test for ACF and PACF</li>
+</ul>
+</li>
+<li>Split training and test data<ul>
+<li>Walk Forward Validation</li>
+</ul>
+</li>
+</ul>
+<h3 id="data-prep">Data Prep</h3>
+<div class="admonition abstract">
+<p class="admonition-title">Read Data</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Parse date column as date when reading data</span>
+<span class="c1"># dayfirst = True uses the dd/mm/yyyy format instead of the default mm/dd/yyyy; not needed if date is in default format</span>
+<span class="c1"># we pass the index of the date column to the parse_dates parameter</span>
+<span class="n">df_ts_base1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/TimeSeriesData1.csv&#39;</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Alternatively, we can also convert the date column after reading the csv</span>
+<span class="c1"># We would do this if for some reason we read the date column without parsing it as a date</span>
+<span class="n">df_ts_base2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/TimeSeriesData1.csv&#39;</span><span class="p">)</span>
+<span class="n">df_ts_base2</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_ts_base2</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">dayfirst</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<h4 id="resampling"><abbr title="Changing the frequency of the available data to match the desired forecast frequency">Resampling</abbr></h4>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>Business day</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Calendar day</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Weekly</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Month end</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>Quarter end</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Year end</td>
+</tr>
+<tr>
+<td>BA</td>
+<td>Business year end</td>
+</tr>
+<tr>
+<td>AS</td>
+<td>Year start</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Hourly frequency</td>
+</tr>
+<tr>
+<td>T, min</td>
+<td>Minutely frequency</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Secondly frequency</td>
+</tr>
+<tr>
+<td>L, ms</td>
+<td>Millisecond frequency</td>
+</tr>
+<tr>
+<td>U, us</td>
+<td>Microsecond frequency</td>
+</tr>
+<tr>
+<td>N, ns</td>
+<td>Nanosecond frequency</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">Sample Code</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/api/pandas.DataFrame.resample.html#pandas.DataFrame.resample">Resample</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Downsample</span>
+<span class="n">df_ts1_mth</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Upsample</span>
+<span class="n">df_ts1_hr</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Set Index</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set date column as index if it has not been set as the index based on some prior operation</span>
+<span class="n">df_ts_base1</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Set desired frequency</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># This will generate new rows for missing periods for the desired frequency</span>
+<span class="c1"># Make sure to set the frequency only after setting the date column as index</span>
+<span class="c1"># Parameter &#39;b&#39; signifies business days</span>
+<span class="n">df_ts_base1</span> <span class="o">=</span> <span class="n">df_ts_base1</span><span class="o">.</span><span class="n">asfreq</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<h4 id="handle-missing-data">Handle missing data</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bfill</td>
+<td>Backward fill</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Count of values</td>
+</tr>
+<tr>
+<td>ffill</td>
+<td>Forward fill</td>
+</tr>
+<tr>
+<td>first</td>
+<td>First valid data value</td>
+</tr>
+<tr>
+<td>last</td>
+<td>Last valid data value</td>
+</tr>
+<tr>
+<td>max</td>
+<td>Maximum data value</td>
+</tr>
+<tr>
+<td>mean</td>
+<td>Mean of values in time range</td>
+</tr>
+<tr>
+<td>median</td>
+<td>Median of values in time range</td>
+</tr>
+<tr>
+<td>min</td>
+<td>Minimum data value</td>
+</tr>
+<tr>
+<td>nunique</td>
+<td>Number of unique values</td>
+</tr>
+<tr>
+<td>ohlc</td>
+<td>Opening value, highest value, lowest value, closing value</td>
+</tr>
+<tr>
+<td>pad</td>
+<td>Same as forward fill</td>
+</tr>
+<tr>
+<td>std</td>
+<td>Standard deviation of values</td>
+</tr>
+<tr>
+<td>sum</td>
+<td>Sum of values</td>
+</tr>
+<tr>
+<td>var</td>
+<td>Variance of values</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">Handle Missing Data</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/api/pandas.DataFrame.interpolate.html">Interpolate</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Front fill NaNs</span>
+<span class="n">df_ts_base1</span><span class="o">.</span><span class="n">spx</span> <span class="o">=</span> <span class="n">df_ts_base1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+
+<span class="c1"># Back fill NaNs</span>
+<span class="n">df_ts_base1</span><span class="o">.</span><span class="n">spx</span> <span class="o">=</span> <span class="n">df_ts_base1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
+
+<span class="c1"># Populate NaNs using mean value</span>
+<span class="n">df_ts_base1</span><span class="o">.</span><span class="n">spx</span> <span class="o">=</span> <span class="n">df_ts_base1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">df_ts_base1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># Fill in missing values with linear interpolation (euqally spaced values)</span>
+<span class="n">df_ts1_hr_interpolated</span> <span class="o">=</span> <span class="n">df_ts1_hr</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<h3 id="feature-engineering">Feature Engineering</h3>
+<div class="admonition abstract">
+<p class="admonition-title">Add Basic Date Columns</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/series.html#datetimelike-properties">Pandas Datetime</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add additional date columns as needed</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Add Basic Date Columns</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/series.html#datetimelike-properties">Datetime</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add additional date columns as needed</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Lag Features</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/api/pandas.Series.shift.html#pandas.Series.shift">Shift</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;last_day&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df_ts1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># last data point&#39;s value</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;last_week&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df_ts1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="c1"># values for current -7th data point</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Window Features</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/api/pandas.Series.rolling.html#pandas.Series.rolling">Rolling</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Aggreates over specified rolling windows</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;2day_mean&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df_ts1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;2day_max&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df_ts1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Expanding/Cumulative Features</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/api/pandas.Series.expanding.html#pandas.Series.expanding">Expanding</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Cumulative max</span>
+<span class="n">df_ts1</span><span class="p">[</span><span class="s1">&#39;cum_max&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df_ts1</span><span class="o">.</span><span class="n">spx</span><span class="o">.</span><span class="n">expanding</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<h3 id="explore-data">Explore Data</h3>
+<div class="admonition abstract">
+<p class="admonition-title">Test for Stationarity</p>
+<p><a href="../stats-tsb/#stationarity">Stationarity</a></p>
+<p><a href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.stattools.adfuller.html">Augmented Dickey Fuller Test</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="k">as</span> <span class="nn">sts</span>
+
+<span class="n">adfuller_stats</span> <span class="o">=</span> <span class="n">sts</span><span class="o">.</span><span class="n">adfuller</span><span class="p">(</span><span class="n">df_ts_base1</span><span class="o">.</span><span class="n">market_value</span><span class="p">)</span>
+<span class="n">adfuller_stats</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Test for Seasonality</p>
+<p><a href="../stats-tsb/#seasonality">Seasonality</a></p>
+<p><a href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.seasonal.seasonal_decompose.html">Seasonal Decompose</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
+
+<span class="c1"># Use model=&quot;multiplicative&quot; for testing multiplicative naive decomposition</span>
+<span class="n">s_dec_additive</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">df_ts_base1</span><span class="o">.</span><span class="n">market_value</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;additive&quot;</span><span class="p">)</span>
+<span class="n">s_dec_additive</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Differencing</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable//reference/api/pandas.Series.diff.html#pandas.Series.diff">Differencing</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove Trend</span>
+<span class="c1"># Lag 1 Differencing to get rid of trends</span>
+<span class="c1"># Uses the difference of current and &#39;Lag1&#39; values (col - col.shift(1))</span>
+<span class="n">df_ts_base3</span><span class="p">[</span><span class="s1">&#39;diff1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts_base3</span><span class="p">[</span><span class="s1">&#39;MilesMM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Remove Seasonality</span>
+<span class="c1"># Lag 12 Differencing to get rid of monthly seasonality</span>
+<span class="c1"># Uses the difference of current and &#39;Lag12&#39; values (col - col.shift(12))</span>
+<span class="n">df_ts_base3</span><span class="p">[</span><span class="s1">&#39;diff12&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ts_base3</span><span class="p">[</span><span class="s1">&#39;diff1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Test for Autocorrelation (ACF)</p>
+<p><a href="../stats-tsb/#autocorrelation">Autocorrelation</a></p>
+<p><a href="https://www.statsmodels.org/dev/generated/statsmodels.graphics.tsaplots.plot_acf.html">Plot ACF</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="k">as</span> <span class="nn">sgt</span>
+
+<span class="c1"># zero = False means that the current period is not considered</span>
+<span class="c1"># as the correlation between the current period and itself will always be 1</span>
+<span class="c1"># 40 is the optimal number of lags for time series analysis</span>
+<span class="n">sgt</span><span class="o">.</span><span class="n">plot_acf</span><span class="p">(</span><span class="n">df_ts_base1</span><span class="o">.</span><span class="n">market_value</span><span class="p">,</span> <span class="n">lags</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="n">zero</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;ACF S&amp;P&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">24</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Test for Partial Autocorrelation (PACF)</p>
+<p><a href="../stats-tsb/#partial-autocorrelation">Partial Autocorrelation</a></p>
+<p><a href="https://www.statsmodels.org/dev/generated/statsmodels.graphics.tsaplots.plot_pacf.html">Plot PACF</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">statsmodels.graphics.tsaplots</span> <span class="k">as</span> <span class="nn">sgt</span>
+
+<span class="c1"># zero = False means that the current period is not considered</span>
+<span class="c1"># as the correlation between the current period and itself will always be 1</span>
+<span class="c1"># 40 is the optimal number of lags for time series analysis</span>
+<span class="n">sgt</span><span class="o">.</span><span class="n">plot_pacf</span><span class="p">(</span><span class="n">df_ts_base1</span><span class="o">.</span><span class="n">market_value</span><span class="p">,</span> <span class="n">lags</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="n">zero</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;ols&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;PACF S&amp;P&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">24</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</div>
 
 
 
