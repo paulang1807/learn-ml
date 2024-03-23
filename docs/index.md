@@ -9,7 +9,7 @@
 ### Handle missing data
 Common Approach - Replace missing value with average of all values in the column
 
-!!! abstract "SkLearn API"
+!!! abstract "Sample Code"
 
     [Simple Imputer](https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html)
 

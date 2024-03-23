@@ -828,3 +828,31 @@ $$ f'(m, b) = \begin{bmatrix}
 
 ### Cost Function
 $$ f(m, b) = \frac{1}{N} \sum_i^N { (y_i - (mx_i + b))^2 }$$
+
+## Time Series Concepts
+### Exponential Smoothing
+$$ F_{t + 1} = \alpha y_t + \alpha (1 - \alpha) y_{t -1} + \alpha (1 - \alpha)^2 y_{t -2} + \dots$$
+
+where $0 \leq \alpha \leq 1$ is the smoothing constant
+
+### Lag k Differencing
+$$ Difference = Y_t - Y_{t-k} $$
+
+## Autoregressive Model (AR)
+
+$$ x_t = \phi_0 + \phi_1 x_{t - 1} + \epsilon_t $$
+
+where $t$ is the current period, $t - 1$ is the previous period, $x_t$ is the value for the current period, $x_{t - 1}$ is the value for the previous period, $\phi_1$ is the coefficient for the previous period value and $\epsilon_t$ is the residual error and should be just some unpredictable "white noise"
+
+and $-1 \lt \phi_1 \lt 1$
+
+**Pct Change**
+$$ 100 * \frac{x_t - x_{t - 1}}{x_{t - 1}} $$
+
+## Moving Average Model (MA)
+
+$$ x_t = \phi_0 + \phi_1  \epsilon_{t - 1} + \epsilon_t $$
+
+where $t$ is the current period, $t - 1$ is the previous period, $\epsilon_t$ is the residual for the current period, $\epsilon_{t - 1}$ is the residual for the previous period and $\phi_1$ is the coefficient for the previous period value
+
+and $-1 \lt \phi_1 \lt 1$

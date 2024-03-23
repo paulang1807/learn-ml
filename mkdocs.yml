@@ -78,6 +78,7 @@ nav:
     - Natural Language Processing: ml-nlp.md
     - Deep Learning: ml-deepl.md
     - Dimensionality Reduction: ml-dimred.md
+    - Time Series Basics: ml-tsb.md
     - Cheatsheet: ml-cheatsheet.md
   - Statistics & ML Concepts:
     - Stats Basics: stats-basics.md
@@ -85,6 +86,7 @@ nav:
     - Random Variables: stats-rv.md
     - Sampling: stats-sampling.md
     - Hypothesis Testing: stats-hypo-test.md
+    - Time Series Forecasting: stats-tsb.md
     - Regression: stats-reg.md
     - Classification: stats-cls.md
     - Clustering: stats-clustr.md
